@@ -3,6 +3,7 @@ import { Nunito, Bubblegum_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 import { siteConfig } from '@/content/site.config';
 import { Preloader } from '@/components/ui/Preloader';
+import { CustomCursor } from '@/components/ui/CustomCursor';
 import { TopBar } from '@/components/layout/TopBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -84,6 +85,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Preloader />
+        <CustomCursor />
         <TopBar />
         <Header />
         <div id="main-content" className="flex-1 flex flex-col">{children}</div>

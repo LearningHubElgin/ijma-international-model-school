@@ -21,23 +21,22 @@ export function InnerPageBanner({
   title,
   badge,
   breadcrumbs,
-  bgImage = '/assets/banners/inner-hero-banner.svg',
+  bgImage = '/assets/banners/page-banner.png',
 }: InnerPageBannerProps) {
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#0a6375] overflow-hidden text-center text-white">
+    <section className="relative w-full py-16 sm:py-20 md:py-28 overflow-hidden text-center text-white min-h-[320px] sm:min-h-[380px] md:min-h-[440px] flex items-center justify-center">
       {/* Background Graphic */}
-      <div className="absolute inset-0 opacity-20">
-        <Image src={bgImage} alt={title} fill className="object-cover" priority />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a6375] via-[#0a6375]/80 to-[#074c5a]/90" />
-
-      {/* Floating Cloud */}
-      <div className="absolute top-6 left-10 w-24 h-12 opacity-30 pointer-events-none animate-float-slow hidden md:block">
-        <Image src="/assets/decorative/cloud-shape.svg" alt="Cloud" fill className="object-contain" />
-      </div>
+      <Image
+        src={bgImage}
+        alt={title}
+        fill
+        className="object-cover object-center"
+        priority
+        sizes="100vw"
+      />
 
       <Container>
-        <div className="relative z-10 max-w-3xl mx-auto">
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
           {badge && (
             <Reveal variant="fade-up" delay={0.1}>
               <span className="inline-block font-bubblegum text-[#f7941e] text-lg uppercase tracking-wider mb-2">
@@ -47,26 +46,29 @@ export function InnerPageBanner({
           )}
 
           <Reveal variant="fade-up" delay={0.2}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.2)]">
               {title}
             </h1>
           </Reveal>
 
           {/* Breadcrumbs */}
           <Reveal variant="fade-up" delay={0.3}>
-            <nav aria-label="Breadcrumb" className="mt-4 flex items-center justify-center space-x-2 text-sm text-white/80">
-              <Link href="/" className="hover:text-primary transition-colors">
+            <nav
+              aria-label="Breadcrumb"
+              className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]"
+            >
+              <Link href="/" className="hover:text-[#f7941e] transition-colors">
                 Home
               </Link>
               {breadcrumbs.map((crumb, idx) => (
                 <React.Fragment key={crumb.label}>
-                  <ChevronRight className="w-3.5 h-3.5 text-white/50" />
+                  <span className="text-[#ed145b] font-bold">▪</span>
                   {crumb.href && idx < breadcrumbs.length - 1 ? (
-                    <Link href={crumb.href} className="hover:text-primary transition-colors">
+                    <Link href={crumb.href} className="hover:text-[#f7941e] transition-colors">
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-[#f7941e] font-semibold">{crumb.label}</span>
+                    <span className="text-white/90">{crumb.label}</span>
                   )}
                 </React.Fragment>
               ))}

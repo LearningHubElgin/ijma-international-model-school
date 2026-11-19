@@ -20,7 +20,7 @@ export const siteConfig = {
     motto: 'We Educate Knowledge & Essential Skills!',
     description:
       'GD Goenka La Petite, Rohini is a premier Montessori-based preschool offering innovative, nurturing early education that develops independence, confidence, and a positive sense of self.',
-    logo: '/assets/logo/gdglp-logo.svg',
+    logo: '/assets/logo/gdglp-logo.png',
     affiliation: 'Montessori-Based Early Childhood Education',
   },
 
@@ -42,7 +42,6 @@ export const siteConfig = {
   },
 
   navigation: [
-    { label: 'Home', href: '/' },
     {
       label: 'Programmes',
       href: '/programmes',
@@ -95,9 +94,8 @@ export const siteConfig = {
       label: 'Montessori',
       href: '/montessori-methodology',
       children: [
-        { label: 'Montessori Methodology', href: '/montessori-methodology' },
-        { label: 'Curriculum', href: '/curriculum' },
         { label: 'Celebrations', href: '/celebrations' },
+        { label: 'Curriculum', href: '/curriculum' },
         { label: 'Field Trips', href: '/field-trips' },
         { label: 'Music & Movement', href: '/music-movement' },
         { label: 'Physical Education', href: '/physical-education' },
@@ -119,18 +117,18 @@ export const siteConfig = {
         'Cultivating curious minds through child-centered Montessori environments where every discovery sparks confidence, creativity, and joyful lifelong learning.',
       ctaText: 'Know More',
       ctaHref: '/about-us',
-      image: '/assets/hero/hero-slide-1.svg',
+      image: '/assets/hero/hero-slide-1.jpg',
     },
     {
       id: 2,
       badge: 'Premier Early Childhood Center',
       title: 'Children Focused Education',
-      subtitle: 'Early Education Foundation',
+      subtitle: 'Early Education',
       description:
         'Empowering young learners through hands-on materials, supportive mentors, and thoughtful spaces that inspire independence and personal achievement.',
       ctaText: 'Know More',
       ctaHref: '/programmes',
-      image: '/assets/hero/hero-slide-2.svg',
+      image: '/assets/hero/hero-slide-2.jpg',
     },
   ],
 

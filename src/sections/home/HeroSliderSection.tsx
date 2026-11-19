@@ -7,12 +7,11 @@ import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/content/site.config';
-import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 
 export function HeroSliderSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -45,15 +44,7 @@ export function HeroSliderSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#fff9f5] to-white">
-      {/* Decorative Floating Clouds */}
-      <div className="absolute top-8 left-12 w-32 h-16 pointer-events-none animate-float-slow hidden md:block z-10">
-        <Image src="/assets/decorative/cloud-shape.svg" alt="Cloud" fill className="object-contain" />
-      </div>
-      <div className="absolute top-20 right-16 w-28 h-14 pointer-events-none animate-float-reverse hidden md:block z-10">
-        <Image src="/assets/decorative/cloud-shape.svg" alt="Cloud" fill className="object-contain" />
-      </div>
-
+    <section className="relative w-full overflow-hidden bg-slate-900" aria-label="Hero Showcase">
       {/* Carousel Viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
@@ -63,122 +54,109 @@ export function HeroSliderSection() {
             return (
               <div
                 key={slide.id}
-                className="relative flex-[0_0_100%] min-w-0 min-h-[540px] sm:min-h-[600px] lg:min-h-[680px] flex items-center py-12 lg:py-20"
+                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[680px] md:h-[760px] lg:h-[840px] xl:h-[900px] flex items-center justify-center"
               >
-                <Container size="wide">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                    {/* Slide Text Content */}
-                    <div className="lg:col-span-7 text-center lg:text-left z-20">
-                      <AnimatePresence mode="wait">
-                        {isActive && (
-                          <div key={`slide-text-${slide.id}`}>
-                            {/* Eyebrow Badge */}
-                            <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.5, delay: 0.15 }}
-                            >
-                              <span className="inline-block px-4 py-1.5 rounded-pill bg-peach text-[#ed145b] font-bubblegum text-base sm:text-lg tracking-wide uppercase mb-3">
-                                {slide.badge}
-                              </span>
-                            </motion.div>
+                {/* Full-width High-Res Slide Background Image */}
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  priority={index === 0}
+                  className="object-cover object-center"
+                  sizes="100vw"
+                />
 
-                            {/* Headline */}
-                            <motion.h1
-                              initial={{ opacity: 0, y: 35 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.65, delay: 0.3 }}
-                              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black tracking-tight leading-[1.15]"
-                            >
-                              {slide.title}
-                              <span className="block text-primary text-3xl sm:text-4xl lg:text-5xl mt-2 font-bold font-bubblegum">
-                                {slide.subtitle}
-                              </span>
-                            </motion.h1>
+                {/* Centered Slide Content Overlay */}
+                <div className="relative z-20 max-w-2xl mx-auto px-4 text-center mt-[-40px] sm:mt-[-20px]">
+                  <AnimatePresence mode="wait">
+                    {isActive && (
+                      <div key={`slide-${slide.id}`} className="flex flex-col items-center">
+                        {/* Title: Big Stacked Bold White Font matching live site */}
+                        <motion.h1
+                          initial={{ opacity: 0, y: 25 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.1 }}
+                          className="text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_12px_rgba(0,0,0,0.18)]"
+                        >
+                          {slide.id === 2 ? (
+                            <>
+                              Children<br />
+                              Focused<br />
+                              Education
+                            </>
+                          ) : (
+                            <>
+                              Learning<br />
+                              With Fun
+                            </>
+                          )}
+                        </motion.h1>
 
-                            {/* Description */}
-                            <motion.p
-                              initial={{ opacity: 0, y: 25 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.55, delay: 0.5 }}
-                              className="mt-6 text-base sm:text-lg text-body leading-relaxed max-w-xl mx-auto lg:mx-0"
-                            >
-                              {slide.description}
-                            </motion.p>
+                        {/* Subtitle */}
+                        <motion.p
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.55, delay: 0.25 }}
+                          className="mt-4 sm:mt-6 text-xl sm:text-2xl md:text-3xl text-white font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+                        >
+                          {slide.subtitle}
+                        </motion.p>
 
-                            {/* Button */}
-                            <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.5, delay: 0.65 }}
-                              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4"
-                            >
-                              <Button variant="primary" size="lg" href={slide.ctaHref}>
-                                {slide.ctaText}
-                              </Button>
-                              <Button variant="outline" size="lg" href="/contact-us">
-                                Contact Us
-                              </Button>
-                            </motion.div>
-                          </div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-
-                    {/* Slide Graphic / Illustration */}
-                    <div className="lg:col-span-5 relative flex justify-center z-10">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.7, delay: 0.2 }}
-                        className="relative w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
-                      >
-                        <Image
-                          src={slide.image}
-                          alt={slide.title}
-                          fill
-                          priority={index === 0}
-                          className="object-cover"
-                        />
-                      </motion.div>
-                    </div>
-                  </div>
-                </Container>
+                        {/* CTA Button */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
+                          className="mt-6 sm:mt-8"
+                        >
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            href={slide.ctaHref}
+                            className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg rounded-full shadow-button transition-all duration-300"
+                          >
+                            {slide.ctaText}
+                          </Button>
+                        </motion.div>
+                      </div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Navigation Controls: Arrows */}
+      {/* Navigation Arrows */}
       <div className="absolute inset-y-0 left-4 right-4 flex items-center justify-between pointer-events-none z-30">
         <button
           onClick={scrollPrev}
-          className="pointer-events-auto p-3 rounded-full bg-white/80 hover:bg-white text-gray-800 shadow-md hover:shadow-lg transition-all focus:outline-none -ml-2 sm:ml-0"
+          className="pointer-events-auto p-3 sm:p-4 rounded-full bg-white/70 hover:bg-white text-gray-800 shadow-lg hover:shadow-xl transition-all focus:outline-none -ml-2 sm:ml-2"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         <button
           onClick={scrollNext}
-          className="pointer-events-auto p-3 rounded-full bg-white/80 hover:bg-white text-gray-800 shadow-md hover:shadow-lg transition-all focus:outline-none -mr-2 sm:mr-0"
+          className="pointer-events-auto p-3 sm:p-4 rounded-full bg-white/70 hover:bg-white text-gray-800 shadow-lg hover:shadow-xl transition-all focus:outline-none -mr-2 sm:mr-2"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-2 z-30">
+      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex items-center space-x-2.5 z-30">
         {siteConfig.heroSlides.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollTo(i)}
             className={`transition-all duration-300 rounded-full ${
               selectedIndex === i
-                ? 'w-8 h-2.5 bg-primary'
-                : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
+                ? 'w-8 h-2.5 bg-[#ed145b]'
+                : 'w-2.5 h-2.5 bg-white/60 hover:bg-white'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
