@@ -136,15 +136,17 @@ export const siteConfig = {
     eyebrow: 'About Us',
     heading: 'We Educate Knowledge & Essential Skills!',
     paragraph1:
-      'GD Goenka La Petite, Rohini offers a warm, encouraging, and respectful community where children are inspired to explore their unique talents. Rooted in authentic Montessori principles and contemporary pedagogy, our approach emphasizes experiential learning, emotional resilience, and active collaboration.',
+      'We provide a warm and encouraging atmosphere that enhances self-concept, instills basic moral values, encourages social interaction, and enriches awareness of the natural and cultural world. We’re a warm and loving community of preschoolers, teachers, and parents who inspire imagination, creativity, and play for every learner.',
     paragraph2:
-      'We believe the early years form the bedrock of a child’s intellectual and moral growth. Our carefully planned classrooms and compassionate educators foster a joyful atmosphere where curiosity thrives and self-directed exploration becomes second nature.',
+      "In an environment rooted in respect and compassion, we strive to nourish each child's spirit and provide a protective space for him or her to grow.",
     ctaText: 'Read More',
     ctaHref: '/about-us',
-    mainImage: '/assets/about/about-main.svg',
-    floatingBoy: '/assets/decorative/pencil-boy.svg',
-    floatingGirl: '/assets/decorative/pencil-girl.svg',
-    floatingCloud: '/assets/decorative/cloud-shape.svg',
+    mainImage: '/assets/about/about-main.jpg',
+    toddlerImage: '/assets/about/toddler-play.png',
+    floatingStar: '/assets/decorative/sleeping-star.svg',
+    floatingRocket: '/assets/decorative/doodle-rocket.svg',
+    floatingSwirls: '/assets/decorative/doodle-swirls.svg',
+    gradCapIcon: '/assets/decorative/grad-cap.svg',
   },
 
   stepByStep: {
