@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens from recon.md */
+  --wdtPrimaryColor: #ed145b;
+  --wdtPrimaryHover: #c40e48;
+  --wdtSecondaryColor: #0a6375;
+  --wdtSecondaryHover: #074c5a;
+  --wdtTertiaryColor: #f7941e;
+  --wdtAccentTurquoise: #1cbbb4;
+  --wdtSoftWarmBg: #ffefe4;
+  --wdtSoftYellow: #fff9e6;
+
+  --wdtBodyBGColor: #ffffff;
+  --wdtBodyTxtColor: #6b6b84;
+  --wdtHeadAltColor: #000000;
+  --wdtBorderColor: #e8e8ed;
+
+  --wdtRadius_Part: 50px;
+  --wdtRadius_Card: 22px;
+  --wdtBaseTransition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-nunito), system-ui, -apple-system, sans-serif;
+  color: var(--wdtBodyTxtColor);
+  background-color: var(--wdtBodyBGColor);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-nunito), system-ui, -apple-system, sans-serif;
+  color: var(--wdtHeadAltColor);
+  font-weight: 700;
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

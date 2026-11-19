@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a6375" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#f7941e" stop-opacity="0.95" />
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#ffffff" fill-opacity="0.15" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad)" rx="16" />
+  <rect width="100%" height="100%" fill="url(#grid)" rx="16" />
+  <g fill="#ffffff" text-anchor="middle" font-family="'Nunito', sans-serif">
+    <circle cx="200" cy="125" r="32" fill="#ffffff" fill-opacity="0.2" />
+    <text x="200" y="132" font-size="28" font-weight="700">★</text>
+    <text x="200" y="175" font-size="24" font-weight="700">Splash Pool Arena</text>
+    <text x="200" y="200" font-size="14" font-weight="400" fill-opacity="0.85">Water Discovery</text>
+  </g>
+</svg>
