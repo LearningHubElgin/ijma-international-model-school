@@ -41,7 +41,52 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* Reduced Motion Fallback */
+/* GPU-friendly Floating Keyframes */
+@keyframes floatBobSlow {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(2deg);
+  }
+}
+
+@keyframes floatBobReverse {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1);
+    opacity: 1;
+  }
+}
+
+.animate-float-slow {
+  animation: floatBobSlow 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-reverse {
+  animation: floatBobReverse 5.2s ease-in-out infinite 0.5s;
+  will-change: transform;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Universal Accessibility: Reduced Motion Fallback */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -50,5 +95,11 @@ h1, h2, h3, h4, h5, h6 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .animate-float-slow,
+  .animate-float-reverse,
+  .animate-pulse-slow {
+    animation: none !important;
+    transform: none !important;
   }
 }
