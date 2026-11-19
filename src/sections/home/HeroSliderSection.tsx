@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/content/site.config';
 import { Button } from '@/components/ui/Button';
+import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
 
 export function HeroSliderSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
@@ -148,7 +149,7 @@ export function HeroSliderSection() {
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex items-center space-x-2.5 z-30">
+      <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 lg:bottom-24 left-1/2 -translate-x-1/2 flex items-center space-x-2.5 z-30">
         {siteConfig.heroSlides.map((_, i) => (
           <button
             key={i}
@@ -156,12 +157,15 @@ export function HeroSliderSection() {
             className={`transition-all duration-300 rounded-full ${
               selectedIndex === i
                 ? 'w-8 h-2.5 bg-[#ed145b]'
-                : 'w-2.5 h-2.5 bg-white/60 hover:bg-white'
+                : 'w-2.5 h-2.5 bg-white/70 hover:bg-white'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
+
+      {/* Authentic Multi-layered Scalloped Cloud Shape Divider */}
+      <CloudWaveDivider fillColor="#ffffff" />
     </section>
   );
 }

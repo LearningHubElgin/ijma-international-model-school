@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
+import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
 
 interface BreadcrumbItem {
   label: string;
@@ -76,6 +77,12 @@ export function InnerPageBanner({
           </Reveal>
         </div>
       </Container>
+
+      {/* Cloud Shape Divider for Inner Page Banners */}
+      <CloudWaveDivider
+        fillColor="#ffffff"
+        heightClass="h-[60px] sm:h-[80px] md:h-[100px] lg:h-[120px]"
+      />
     </section>
   );
 }
