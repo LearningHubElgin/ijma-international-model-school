@@ -150,10 +150,13 @@ export const siteConfig = {
   },
 
   stepByStep: {
-    eyebrow: 'Our Philosophy',
     heading: 'Step By Step Systematic Education',
     description:
-      'In an innovative, nurturing environment, our children develop independence, confidence, and a positive sense of self. Each milestone is thoughtfully guided with purposeful activities that honor every child’s natural learning rhythm and unique developmental trajectory.',
+      'We provide an innovative, nurturing and stimulating environment where children develop independence, confidence and a positive sense of self and the world around them. Our curriculum is designed to involve children in experiences that enhance language, literacy, music, movement, art and socialization. Through play, all areas of development are fostered.',
+    abacusIcon: '/assets/decorative/doodle-abacus.svg',
+    planetDoodle: '/assets/decorative/doodle-planet.svg',
+    abcDoodle: '/assets/decorative/doodle-abc.svg',
+    pencilDoodle: '/assets/decorative/doodle-pencil.svg',
   },
 
   features: [

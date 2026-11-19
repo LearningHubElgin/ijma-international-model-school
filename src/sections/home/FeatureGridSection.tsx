@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/content/site.config';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 
 export function FeatureGridSection() {
@@ -13,14 +11,8 @@ export function FeatureGridSection() {
   const displayFeatures = siteConfig.features.slice(0, 6);
 
   return (
-    <Section bg="white" spacing="default">
+    <section className="bg-[#FFEFE4] pt-2 pb-16 sm:pb-20 lg:pb-24">
       <Container>
-        <SectionHeading
-          eyebrow="Montessori Core Pillars"
-          title="Fostering Curiosity & Growth"
-          description="Every pillar of our methodology is carefully structured to inspire self-driven discovery, social connection, and personal agency."
-        />
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayFeatures.map((feature, index) => (
             <Reveal
@@ -71,6 +63,6 @@ export function FeatureGridSection() {
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

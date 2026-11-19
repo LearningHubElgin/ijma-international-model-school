@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/content/site.config';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 
@@ -12,7 +11,11 @@ export function AboutSection() {
   const { about } = siteConfig;
 
   return (
-    <Section bg="white" spacing="default" className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section
+      className="relative overflow-hidden pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20"
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 10%, #FFEFE4 100%)' }}
+      aria-label="About Us"
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Organic Apple / Blob Framed Photo */}
@@ -107,13 +110,13 @@ export function AboutSection() {
 
             {/* Eyebrow Label with Mortarboard Icon */}
             <Reveal variant="fade-up" delay={0.1}>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="relative w-5 h-5 flex-shrink-0 opacity-70">
+              <div className="flex flex-col items-start gap-1 mb-2">
+                <div className="relative w-7 h-7 opacity-75 mb-0.5">
                   <Image
                     src={about.gradCapIcon || '/assets/decorative/grad-cap.svg'}
                     alt="Graduation Cap"
-                    width={20}
-                    height={20}
+                    width={28}
+                    height={28}
                     className="object-contain"
                   />
                 </div>
@@ -144,27 +147,39 @@ export function AboutSection() {
               </p>
             </Reveal>
 
-            {/* Action Button & Bottom Center Star */}
+            {/* Action Button & Scalloped Doodle Divider Row */}
             <Reveal variant="fade-up" delay={0.5}>
-              <div className="mt-8 flex items-center justify-between relative">
+              <div className="mt-8 flex items-center gap-4 relative w-full">
                 <Button
                   variant="primary"
                   size="lg"
                   href={about.ctaHref}
-                  className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg rounded-full shadow-button transition-all duration-300"
+                  className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg rounded-full shadow-button transition-all duration-300 flex-shrink-0 z-10"
                 >
                   {about.ctaText}
                 </Button>
 
-                {/* Small Orange Doodle Star */}
-                <div className="hidden sm:block text-[#f7941e] text-2xl animate-pulse-slow pr-28 select-none">
-                  ★
-                </div>
+                {/* Authentic Scalloped Loop Teal Doodle Divider */}
+                <div
+                  className="hidden sm:block flex-1 h-[20px] -scale-y-100 opacity-90 select-none pointer-events-none"
+                  style={{
+                    backgroundColor: '#0a6375',
+                    WebkitMaskImage: "url('/assets/decorative/scalloped-loop-line.png')",
+                    WebkitMaskSize: 'contain',
+                    WebkitMaskRepeat: 'repeat-x',
+                    WebkitMaskPosition: 'left center',
+                    maskImage: "url('/assets/decorative/scalloped-loop-line.png')",
+                    maskSize: 'contain',
+                    maskRepeat: 'repeat-x',
+                    maskPosition: 'left center',
+                  }}
+                  aria-hidden="true"
+                />
               </div>
             </Reveal>
 
             {/* Toddler Boy Sitting Playing with Blocks on Bottom Right */}
-            <div className="absolute -bottom-10 -right-4 sm:-right-8 w-28 sm:w-36 h-28 sm:h-36 pointer-events-none z-20">
+            <div className="absolute -bottom-8 -right-4 sm:-right-8 w-28 sm:w-36 h-28 sm:h-36 pointer-events-none z-20">
               <Image
                 src={about.toddlerImage || '/assets/about/toddler-play.png'}
                 alt="Toddler Playing"
@@ -176,6 +191,6 @@ export function AboutSection() {
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }
