@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens from recon.md */
+  --wdtPrimaryColor: #ed145b;
+  --wdtPrimaryHover: #c40e48;
+  --wdtSecondaryColor: #0a6375;
+  --wdtSecondaryHover: #074c5a;
+  --wdtTertiaryColor: #f7941e;
+  --wdtAccentTurquoise: #1cbbb4;
+  --wdtSoftWarmBg: #ffefe4;
+  --wdtSoftYellow: #fff9e6;
+
+  --wdtBodyBGColor: #ffffff;
+  --wdtBodyTxtColor: #6b6b84;
+  --wdtHeadAltColor: #000000;
+  --wdtBorderColor: #e8e8ed;
+
+  --wdtRadius_Part: 50px;
+  --wdtRadius_Card: 22px;
+  --wdtBaseTransition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-nunito), system-ui, -apple-system, sans-serif;
+  color: var(--wdtBodyTxtColor);
+  background-color: var(--wdtBodyBGColor);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-nunito), system-ui, -apple-system, sans-serif;
+  color: var(--wdtHeadAltColor);
+  font-weight: 700;
+}
+
+/* GPU-friendly Floating Keyframes */
+@keyframes floatBobSlow {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(2deg);
+  }
+}
+
+@keyframes floatBobReverse {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1);
+    opacity: 1;
+  }
+}
+
+.animate-float-slow {
+  animation: floatBobSlow 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-reverse {
+  animation: floatBobReverse 5.2s ease-in-out infinite 0.5s;
+  will-change: transform;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Universal Accessibility: Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-float-slow,
+  .animate-float-reverse,
+  .animate-pulse-slow {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Authentic Kidscool Crayon Cursor Desktop Rule */
+@media only screen and (min-width: 768px) {
+  *,
+  html,
+  body,
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    cursor: none !important;
+  }
+}

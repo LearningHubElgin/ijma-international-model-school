@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 376" width="200" height="376">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Giant Pencil -->
+    <polygon points="100,20 65,90 135,90" fill="#f7941e" />
+    <polygon points="100,20 85,55 115,55" fill="#333333" />
+    <rect x="65" y="90" width="70" height="230" fill="#ed145b" rx="8" />
+    <!-- Character Face -->
+    <circle cx="100" cy="150" r="32" fill="#ffe0bd" />
+    <circle cx="90" cy="145" r="4" fill="#333333" />
+    <circle cx="110" cy="145" r="4" fill="#333333" />
+    <path d="M92 160 Q100 170 108 160" stroke="#ed145b" stroke-width="3" fill="none" stroke-linecap="round" />
+    <!-- Hair / Hat -->
+    <path d="M72 135 Q100 110 128 135" fill="#ed145b" />
+    <!-- Text Badge -->
+    <rect x="40" y="330" width="120" height="32" rx="16" fill="#ffffff" stroke="#ed145b" stroke-width="2" />
+    <text x="100" y="352" font-family="'Nunito', sans-serif" font-size="13" font-weight="700" fill="#ed145b" text-anchor="middle">Pencil Girl</text>
+  </g>
+</svg>

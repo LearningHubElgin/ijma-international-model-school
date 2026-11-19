@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 78" width="260" height="78">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ed145b" />
+      <stop offset="100%" stop-color="#f7941e" />
+    </linearGradient>
+  </defs>
+  <rect width="260" height="78" rx="12" fill="#ffffff" />
+  <!-- Logo Icon -->
+  <g transform="translate(14, 12)">
+    <circle cx="26" cy="26" r="24" fill="url(#logoGrad)" />
+    <path d="M16 32 C16 20, 36 20, 36 32 Z" fill="#ffffff" />
+    <circle cx="26" cy="18" r="6" fill="#ffffff" />
+  </g>
+  <!-- Text -->
+  <text x="76" y="32" font-family="'Nunito', sans-serif" font-weight="800" font-size="16" fill="#0a6375" letter-spacing="0.5">GD GOENKA</text>
+  <text x="76" y="49" font-family="'Bubblegum Sans', cursive" font-weight="400" font-size="17" fill="#ed145b">LA PETITE</text>
+  <text x="76" y="64" font-family="'Nunito', sans-serif" font-weight="600" font-size="10" fill="#6b6b84" letter-spacing="1">ROHINI • PRE SCHOOL</text>
+</svg>
