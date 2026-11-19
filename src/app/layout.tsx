@@ -6,6 +6,7 @@ import { Preloader } from '@/components/ui/Preloader';
 import { TopBar } from '@/components/layout/TopBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -74,10 +75,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable} ${bubblegum.variable}`}>
       <body className="min-h-screen flex flex-col font-sans bg-white text-body selection:bg-primary-light selection:text-primary">
+        <JsonLd />
+        {/* WCAG 2.1 AA Skip to Content Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-pill focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Preloader />
         <TopBar />
         <Header />
-        <div className="flex-1 flex flex-col">{children}</div>
+        <div id="main-content" className="flex-1 flex flex-col">{children}</div>
         <Footer />
       </body>
     </html>
