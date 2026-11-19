@@ -3,6 +3,9 @@ import { Nunito, Bubblegum_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 import { siteConfig } from '@/content/site.config';
 import { Preloader } from '@/components/ui/Preloader';
+import { TopBar } from '@/components/layout/TopBar';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -72,7 +75,10 @@ export default function RootLayout({
     <html lang="en" className={`${nunito.variable} ${bubblegum.variable}`}>
       <body className="min-h-screen flex flex-col font-sans bg-white text-body selection:bg-primary-light selection:text-primary">
         <Preloader />
-        {children}
+        <TopBar />
+        <Header />
+        <div className="flex-1 flex flex-col">{children}</div>
+        <Footer />
       </body>
     </html>
   );
