@@ -28,21 +28,15 @@ export function FeatureGridSection() {
                 href={feature.href}
                 className="group relative bg-white hover:bg-[#EB1551] rounded-[32px] sm:rounded-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_16px_40px_rgba(235,21,81,0.25)] transition-all duration-300 overflow-hidden p-5 sm:p-7 flex flex-row items-center gap-5 sm:gap-6 cursor-pointer border border-orange-50/50 hover:border-transparent block"
               >
-                {/* Left Side: Organic Blob Masked Image with Accent Dot */}
-                <div className="relative w-[110px] sm:w-[130px] md:w-[145px] aspect-square flex-shrink-0 select-none">
-                  {/* Top Accent Dot */}
-                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#f7941e] z-20 shadow-sm" />
-
-                  {/* Organic Blob Masked Photo */}
-                  <div className="w-full h-full rounded-[48%_52%_45%_55%/50%_45%_55%_50%] overflow-hidden border-3 border-white shadow-md relative bg-teal-50">
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      sizes="150px"
-                    />
-                  </div>
+                {/* Left Side: Authentic Special Curve Masked Image (Matching gdgoenkarohini.com) */}
+                <div className="wdt-mask-frame relative w-[115px] sm:w-[135px] md:w-[150px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="160px"
+                  />
                 </div>
 
                 {/* Right Side: Title & Learn More Link */}
@@ -74,23 +68,12 @@ export function FeatureGridSection() {
                   </div>
                 </div>
 
-                {/* Little diagonal pencil doodle matching live site in top right */}
-                <div className="absolute top-3 right-4 sm:top-4 sm:right-5 w-6 h-6 sm:w-7 sm:h-7 pointer-events-none select-none -rotate-45 opacity-80 group-hover:opacity-100 transition-transform duration-300 group-hover:scale-110">
-                  <Image
-                    src="/assets/decorative/doodle-pencil.svg"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="object-contain"
-                  />
-                </div>
-
-                {/* Sparkles Doodle SVG in bottom right matching live site */}
-                <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 pointer-events-none select-none text-[#FFC1A7] group-hover:text-white transition-colors duration-300">
+                {/* Sparkles Doodle SVG in bottom right matching live site (visible on hover) */}
+                <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 pointer-events-none select-none text-[#FFC1A7] group-hover:text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 100 100"
-                    className="w-8 h-8 sm:w-10 sm:h-10 fill-current opacity-70 group-hover:opacity-100 transition-opacity"
+                    className="w-8 h-8 sm:w-10 sm:h-10 fill-current"
                     aria-hidden="true"
                   >
                     <path d="M68.4,25.5c5.3,0.5,10.4-0.3,11.7,6.3c1,5.4,0.5,11.3,1.9,16.5c1.9-5.1,1.8-11,3.4-16.3 c1.8-6.5,6.9-5.2,12.2-5.3c0.2,0,0.8-1.2,0-1.3c-5.8-1.3-11-2.6-12.3-9.2c-0.4-1.9-0.5-3.9-0.5-5.9c0.1-2.2,0-4.4-0.2-6.4 c-0.1-0.6-0.2-1.2-0.3-1.8C84.2,2.1,84.1,2,84,2c-0.1,0-0.2,0-0.2,0.2c-0.2,0.6-0.3,1.2-0.4,1.8c-0.4,2-0.7,4.1-0.8,6.4 c-0.2,2-0.4,3.9-1,5.8c-1.9,6.4-7.2,7.3-13.1,8.1C67.7,24.3,68.2,25.5,68.4,25.5z M77.2,24.7c2.1-0.8,3.9-2.2,5.2-4.5 c0.4-0.7,0.7-1.4,1-2.2c0.2,0.8,0.5,1.5,0.8,2.2c1.1,2.4,2.8,4,4.8,4.9c-1.3,0.4-2.5,1.1-3.5,2.2c-1.4,1.7-2.3,4-2.8,6.5 c-0.3-2.5-0.9-5-2.2-6.8C79.6,26,78.5,25.2,77.2,24.7z" />

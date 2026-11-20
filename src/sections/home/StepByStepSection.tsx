@@ -96,36 +96,16 @@ export function StepByStepSection() {
             className="group relative max-w-5xl mx-auto bg-white hover:bg-[#EB1551] rounded-[36px] sm:rounded-[48px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_45px_rgba(235,21,81,0.25)] transition-all duration-300 overflow-hidden p-6 sm:p-10 lg:p-12 cursor-pointer border border-orange-50/50 hover:border-transparent block"
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Column: Organic Photo Frame with playground-1.jpg */}
-              <div className="md:col-span-5 flex justify-center relative">
-                <div className="relative w-[240px] sm:w-[280px] lg:w-[320px] aspect-square">
-                  {/* Floating tilted pencil doodle on top edge of frame */}
-                  <div className="absolute -top-3 left-6 sm:left-10 w-8 h-8 sm:w-10 sm:h-10 z-30 pointer-events-none select-none -rotate-45">
-                    <Image
-                      src="/assets/decorative/doodle-pencil.svg"
-                      alt="Pencil Doodle"
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                  </div>
-
-                  {/* Top Orange Accent Dot */}
-                  <div className="absolute top-1 sm:top-2 left-1/2 -translate-x-1/2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#f7941e] z-20 shadow-sm" />
-
-                  {/* Lower Right Accent Dot */}
-                  <div className="absolute bottom-1 sm:bottom-2 right-4 sm:right-6 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#f7941e] z-20 shadow-sm" />
-
-                  {/* Organic Blob Masked Toddler Photo */}
-                  <div className="w-full h-full rounded-[48%_52%_45%_55%/50%_45%_55%_50%] overflow-hidden border-4 border-white shadow-md relative bg-teal-50">
-                    <Image
-                      src={stepByStep.montessoriImage || '/assets/gallery/playground-1.jpg'}
-                      alt="Montessori Child Sliding"
-                      fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 280px, 320px"
-                    />
-                  </div>
+              {/* Left Column: Authentic Special Curve Masked Photo Frame (Matching gdgoenkarohini.com) */}
+              <div className="md:col-span-5 flex justify-center items-center relative">
+                <div className="wdt-mask-frame relative w-[260px] sm:w-[300px] lg:w-[340px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
+                  <Image
+                    src={stepByStep.montessoriImage || '/assets/gallery/playground-1.jpg'}
+                    alt="Montessori Child Sliding"
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 300px, 350px"
+                  />
                 </div>
               </div>
 
