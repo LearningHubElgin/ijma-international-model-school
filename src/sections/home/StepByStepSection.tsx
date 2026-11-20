@@ -13,7 +13,7 @@ export function StepByStepSection() {
 
   return (
     <section
-      className="relative overflow-hidden pt-8 pb-10 sm:pt-12 sm:pb-14 lg:pt-16 lg:pb-16 bg-[#FFEFE4]"
+      className="relative overflow-hidden pt-8 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-11 bg-[#FFEFE4]"
       aria-label="Step By Step Systematic Education"
     >
       {/* Floating Saturn Planet with Ring on Left */}
@@ -93,12 +93,12 @@ export function StepByStepSection() {
         <Reveal variant="fade-up" delay={0.35}>
           <Link
             href={stepByStep.montessoriHref || '/montessori-methodology'}
-            className="group relative max-w-5xl mx-auto bg-white hover:bg-[#EB1551] rounded-[36px] sm:rounded-[48px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_45px_rgba(235,21,81,0.25)] transition-all duration-300 overflow-hidden p-6 sm:p-10 lg:p-12 cursor-pointer border border-orange-50/50 hover:border-transparent block"
+            className="group relative max-w-[1050px] mx-auto bg-white hover:bg-[#EB1551] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-9 lg:py-[60px] lg:px-[45px] cursor-pointer block"
           >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column: Authentic Special Curve Masked Photo Frame (Matching gdgoenkarohini.com) */}
               <div className="md:col-span-5 flex justify-center items-center relative">
-                <div className="wdt-mask-frame relative w-[260px] sm:w-[300px] lg:w-[340px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
+                <div className="wdt-mask-frame relative w-[260px] sm:w-[300px] lg:w-[330px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
                   <Image
                     src={stepByStep.montessoriImage || '/assets/gallery/playground-1.jpg'}
                     alt="Montessori Child Sliding"
