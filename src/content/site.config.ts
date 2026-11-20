@@ -302,41 +302,47 @@ export const siteConfig = {
   },
 
   facilities: {
+    eyebrow: 'School Facilities',
     heading: 'Engaging & Spacious School Campus',
     description:
-      'Every corner of our Rohini campus is purposefully crafted to stimulate curiosity, ensure complete physical security, and support child-led discovery.',
+      'State- of- the- art infrastructure of school provides the most interactive and modern techniques to help children grow in the most comfortable space. The school offers air conditioned, ventilated, spacious classrooms and lobbies with adequate natural lighting and soft vinyl flooring. The school is equipped with theme based interactive boards and panels, child friendly and theme oriented furniture, wall mounted interactive games and cladders.',
     list: [
       {
-        id: 'classrooms',
+        id: 'class-room',
         title: 'Class Room',
         description:
-          'Montessori-based, hands-on learning environment equipped with child-sized furniture and sensorial learning apparatus.',
-        icon: 'School',
-        image: '/assets/facilities/facility-classroom.svg',
+          'The school offers MONTESSARI based classrooms that focus is on hands-on-learning and collaborative play in each child which enable him/her to explore and eventually channelise the innate and acquired potential or strengths',
+        ctaText: 'View More',
+        ctaHref: '/about-us',
+        icon: '/assets/decorative/doodle-book.svg',
       },
       {
         id: 'healthy-foods',
         title: 'Healthy Foods',
         description:
-          'Nutritionist-planned, balanced, hygienic meals that cultivate wholesome eating habits and energetic physical wellbeing.',
-        icon: 'Utensils',
-        image: '/assets/facilities/facility-food.svg',
+          'Nutritious ,Tasty and Healthy and balanced meals prepared in consultation by our nutritionist to develop independent eating habits, healthy eating and group eating etiquettes.',
+        ctaText: 'View More',
+        ctaHref: '/about-us',
+        hasTopCrayon: true,
+        icon: '/assets/decorative/doodle-book.svg',
       },
       {
         id: 'play-area',
         title: 'Play Area',
         description:
-          'Safe indoor and outdoor play spaces with uneven tactile surfaces designed to enhance gross motor strength, balance, and spatial awareness.',
-        icon: 'Gamepad2',
-        image: '/assets/facilities/facility-playarea.svg',
+          'Rough and uneven surfaces provide opportunities for the development of physical strength, balance and coordination',
+        ctaText: 'View More',
+        ctaHref: '/about-us',
+        icon: '/assets/decorative/doodle-slide.svg',
       },
       {
         id: 'transport',
         title: 'Transport',
         description:
-          'GPS-enabled, air-conditioned school buses with trained attendants and speed governors ensuring safe, reliable pick-and-drop service.',
-        icon: 'Bus',
-        image: '/assets/facilities/facility-transport.svg',
+          'Pick and drop transport facility is available for children.',
+        ctaText: 'View More',
+        ctaHref: '/contact-us',
+        icon: '/assets/decorative/doodle-bus.svg',
       },
     ],
   },
