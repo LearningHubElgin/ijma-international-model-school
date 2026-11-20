@@ -323,7 +323,6 @@ export const siteConfig = {
           'Nutritious ,Tasty and Healthy and balanced meals prepared in consultation by our nutritionist to develop independent eating habits, healthy eating and group eating etiquettes.',
         ctaText: 'View More',
         ctaHref: '/about-us',
-        hasTopCrayon: true,
         icon: '/assets/decorative/doodle-book.svg',
       },
       {
