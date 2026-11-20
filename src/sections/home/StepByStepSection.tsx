@@ -91,7 +91,10 @@ export function StepByStepSection() {
 
         {/* Authentic Large Horizontal Montessori Methodology Card (Matching gdgoenkarohini.com) */}
         <Reveal variant="fade-up" delay={0.35}>
-          <div className="relative max-w-5xl mx-auto bg-[#EB1551] rounded-[36px] sm:rounded-[48px] shadow-[0_16px_45px_rgba(235,21,81,0.25)] overflow-hidden p-6 sm:p-10 lg:p-12">
+          <Link
+            href={stepByStep.montessoriHref || '/montessori-methodology'}
+            className="group relative max-w-5xl mx-auto bg-white hover:bg-[#EB1551] rounded-[36px] sm:rounded-[48px] shadow-[0_12px_45px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_45px_rgba(235,21,81,0.25)] transition-all duration-300 overflow-hidden p-6 sm:p-10 lg:p-12 cursor-pointer border border-orange-50/50 hover:border-transparent block"
+          >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Organic Photo Frame with playground-1.jpg */}
               <div className="md:col-span-5 flex justify-center relative">
@@ -119,7 +122,7 @@ export function StepByStepSection() {
                       src={stepByStep.montessoriImage || '/assets/gallery/playground-1.jpg'}
                       alt="Montessori Child Sliding"
                       fill
-                      className="object-cover object-center"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 280px, 320px"
                     />
                   </div>
@@ -128,19 +131,16 @@ export function StepByStepSection() {
 
               {/* Right Column: Title, Long Description & Learn More CTA */}
               <div className="md:col-span-7 flex flex-col justify-center text-left relative z-10">
-                <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight mb-4">
+                <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0a6375] group-hover:text-white transition-colors duration-300 tracking-tight mb-4">
                   {stepByStep.montessoriHeading}
                 </h3>
 
-                <p className="text-[14px] sm:text-[15px] lg:text-base text-white/95 leading-relaxed mb-6 font-normal">
+                <p className="text-[14px] sm:text-[15px] lg:text-base text-[#6b6b84] group-hover:text-white/95 transition-colors duration-300 leading-relaxed mb-6 font-normal">
                   {stepByStep.montessoriDescription}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <Link
-                    href={stepByStep.montessoriHref || '/montessori-methodology'}
-                    className="inline-flex flex-col items-start font-bold text-sm sm:text-base text-white hover:text-white/80 transition-colors group"
-                  >
+                  <div className="inline-flex flex-col items-start font-bold text-sm sm:text-base text-[#0a6375] group-hover:text-white transition-colors duration-300">
                     <span>Learn More</span>
                     {/* Authentic yellow wavy underline matching live site */}
                     <svg
@@ -160,10 +160,10 @@ export function StepByStepSection() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </Link>
+                  </div>
 
                   {/* Authentic Sun Rays Doodle from live site */}
-                  <div className="w-16 sm:w-20 select-none pointer-events-none">
+                  <div className="w-16 sm:w-20 select-none pointer-events-none transition-all duration-300 group-hover:brightness-0 group-hover:invert">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 416 226.1"
@@ -210,7 +210,7 @@ export function StepByStepSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </Reveal>
       </Container>
     </section>
