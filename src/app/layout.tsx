@@ -1,27 +1,11 @@
 import type { Metadata } from 'next';
-import { Nunito, Bubblegum_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 import { siteConfig } from '@/content/site.config';
-import { Preloader } from '@/components/ui/Preloader';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { TopBar } from '@/components/layout/TopBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
-  variable: '--font-nunito',
-  display: 'swap',
-});
-
-const bubblegum = Bubblegum_Sans({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-bubblegum',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gdgoenkarohini.com'),
@@ -63,8 +47,8 @@ export const metadata: Metadata = {
     images: ['/assets/hero/hero-slide-1.svg'],
   },
   icons: {
-    icon: '/assets/logo/gdglp-logo.svg',
-    apple: '/assets/logo/gdglp-logo.svg',
+    icon: '/assets/logo/gdglp-logo.png',
+    apple: '/assets/logo/gdglp-logo.png',
   },
 };
 
@@ -74,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} ${bubblegum.variable}`}>
+    <html lang="en">
       <body className="min-h-screen flex flex-col font-sans bg-white text-body selection:bg-primary-light selection:text-primary">
         <JsonLd />
         {/* WCAG 2.1 AA Skip to Content Link */}
@@ -84,7 +68,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Preloader />
         <CustomCursor />
         <TopBar />
         <Header />

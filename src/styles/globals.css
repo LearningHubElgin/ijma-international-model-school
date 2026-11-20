@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --font-nunito: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-bubblegum: 'Bubblegum Sans', cursive, sans-serif;
+
   /* Design Tokens from recon.md */
   --wdtPrimaryColor: #ed145b;
   --wdtPrimaryHover: #c40e48;
@@ -104,16 +109,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Authentic Kidscool Crayon Cursor Desktop Rule */
+/* Authentic Kidscool Custom Crayon Cursor - Hide native OS pointer on desktop */
 @media only screen and (min-width: 768px) {
   *,
   html,
-  body,
-  a,
-  button,
-  input,
-  select,
-  textarea {
+  body {
     cursor: none !important;
   }
 }

@@ -169,7 +169,7 @@ export function Header() {
                     {/* Standard Dropdown (Admissions, Montessori) */}
                     {!isMega && hasChildren && (
                       <div
-                        className={`absolute top-full left-0 pt-2 min-w-[210px] transition-all duration-200 ${
+                        className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[210px] transition-all duration-200 ${
                           activeDropdown === item.label
                             ? 'opacity-100 visible translate-y-0'
                             : 'opacity-0 invisible translate-y-2 pointer-events-none'

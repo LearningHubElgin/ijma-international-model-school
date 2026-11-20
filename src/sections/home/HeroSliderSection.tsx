@@ -4,33 +4,17 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/content/site.config';
 import { Button } from '@/components/ui/Button';
 import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
 
 export function HeroSliderSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
-    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 35 }, [
+    Autoplay({ delay: 6500, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -55,20 +39,20 @@ export function HeroSliderSection() {
             return (
               <div
                 key={slide.id}
-                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[680px] md:h-[760px] lg:h-[840px] xl:h-[900px] flex items-center justify-center"
+                className="relative flex-[0_0_100%] min-w-0 h-[620px] sm:h-[720px] md:h-[820px] lg:h-[890px] xl:h-[940px] flex items-center justify-center"
               >
-                {/* Full-width High-Res Slide Background Image */}
+                {/* Full-width High-Res Slide Background Image with object-bottom grounding kids on clouds */}
                 <Image
                   src={slide.image}
                   alt={slide.title}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center"
+                  className="object-cover object-bottom"
                   sizes="100vw"
                 />
 
-                {/* Centered Slide Content Overlay */}
-                <div className="relative z-20 max-w-2xl mx-auto px-4 text-center mt-[-40px] sm:mt-[-20px]">
+                {/* Centered Slide Content Overlay - generous padding */}
+                <div className="relative z-20 max-w-3xl mx-auto px-4 text-center pt-8 sm:pt-14 md:pt-16 pb-28 sm:pb-36">
                   <AnimatePresence mode="wait">
                     {isActive && (
                       <div key={`slide-${slide.id}`} className="flex flex-col items-center">
@@ -77,7 +61,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 25 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.1 }}
-                          className="text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_12px_rgba(0,0,0,0.18)]"
+                          className="text-4xl sm:text-6xl md:text-7xl xl:text-[80px] font-extrabold text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_16px_rgba(0,0,0,0.22)]"
                         >
                           {slide.id === 2 ? (
                             <>
@@ -98,7 +82,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.55, delay: 0.25 }}
-                          className="mt-4 sm:mt-6 text-xl sm:text-2xl md:text-3xl text-white font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+                          className="mt-4 sm:mt-6 text-xl sm:text-2xl md:text-3xl text-white font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
                         >
                           {slide.subtitle}
                         </motion.p>
@@ -129,43 +113,8 @@ export function HeroSliderSection() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="absolute inset-y-0 left-4 right-4 flex items-center justify-between pointer-events-none z-30">
-        <button
-          onClick={scrollPrev}
-          className="pointer-events-auto p-3 sm:p-4 rounded-full bg-white/70 hover:bg-white text-gray-800 shadow-lg hover:shadow-xl transition-all focus:outline-none -ml-2 sm:ml-2"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-
-        <button
-          onClick={scrollNext}
-          className="pointer-events-auto p-3 sm:p-4 rounded-full bg-white/70 hover:bg-white text-gray-800 shadow-lg hover:shadow-xl transition-all focus:outline-none -mr-2 sm:mr-2"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-      </div>
-
-      {/* Dot Indicators */}
-      <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 lg:bottom-24 left-1/2 -translate-x-1/2 flex items-center space-x-2.5 z-30">
-        {siteConfig.heroSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollTo(i)}
-            className={`transition-all duration-300 rounded-full ${
-              selectedIndex === i
-                ? 'w-8 h-2.5 bg-[#ed145b]'
-                : 'w-2.5 h-2.5 bg-white/70 hover:bg-white'
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Authentic Multi-layered Scalloped Cloud Shape Divider */}
-      <CloudWaveDivider fillColor="#ffffff" />
+      {/* Multi-layered Scalloped Cloud Shape Divider */}
+      <CloudWaveDivider />
     </section>
   );
 }

@@ -51,25 +51,13 @@ export default function ApplicationFormPage() {
     setServerError(null);
 
     try {
-      const res = await fetch('/api/admissions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      const json = await res.json();
-      if (!res.ok) {
-        throw new Error(json.message || 'Failed to submit application');
-      }
-
-      setSubmittedRef(json.applicationId || 'GDG-ROHINI-2024');
+      // Pure frontend submission - no backend dependency
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      const randomRef = `GDG-ROHINI-${Math.floor(1000 + Math.random() * 9000)}`;
+      setSubmittedRef(randomRef);
       reset();
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setServerError(err.message);
-      } else {
-        setServerError('Submission error. Please contact the admissions office.');
-      }
+    } catch {
+      setServerError('Submission error. Please contact the admissions office.');
     } finally {
       setIsSubmitting(false);
     }

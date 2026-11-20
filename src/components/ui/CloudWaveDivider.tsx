@@ -9,42 +9,49 @@ interface CloudWaveDividerProps {
 export function CloudWaveDivider({
   fillColor = '#ffffff',
   className = '',
-  heightClass = 'h-[75px] sm:h-[110px] md:h-[140px] lg:h-[165px] xl:h-[185px]',
+  heightClass = 'h-[160px] sm:h-[210px] md:h-[250px] lg:h-[280px]',
 }: CloudWaveDividerProps) {
   return (
     <div
-      className={`absolute bottom-0 left-0 right-0 w-full pointer-events-none z-20 overflow-hidden leading-none select-none ${heightClass} ${className}`}
+      className={`absolute bottom-0 left-0 right-0 w-full pointer-events-none z-30 overflow-hidden leading-none select-none ${heightClass} ${className}`}
       aria-hidden="true"
     >
-      {/* Background Translucent Cloud Layer (Peach/Teal soft silhouette) */}
+      {/* Layer 1: Translucent Underlayer (matches .elementor-element-f12d22e from live site) */}
       <div
-        className="absolute -bottom-2 sm:-bottom-3 left-0 right-0 w-full h-full bg-white/45"
+        className="absolute bottom-0 left-0 right-0 w-full h-full pointer-events-none opacity-60"
         style={{
+          backgroundColor: fillColor,
           WebkitMaskImage: "url('/assets/decorative/slider-cloud-bg-light.png')",
-          WebkitMaskSize: '1440px 100%',
-          WebkitMaskRepeat: 'repeat-x',
-          WebkitMaskPosition: 'bottom center',
           maskImage: "url('/assets/decorative/slider-cloud-bg-light.png')",
-          maskSize: '1440px 100%',
-          maskRepeat: 'repeat-x',
+          WebkitMaskSize: '100% 100%',
+          maskSize: '100% 100%',
+          WebkitMaskPosition: 'bottom center',
           maskPosition: 'bottom center',
+          WebkitMaskRepeat: 'repeat-x',
+          maskRepeat: 'repeat-x',
         }}
       />
 
-      {/* Foreground Solid Cloud Wave Layer (Matches exactly with following section background) */}
+      {/* Layer 2: Solid Foreground Puffy Clouds (matches .elementor-element-09b41a3 from live site) */}
       <div
-        className="absolute bottom-0 left-0 right-0 w-full h-[90%] sm:h-[92%]"
+        className="absolute bottom-0 left-0 right-0 w-full h-[95%] pointer-events-none"
         style={{
           backgroundColor: fillColor,
           WebkitMaskImage: "url('/assets/decorative/slider-cloud-bg.png')",
-          WebkitMaskSize: '1440px 100%',
-          WebkitMaskRepeat: 'repeat-x',
-          WebkitMaskPosition: 'bottom center',
           maskImage: "url('/assets/decorative/slider-cloud-bg.png')",
-          maskSize: '1440px 100%',
-          maskRepeat: 'repeat-x',
+          WebkitMaskSize: '100% 100%',
+          maskSize: '100% 100%',
+          WebkitMaskPosition: 'bottom center',
           maskPosition: 'bottom center',
+          WebkitMaskRepeat: 'repeat-x',
+          maskRepeat: 'repeat-x',
         }}
+      />
+
+      {/* Solid gap seal at the bottom to guarantee zero sub-pixel seams */}
+      <div
+        className="absolute -bottom-[2px] left-0 right-0 w-full h-[6px] z-20 pointer-events-none"
+        style={{ backgroundColor: fillColor }}
       />
     </div>
   );

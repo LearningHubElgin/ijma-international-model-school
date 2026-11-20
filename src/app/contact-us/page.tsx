@@ -53,30 +53,12 @@ export default function ContactUsPage() {
     setErrorMessage(null);
 
     try {
-      const res = await fetch('/api/enquire', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          parentName: data.name,
-          email: data.email,
-          programme: data.programme,
-          phone: data.phone || '+910000000000',
-          message: data.message,
-        }),
-      });
-
-      if (!res.ok) {
-        throw new Error('Failed to send message. Please contact us directly.');
-      }
-
+      // Pure frontend submission - no backend dependency
+      await new Promise((resolve) => setTimeout(resolve, 600));
       setIsSuccess(true);
       reset();
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setErrorMessage(err.message);
-      } else {
-        setErrorMessage('Something went wrong. Please call us directly.');
-      }
+    } catch {
+      setErrorMessage('Something went wrong. Please call us directly.');
     } finally {
       setIsSubmitting(false);
     }
