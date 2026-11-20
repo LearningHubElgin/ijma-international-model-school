@@ -12,11 +12,12 @@ export function AboutSection() {
 
   return (
     <section
-      className="relative overflow-hidden pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20"
-      style={{ background: 'linear-gradient(180deg, #FFFFFF 10%, #FFEFE4 100%)' }}
+      className="relative overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14"
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 15%, #FFEFE4 100%)' }}
       aria-label="About Us"
     >
       <Container>
+        {/* Top 2-Column Content: Left Organic Apple Blob + Right Copy */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Organic Apple / Blob Framed Photo */}
           <div className="lg:col-span-6 relative flex justify-center">
@@ -146,48 +147,68 @@ export function AboutSection() {
                 {about.paragraph2}
               </p>
             </Reveal>
+          </div>
+        </div>
 
-            {/* Action Button & Scalloped Doodle Divider Row */}
-            <Reveal variant="fade-up" delay={0.5}>
-              <div className="mt-8 flex items-center gap-4 relative w-full">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  href={about.ctaHref}
-                  className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg rounded-full shadow-button transition-all duration-300 flex-shrink-0 z-10"
-                >
-                  {about.ctaText}
-                </Button>
+        {/* Centered "Read More" Button with Floating Crayon */}
+        <div className="mt-10 sm:mt-12 relative w-full flex justify-center items-center">
+          {/* Floating Crayon Left of Read More */}
+          <div className="absolute left-[18%] sm:left-[26%] -top-3 w-10 sm:w-12 h-10 sm:h-12 pointer-events-none hidden sm:block animate-float-delayed z-20">
+            <Image
+              src="/assets/decorative/doodle-pencil.svg"
+              alt="Pencil Doodle"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+          </div>
 
-                {/* Authentic Scalloped Loop Teal Doodle Divider */}
-                <div
-                  className="hidden sm:block flex-1 h-[20px] -scale-y-100 opacity-90 select-none pointer-events-none"
-                  style={{
-                    backgroundColor: '#0a6375',
-                    WebkitMaskImage: "url('/assets/decorative/scalloped-loop-line.png')",
-                    WebkitMaskSize: 'contain',
-                    WebkitMaskRepeat: 'repeat-x',
-                    WebkitMaskPosition: 'left center',
-                    maskImage: "url('/assets/decorative/scalloped-loop-line.png')",
-                    maskSize: 'contain',
-                    maskRepeat: 'repeat-x',
-                    maskPosition: 'left center',
-                  }}
-                  aria-hidden="true"
+          <Reveal variant="fade-up" delay={0.45}>
+            <Button
+              variant="primary"
+              size="lg"
+              href={about.ctaHref}
+              className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-10 sm:px-12 py-3.5 sm:py-4 text-base sm:text-lg rounded-full shadow-[0_4px_16px_rgba(237,20,91,0.35)] transition-all duration-300 transform hover:scale-105"
+            >
+              {about.ctaText}
+            </Button>
+          </Reveal>
+        </div>
+
+        {/* Continuous Teal Scalloped Wave Loop across full container width with toddler playing on right */}
+        <div className="mt-8 sm:mt-10 relative w-full h-[36px] flex items-center">
+          <svg
+            className="w-full h-[26px] pointer-events-none select-none"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="scallopWave"
+                width="30"
+                height="26"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 0 19 C 5 19, 7 3, 15 3 C 23 3, 25 19, 30 19"
+                  fill="none"
+                  stroke="#0a6375"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
                 />
-              </div>
-            </Reveal>
+              </pattern>
+            </defs>
+            <rect width="100%" height="26" fill="url(#scallopWave)" />
+          </svg>
 
-            {/* Toddler Boy Sitting Playing with Blocks on Bottom Right */}
-            <div className="absolute -bottom-8 -right-4 sm:-right-8 w-28 sm:w-36 h-28 sm:h-36 pointer-events-none z-20">
-              <Image
-                src={about.toddlerImage || '/assets/about/toddler-play.png'}
-                alt="Toddler Playing"
-                width={140}
-                height={140}
-                className="object-contain"
-              />
-            </div>
+          {/* Toddler Boy Sitting Playing with Blocks on Right Side of Divider */}
+          <div className="absolute right-0 sm:right-4 lg:right-8 -top-16 sm:-top-20 lg:-top-24 w-32 sm:w-40 lg:w-48 h-32 sm:h-40 lg:h-48 pointer-events-none z-20">
+            <Image
+              src={about.toddlerImage || '/assets/about/toddler-play.png'}
+              alt="Toddler Playing with Blocks"
+              width={180}
+              height={180}
+              className="object-contain"
+            />
           </div>
         </div>
       </Container>

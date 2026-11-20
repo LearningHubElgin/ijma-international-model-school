@@ -47,24 +47,12 @@ export function EnquireModal({ isOpen, onClose, defaultProgramme }: EnquireModal
     setErrorMessage(null);
 
     try {
-      const response = await fetch('/api/enquire', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit enquiry. Please try again.');
-      }
-
+      // Pure frontend submission - no backend dependency
+      await new Promise((resolve) => setTimeout(resolve, 600));
       setIsSuccess(true);
       reset();
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setErrorMessage(err.message);
-      } else {
-        setErrorMessage('Something went wrong. Please call us directly.');
-      }
+    } catch {
+      setErrorMessage('Something went wrong. Please call us directly.');
     } finally {
       setIsSubmitting(false);
     }

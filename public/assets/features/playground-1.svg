@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e0f7fa" />
+      <stop offset="60%" stop-color="#b2ebf2" />
+      <stop offset="100%" stop-color="#80deea" />
+    </radialGradient>
+    <linearGradient id="slideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffeb3b" />
+      <stop offset="40%" stop-color="#fbc02d" />
+      <stop offset="100%" stop-color="#f57f17" />
+    </linearGradient>
+    <linearGradient id="slideInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf360c" />
+      <stop offset="50%" stop-color="#870000" />
+      <stop offset="100%" stop-color="#4e0000" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Sky -->
+  <rect width="600" height="600" fill="url(#skyGrad)" />
+
+  <!-- Large Yellow Slide Ring -->
+  <ellipse cx="300" cy="340" rx="230" ry="220" fill="url(#slideGrad)" />
+  <ellipse cx="300" cy="340" rx="180" ry="170" fill="url(#slideInner)" />
+
+  <!-- Toddler sliding out -->
+  <!-- Shirt in blue checkered pattern -->
+  <path d="M 230 380 Q 200 440 230 490 L 370 490 Q 400 440 370 380 Z" fill="#0288d1" />
+  <line x1="260" y1="380" x2="260" y2="490" stroke="#b3e5fc" stroke-width="6" />
+  <line x1="300" y1="380" x2="300" y2="490" stroke="#b3e5fc" stroke-width="6" />
+  <line x1="340" y1="380" x2="340" y2="490" stroke="#b3e5fc" stroke-width="6" />
+  <line x1="220" y1="420" x2="380" y2="420" stroke="#b3e5fc" stroke-width="6" />
+  <line x1="220" y1="460" x2="380" y2="460" stroke="#b3e5fc" stroke-width="6" />
+
+  <!-- Head & Smiling Face -->
+  <circle cx="300" cy="300" r="65" fill="#ffcc80" />
+  <!-- Curly Blonde/Brown Hair -->
+  <path d="M 235 300 Q 230 220 300 220 Q 370 220 365 300 Q 355 240 300 245 Q 245 240 235 300 Z" fill="#8d6e63" />
+  <circle cx="250" cy="250" r="18" fill="#8d6e63" />
+  <circle cx="280" cy="235" r="20" fill="#8d6e63" />
+  <circle cx="320" cy="235" r="20" fill="#8d6e63" />
+  <circle cx="350" cy="250" r="18" fill="#8d6e63" />
+
+  <!-- Eyes (Happy arcs) -->
+  <path d="M 270 295 Q 280 285 290 295" stroke="#3e2723" stroke-width="4" fill="none" stroke-linecap="round" />
+  <path d="M 310 295 Q 320 285 330 295" stroke="#3e2723" stroke-width="4" fill="none" stroke-linecap="round" />
+
+  <!-- Rosy Cheeks -->
+  <circle cx="265" cy="315" r="12" fill="#ffab91" opacity="0.6" />
+  <circle cx="335" cy="315" r="12" fill="#ffab91" opacity="0.6" />
+
+  <!-- Big Smile -->
+  <path d="M 285 320 Q 300 345 315 320 Z" fill="#d32f2f" />
+  <!-- Teeth -->
+  <path d="M 290 320 Q 300 326 310 320" fill="#ffffff" />
+
+  <!-- Arms Outstretched Joyfully -->
+  <path d="M 230 400 L 170 330 Q 155 335 165 350 L 210 430 Z" fill="#ffcc80" />
+  <path d="M 370 400 L 430 330 Q 445 335 435 350 L 390 430 Z" fill="#ffcc80" />
+
+  <!-- Yellow Slide Front Lip Overlay -->
+  <path d="M 120 440 Q 300 580 480 440 Q 300 530 120 440 Z" fill="#fbc02d" />
+  <path d="M 120 440 Q 300 580 480 440 L 490 470 Q 300 620 110 470 Z" fill="#f57f17" />
+</svg>

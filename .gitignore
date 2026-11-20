@@ -36,3 +36,5 @@ next-env.d.ts
 # scratch / temp
 scratch/
 start-chrome-debugger.ps1
+actual-website/
+public/actual-website/

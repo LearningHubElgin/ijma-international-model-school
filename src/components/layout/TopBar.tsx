@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container';
 
 export function TopBar() {
   return (
-    <div className="hidden lg:block bg-[#ed145b] text-white text-xs font-sans py-2">
+    <div className="hidden md:block bg-[#ed145b] text-white text-xs font-sans py-2.5">
       <Container size="wide">
         <div className="flex items-center justify-between">
           {/* Left Contact Details */}

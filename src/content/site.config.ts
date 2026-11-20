@@ -157,6 +157,11 @@ export const siteConfig = {
     planetDoodle: '/assets/decorative/doodle-planet.svg',
     abcDoodle: '/assets/decorative/doodle-abc.svg',
     pencilDoodle: '/assets/decorative/doodle-pencil.svg',
+    montessoriHeading: 'Montessori Methodology',
+    montessoriDescription:
+      'Isn’t an educational approach that is over 100 years old a little out-dated? After all, the content of what children learn today is utterly different from what they learnt even 10 years ago. Yet the ability that the child has to teach themselves is a psychological fact of the human being that has not changed for at least 10,000 years. Any educational approach designed around what children learn is constantly out-of-date – unlike an educational approach built around how children learn. This is why we say Montessori is ‘timeless education for a changing world’.',
+    montessoriImage: '/assets/gallery/playground-1.jpg',
+    montessoriHref: '/montessori-methodology',
   },
 
   features: [
