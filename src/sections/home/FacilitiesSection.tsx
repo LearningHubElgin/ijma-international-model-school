@@ -87,63 +87,69 @@ export function FacilitiesSection() {
         </div>
 
         {/* 4 Arched Dome Cards Grid - items-start so card heights naturally stagger matching gdgoenkarohini.com */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
+        <div className="max-w-[1480px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-0 items-start justify-items-center">
           {facilities.list.map((facility, index) => (
             <Reveal
               key={facility.id}
               variant="fade-up"
               delay={0.08 * (index + 1)}
-              className="w-full"
+              className="w-full flex justify-center"
             >
-              <div className="group relative flex flex-col items-center transition-transform duration-300 hover:-translate-y-1">
+              <div className="group relative w-[310px] max-w-full flex flex-col items-center transition-transform duration-300 hover:-translate-y-1">
                 {/* Card Container with Special Arched Dome Mask */}
-                <div className="wdt-mask-card bg-[#0A6375] group-hover:bg-[#EB1551] transition-colors duration-300 w-full pt-14 pb-12 px-6 sm:px-7 text-center flex flex-col items-center text-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] relative overflow-hidden">
-                  <h3 className="text-xl sm:text-[23px] font-bold text-white mb-1.5 tracking-wide leading-tight">
-                    {facility.title}
-                  </h3>
+                <div className="wdt-mask-card bg-[#0A6375] group-hover:bg-[#EB1551] transition-colors duration-300 w-[310px] max-w-full px-[30px] pb-[34px] pt-0 text-center flex flex-col items-center text-white relative">
+                  {/* Authentic upper spacer (matches live site .wdt-content-media-group of 214px height) */}
+                  <div className="w-full h-[214px] flex-shrink-0 select-none pointer-events-none" aria-hidden="true" />
 
-                  {/* Yellow Wavy Underline */}
-                  <svg
-                    width="56"
-                    height="7"
-                    viewBox="0 0 64 8"
-                    fill="none"
-                    className="my-1.5"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M2 4 Q 5 1, 8 4 T 14 4 T 20 4 T 26 4 T 32 4 T 38 4 T 44 4 T 50 4 T 56 4 T 62 4"
-                      stroke="#f7941e"
-                      strokeWidth="2.5"
+                  {/* Detail Content Group */}
+                  <div className="w-full flex flex-col items-center">
+                    <h3 className="text-[22px] sm:text-[24px] font-bold text-white mb-1.5 tracking-wide leading-tight">
+                      {facility.title}
+                    </h3>
+
+                    {/* Yellow Wavy Underline */}
+                    <svg
+                      width="56"
+                      height="7"
+                      viewBox="0 0 64 8"
                       fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-
-                  {/* Description Paragraph */}
-                  <p className="text-[13px] sm:text-[14px] text-white/95 leading-relaxed font-normal mt-4 mb-7 px-1">
-                    {facility.description}
-                  </p>
-
-                  {/* Bottom View More Button */}
-                  <div className="mt-auto pt-2 relative z-10">
-                    <Link
-                      href={facility.ctaHref}
-                      className="inline-flex items-center justify-center bg-[#EB1551] group-hover:bg-[#c40e48] text-white font-bold text-xs sm:text-sm px-7 py-2.5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
+                      className="my-1.5"
+                      aria-hidden="true"
                     >
-                      {facility.ctaText}
-                    </Link>
+                      <path
+                        d="M2 4 Q 5 1, 8 4 T 14 4 T 20 4 T 26 4 T 32 4 T 38 4 T 44 4 T 50 4 T 56 4 T 62 4"
+                        stroke="#f7941e"
+                        strokeWidth="2.5"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+
+                    {/* Description Paragraph */}
+                    <p className="text-[14px] sm:text-[15px] text-white/95 leading-[24px] font-normal px-1 pt-2 pb-1 mb-6">
+                      {facility.description}
+                    </p>
+
+                    {/* Bottom View More Button */}
+                    <div className="mt-auto pt-1 relative z-10">
+                      <Link
+                        href={facility.ctaHref}
+                        className="inline-flex items-center justify-center bg-[#EB1551] group-hover:bg-[#c40e48] text-white font-bold text-[14px] px-8 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
+                      >
+                        {facility.ctaText}
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
                 {/* Corner SVG Icon: sits OUTSIDE the card in bright turquoise when not hovered; moves UP and INWARD at 0.15 opacity on hover */}
-                <div className="absolute -bottom-2 -left-3 w-16 h-16 pointer-events-none select-none text-[#1CBBB4] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black">
+                <div className="absolute -bottom-[22px] -left-[20px] w-20 h-20 pointer-events-none select-none text-[#1CBBB4] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black">
                   <Image
                     src={facility.icon}
                     alt={`${facility.title} icon`}
-                    width={64}
-                    height={64}
+                    width={80}
+                    height={80}
                     className="object-contain w-full h-full"
                   />
                 </div>
