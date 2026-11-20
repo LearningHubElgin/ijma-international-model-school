@@ -1,22 +1,26 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { useInView } from 'framer-motion';
 import { siteConfig } from '@/content/site.config';
-import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
+
+interface CountUpProps {
+  value: number;
+  suffix: string;
+  label: string;
+  icon: string;
+  inView: boolean;
+}
 
 function CountUpItem({
   value,
   suffix,
   label,
+  icon,
   inView,
-}: {
-  value: number;
-  suffix: string;
-  label: string;
-  inView: boolean;
-}) {
+}: CountUpProps) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -42,12 +46,54 @@ function CountUpItem({
   }, [inView, value]);
 
   return (
-    <div className="text-center p-6 sm:p-8">
-      <div className="font-sans font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight flex items-center justify-center">
-        <span>{count}</span>
-        <span className="text-[#f7941e] ml-1">{suffix}</span>
+    <div className="group flex flex-col items-center text-center px-2 py-4 sm:py-6 cursor-pointer">
+      {/* Icon Badge with Asymmetrical Pebble / Cloud Shape & Offset Pink Shadow */}
+      <div className="relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 mb-2 flex items-center justify-center select-none">
+        {/* Pink Drop Shadow Shape that shifts slightly on hover matching live site */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-x-2.5 group-hover:translate-y-1 pointer-events-none"
+          aria-hidden="true"
+        >
+          <Image
+            src="/assets/decorative/counter-pebble-pink.svg"
+            alt=""
+            width={140}
+            height={140}
+            className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(237,20,91,0.25)]"
+          />
+        </div>
+
+        {/* White Pebble Background */}
+        <div className="absolute inset-0 z-0 filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+          <Image
+            src="/assets/decorative/counter-pebble-white.svg"
+            alt=""
+            width={140}
+            height={140}
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Authentic Cartoon Character SVG */}
+        <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 lg:w-[84px] lg:h-[84px] flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110">
+          <Image
+            src={icon}
+            alt={label}
+            width={84}
+            height={84}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
-      <p className="mt-2 text-sm sm:text-base font-bold text-white/90 tracking-wide uppercase font-sans">
+
+      {/* Number Display */}
+      <div className="font-sans font-bold text-3xl sm:text-4xl lg:text-[34px] leading-tight text-white tracking-wide mt-1 flex items-center justify-center">
+        <span>{count}</span>
+        <span>{suffix}</span>
+      </div>
+
+      {/* Title Label */}
+      <p className="mt-1 text-sm sm:text-[15px] lg:text-[16px] font-semibold text-white/95 tracking-wide font-sans text-center">
         {label}
       </p>
     </div>
@@ -56,28 +102,73 @@ function CountUpItem({
 
 export function CountersStripSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   return (
-    <section ref={ref} className="relative bg-[#0a6375] py-14 md:py-20 overflow-hidden">
-      {/* Subtle Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
+    <section
+      ref={ref}
+      className="relative w-full overflow-visible py-10 sm:py-14 lg:py-16 select-none bg-white"
+      aria-label="School Statistics"
+    >
+      {/* Outer wrapper for the masked ribbon */}
+      <div className="relative max-w-[1920px] mx-auto px-0">
+        {/* The Orange Masked Ribbon Strip */}
+        <div
+          className="wdt-mask-counter-strip bg-[#f7941e] relative py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 overflow-hidden shadow-[0_10px_30px_rgba(247,148,30,0.15)]"
+        >
+          {/* Subtle Alphabet Background Overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none select-none opacity-20 bg-center bg-no-repeat bg-contain"
+            style={{
+              backgroundImage: "url('/assets/decorative/alpha-overlay-image.png')",
+            }}
+          />
 
-      <Container>
-        <Reveal variant="fade-up">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-            {siteConfig.counters.map((item) => (
-              <CountUpItem
-                key={item.id}
-                value={item.value}
-                suffix={item.suffix}
-                label={item.label}
-                inView={isInView}
+          <div className="max-w-[1600px] mx-auto relative z-10 flex items-center justify-between">
+            {/* Left Decorative Floating Image: studys.png (Child reading) */}
+            <div className="hidden xl:flex flex-shrink-0 w-60 2xl:w-72 select-none pointer-events-none animate-float-slow -ml-4 -my-8">
+              <Image
+                src="/assets/decorative/studys.png"
+                alt="Child studying"
+                width={300}
+                height={402}
+                className="w-full h-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.12)]"
+                priority={false}
               />
-            ))}
+            </div>
+
+            {/* Middle 4 Counters Grid */}
+            <div className="flex-1 max-w-5xl mx-auto">
+              <Reveal variant="fade-up">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+                  {siteConfig.counters.map((item) => (
+                    <CountUpItem
+                      key={item.id}
+                      value={item.value}
+                      suffix={item.suffix}
+                      label={item.label}
+                      icon={item.icon}
+                      inView={isInView}
+                    />
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Right Decorative Floating Image: cycle-play.png (Child riding bike) */}
+            <div className="hidden xl:flex flex-shrink-0 w-60 2xl:w-72 select-none pointer-events-none animate-float-reverse -mr-4 -my-8">
+              <Image
+                src="/assets/decorative/cycle-play.png"
+                alt="Child riding bike"
+                width={300}
+                height={401}
+                className="w-full h-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.12)]"
+                priority={false}
+              />
+            </div>
           </div>
-        </Reveal>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }

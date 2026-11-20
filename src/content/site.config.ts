@@ -349,31 +349,31 @@ export const siteConfig = {
   counters: [
     {
       id: 1,
-      // TODO: Replace with official verified statistics from GD Goenka Rohini administration
-      value: 500,
+      value: 3564,
       suffix: '+',
       label: 'Students Admission',
+      icon: '/assets/decorative/counter-icon-0.svg',
     },
     {
       id: 2,
-      // TODO: Replace with official verified statistics from GD Goenka Rohini administration
-      value: 15,
+      value: 156,
       suffix: '+',
-      label: 'Total No. of Class',
+      label: 'Total No.of Class',
+      icon: '/assets/decorative/counter-icon-1.svg',
     },
     {
       id: 3,
-      // TODO: Replace with official verified statistics from GD Goenka Rohini administration
-      value: 25,
+      value: 76,
       suffix: '+',
-      label: 'No. of Teachers',
+      label: 'No.of Teachers',
+      icon: '/assets/decorative/counter-icon-2.svg',
     },
     {
       id: 4,
-      // TODO: Replace with official verified statistics from GD Goenka Rohini administration
-      value: 10,
+      value: 8,
       suffix: '+',
       label: 'Years Experience',
+      icon: '/assets/decorative/counter-icon-3.svg',
     },
   ],
 

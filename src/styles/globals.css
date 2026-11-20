@@ -155,3 +155,15 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-mask-position: center center;
   mask-position: center center;
 }
+
+/* Authentic Kidscool Stats Counter Strip Mask (Organic Curved Ribbon from gdgoenkarohini.com) */
+.wdt-mask-counter-strip {
+  -webkit-mask-image: url('/assets/decorative/counter_bg_img.png');
+  mask-image: url('/assets/decorative/counter_bg_img.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+}
