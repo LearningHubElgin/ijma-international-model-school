@@ -47,6 +47,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* GPU-friendly Floating Keyframes */
+@keyframes handsFloat {
+  0%, 100% {
+    transform: translateY(-16px);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+}
+
+.animate-hands-float {
+  animation: handsFloat 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
 @keyframes floatBobSlow {
   0%, 100% {
     transform: translate3d(0, 0px, 0) rotate(0deg);

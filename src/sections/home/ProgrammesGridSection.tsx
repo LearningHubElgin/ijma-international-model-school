@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/content/site.config';
-import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
 
 export function ProgrammesGridSection() {
@@ -12,132 +11,135 @@ export function ProgrammesGridSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
       aria-label="Programmes"
     >
-      {/* Floating Handprints on the Far Right Edge (Matching gdgoenkarohini.com) */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-16 sm:w-20 lg:w-24 pointer-events-none select-none z-10 hidden sm:block">
+      {/* Floating Animated Handprints on the Far Right Edge (Matching gdgoenkarohini.com) */}
+      <div className="absolute -right-6 top-[340px] w-[180px] lg:w-[200px] h-[500px] lg:h-[556px] pointer-events-none select-none z-20 hidden md:block animate-hands-float">
         <Image
           src="/assets/decorative/hand-shake-resized.png"
           alt="Colorful Handprints"
-          width={96}
-          height={380}
-          className="object-contain"
+          width={200}
+          height={556}
+          className="object-contain w-full h-full drop-shadow-sm"
+          priority={false}
         />
       </div>
 
-      <Container>
-        {/* Top 3-Column Split: Text Block + Photo 1 + Photo 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Column 1: Text Block (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left relative z-10">
-            {/* Subtitle with Giraffe, Cap and Crayon Doodles */}
+      {/* 1520px Max Container matching exact live Elementor container width */}
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Top Split Row: Text Column on Left, Two Large Curved Photos on Right */}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+          {/* Left Text Column (~38% width on desktop) */}
+          <div className="w-full lg:w-[40%] flex flex-col items-start text-left relative z-10">
+            {/* Eyebrow with Cap Icon */}
             <Reveal variant="fade-up" delay={0.1}>
-              <div className="relative inline-flex items-center gap-2 mb-3 pt-6">
-                {/* Floating Giraffe Doodle */}
-                <div className="absolute -top-1 left-12 w-9 h-9 pointer-events-none select-none animate-float-slow">
+              <div className="inline-flex items-center gap-2.5 mb-3.5">
+                <span className="w-7 h-7 flex-shrink-0 text-[#eb1551]">
                   <Image
-                    src="/assets/decorative/doodle-giraffe.svg"
-                    alt="Giraffe Doodle"
-                    width={36}
-                    height={36}
-                    className="object-contain"
-                  />
-                </div>
-
-                {/* Graduation Cap Doodle Icon */}
-                <span className="w-7 h-7 text-[#eb1551] flex-shrink-0">
-                  <Image
-                    src="/assets/decorative/doodle-cap.svg"
-                    alt="Cap Doodle"
+                    src="/assets/decorative/doodle-cap-exact.svg"
+                    alt="Cap"
                     width={28}
                     height={28}
                     className="object-contain"
                   />
                 </span>
-
-                {/* Eyebrow text */}
                 <span className="text-[#eb1551] font-bold text-sm sm:text-[15px] tracking-wide">
                   {programmes.eyebrow}
                 </span>
-
-                {/* Floating Crayon Doodle pointing towards the text */}
-                <div className="w-8 h-8 flex-shrink-0 select-none pointer-events-none animate-float-delayed transform rotate-[-20deg]">
-                  <Image
-                    src="/assets/decorative/doodle-crayon.svg"
-                    alt="Crayon Doodle"
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
               </div>
             </Reveal>
 
             {/* Main Title */}
             <Reveal variant="fade-up" delay={0.2}>
-              <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#111111] tracking-tight leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold text-[#111111] tracking-tight leading-[1.2] mb-4">
                 {programmes.heading}
               </h2>
             </Reveal>
 
             {/* Description Paragraph */}
             <Reveal variant="fade-up" delay={0.3}>
-              <p className="text-[14px] sm:text-[15px] lg:text-base text-[#6b6b84] leading-relaxed mb-8 max-w-lg font-normal">
+              <p className="text-[15px] sm:text-base text-[#6b6b84] leading-relaxed mb-8 max-w-xl font-normal">
                 {programmes.description}
               </p>
             </Reveal>
 
-            {/* CTA Button */}
+            {/* View More CTA + Curved Dashed Line to Mom and Me */}
             <Reveal variant="fade-up" delay={0.35}>
-              <Link
-                href={programmes.ctaHref}
-                className="inline-flex items-center justify-center bg-[#EB1551] hover:bg-[#d01046] text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-[0_8px_25px_rgba(235,21,81,0.25)] hover:shadow-[0_12px_30px_rgba(235,21,81,0.35)] transition-all duration-300 transform hover:-translate-y-0.5"
-              >
-                {programmes.ctaText}
-              </Link>
-            </Reveal>
-          </div>
+              <div className="relative">
+                <Link
+                  href={programmes.ctaHref}
+                  className="inline-flex items-center justify-center bg-[#EB1551] hover:bg-[#d01046] text-white font-bold text-base px-9 py-3.5 rounded-full shadow-[0_8px_25px_rgba(235,21,81,0.25)] hover:shadow-[0_12px_30px_rgba(235,21,81,0.35)] transition-all duration-300 transform hover:-translate-y-0.5"
+                >
+                  {programmes.ctaText}
+                </Link>
 
-          {/* Photo 1 Column (3.5 cols): Playing with clay (border-radius: 0 0 500px 0) */}
-          <div className="lg:col-span-3 sm:col-span-1">
-            <Reveal variant="fade-up" delay={0.25}>
-              <div
-                className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50"
-                style={{ borderRadius: '0px 0px 500px 0px' }}
-              >
-                <Image
-                  src="/assets/programmes/a1.jpg"
-                  alt="Child playing with clay"
-                  fill
-                  className="object-cover object-center hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 350px"
-                />
+                {/* Subtle curved dashed arrow pointing from under View More towards Mom and Me */}
+                <div className="absolute -bottom-24 left-10 w-[150px] h-[150px] pointer-events-none select-none opacity-40 hidden lg:block rotate-[14deg]">
+                  <Image
+                    src="/assets/decorative/doodle-arrow-line.svg"
+                    alt="Arrow line"
+                    width={150}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Photo 2 Column (3.5 cols): Painting horse model (border-radius: 500px 0 0 0) */}
-          <div className="lg:col-span-3 sm:col-span-1">
-            <Reveal variant="fade-up" delay={0.35}>
-              <div
-                className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50"
-                style={{ borderRadius: '500px 0px 0px 0px' }}
-              >
-                <Image
-                  src="/assets/programmes/a2.jpg"
-                  alt="Child painting a model"
-                  fill
-                  className="object-cover object-center hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 350px"
-                />
-              </div>
-            </Reveal>
+          {/* Right Photos Column (~60% width on desktop) */}
+          <div className="w-full lg:w-[60%] relative mt-8 lg:mt-0">
+            {/* Tilted Crayon Doodle sitting at the top-left corner of Photo 1 (Matching gdgoenkarohini.com) */}
+            <div className="absolute -top-10 -left-6 w-20 h-20 select-none pointer-events-none z-20 animate-float-delayed transform rotate-[-15deg]">
+              <Image
+                src="/assets/decorative/doodle-crayon-exact.svg"
+                alt="Crayon Doodle"
+                width={80}
+                height={80}
+                className="object-contain drop-shadow-sm"
+              />
+            </div>
+
+            {/* Dual Curved Photos Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-center">
+              {/* Photo 1: Playing with clay (border-radius: 0 0 500px 0) */}
+              <Reveal variant="fade-up" delay={0.25}>
+                <div
+                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
+                  style={{ borderRadius: '0px 0px 500px 0px' }}
+                >
+                  <Image
+                    src="/assets/programmes/a1.jpg"
+                    alt="Child playing with clay"
+                    fill
+                    className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 480px"
+                  />
+                </div>
+              </Reveal>
+
+              {/* Photo 2: Painting horse model (border-radius: 500px 0 0 0) */}
+              <Reveal variant="fade-up" delay={0.35}>
+                <div
+                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
+                  style={{ borderRadius: '500px 0px 0px 0px' }}
+                >
+                  <Image
+                    src="/assets/programmes/a2.jpg"
+                    alt="Child painting a model"
+                    fill
+                    className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 480px"
+                  />
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Row: 6 Vibrant Rounded Pill Cards (Matching gdgoenkarohini.com) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-14 sm:mt-18 lg:mt-20">
+        {/* Bottom Row: 6 Wide Rounded Pill Cards (Exact 446px x 180px proportions matching gdgoenkarohini.com) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mt-16 sm:mt-20 lg:mt-24">
           {programmes.list.map((prog, index) => (
             <Reveal
               key={prog.id}
@@ -147,11 +149,14 @@ export function ProgrammesGridSection() {
             >
               <Link
                 href={prog.href}
-                className="group relative rounded-[100px] text-white py-14 sm:py-16 px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_6px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(235,21,81,0.25)] block"
-                style={{ backgroundColor: prog.bgColor }}
+                className="group relative rounded-[100px] text-white py-12 sm:py-14 px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_6px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(235,21,81,0.25)] block min-h-[175px]"
+                style={{ backgroundColor: prog.bgColor, borderRadius: '100px' }}
               >
                 {/* Hover overlay that smoothly transitions to #EB1551 */}
-                <div className="absolute inset-0 bg-[#EB1551] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[100px]" />
+                <div
+                  className="absolute inset-0 bg-[#EB1551] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ borderRadius: '100px' }}
+                />
 
                 {/* Card Content */}
                 <div className="relative z-10 flex flex-col items-center">
@@ -183,7 +188,7 @@ export function ProgrammesGridSection() {
                 </div>
 
                 {/* Sparkles Doodle SVG in bottom right (visible on hover) */}
-                <div className="absolute bottom-3 right-6 pointer-events-none select-none text-white opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 z-10">
+                <div className="absolute bottom-3 right-7 pointer-events-none select-none text-white opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 z-10">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 100 100"
@@ -199,7 +204,7 @@ export function ProgrammesGridSection() {
             </Reveal>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
