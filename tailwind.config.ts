@@ -64,10 +64,15 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
           '50%': { transform: 'translateY(12px) rotate(-2deg)' },
         },
+        customRotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'float-slow': 'floatBobSlow 4.5s ease-in-out infinite',
         'float-reverse': 'floatBobReverse 5.2s ease-in-out infinite 0.5s',
+        'rotate-circle': 'customRotate 14s linear infinite',
       },
     },
   },
