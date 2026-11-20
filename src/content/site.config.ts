@@ -234,14 +234,15 @@ export const siteConfig = {
     eyebrow: 'Creative Learning Opportunity For Kids',
     heading: 'Programmes',
     description:
-      'Children think and do for themselves in thoughtfully designed mixed-age groups. Our programmes nurture developmental readiness through sensorial discovery, language enrichment, and motor coordination.',
+      'Children are uniquely supported to think for themselves and do for themselves. The mixed-aged group of children are free to direct their own learning, and learn quickly to respect the work of people around them.',
     ctaText: 'View More',
     ctaHref: '/programmes',
     list: [
       {
         id: 'mom-and-me',
         title: 'Mom and Me',
-        ageRange: '12 - 18 Months',
+        ageRange: '12 months- 18 months',
+        bgColor: '#4D4EFF',
         description:
           'A comforting transition for infant and mother, strengthening emotional bonding and introducing sensory-rich group play.',
         image: '/assets/programmes/programme-mom-me.svg',
@@ -250,7 +251,8 @@ export const siteConfig = {
       {
         id: 'play-group',
         title: 'Play Group',
-        ageRange: '18 - 24 Months',
+        ageRange: '18 months -24 months',
+        bgColor: '#FF994E',
         description:
           'Promoting physical coordination, early social interaction, and sensorial discovery through tactile Montessori materials.',
         image: '/assets/programmes/programme-playgroup.svg',
@@ -259,7 +261,8 @@ export const siteConfig = {
       {
         id: 'pre-nursery',
         title: 'Pre Nursery',
-        ageRange: '2 - 3 Years',
+        ageRange: '2 years to 3 years',
+        bgColor: '#73BE48',
         description:
           'Encouraging verbal expression, fine motor manipulation, and foundational social confidence in a structured yet playful room.',
         image: '/assets/programmes/programme-prenursery.svg',
@@ -268,7 +271,8 @@ export const siteConfig = {
       {
         id: 'nursery',
         title: 'Nursery',
-        ageRange: '3 - 4 Years',
+        ageRange: '3 years to 4 years',
+        bgColor: '#1CBBB4',
         description:
           'Building phonemic awareness, pre-math concepts, collaborative problem-solving, and creative self-expression.',
         image: '/assets/programmes/programme-nursery.svg',
@@ -277,7 +281,8 @@ export const siteConfig = {
       {
         id: 'day-care',
         title: 'Day Care',
-        ageRange: '12 Months - 12 Years',
+        ageRange: '12 months to 12 years',
+        bgColor: '#FF994E',
         description:
           'A loving, hygienic haven offering structured routines, wholesome meals, supervised homework time, and enriching afternoon hobbies.',
         image: '/assets/programmes/programme-daycare.svg',
@@ -286,7 +291,8 @@ export const siteConfig = {
       {
         id: 'activity-centre',
         title: 'Activity Centre',
-        ageRange: '2 - 12 Years',
+        ageRange: '2 years-12 years',
+        bgColor: '#73BE48',
         description:
           'Weekend and afternoon clubs spanning skating, martial arts, classical & contemporary dance, vocal music, and public speaking.',
         image: '/assets/programmes/programme-activity.svg',
