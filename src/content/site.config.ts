@@ -171,7 +171,7 @@ export const siteConfig = {
       description:
         'Timeless education for a changing world. Self-directed activity, hands-on learning, and collaborative play designed to foster intrinsic motivation and critical thinking.',
       color: '#ed145b',
-      image: '/assets/features/feature-montessori.svg',
+      image: '/assets/gallery/playground-1.jpg',
       href: '/montessori-methodology',
     },
     {
@@ -180,7 +180,7 @@ export const siteConfig = {
       description:
         'A comprehensive, integrated syllabus blending sensorial discovery, language arts, mathematical reasoning, and creative cultural experiences.',
       color: '#1cbbb4',
-      image: '/assets/features/feature-curriculum.svg',
+      image: '/assets/features/curriculum.jpg',
       href: '/curriculum',
     },
     {
@@ -189,7 +189,7 @@ export const siteConfig = {
       description:
         'Vibrant cultural festivities and theme days that build community belonging, social warmth, and an appreciation for global diversity.',
       color: '#f7941e',
-      image: '/assets/features/feature-celebrations.svg',
+      image: '/assets/features/celebrations.jpg',
       href: '/celebrations',
     },
     {
@@ -198,7 +198,7 @@ export const siteConfig = {
       description:
         'Rhythmic games, melodic exploration, and physical movement sessions that develop vestibular balance, coordination, and creative expression.',
       color: '#0a6375',
-      image: '/assets/features/feature-music.svg',
+      image: '/assets/features/music-movement.jpg',
       href: '/music-movement',
     },
     {
@@ -207,7 +207,7 @@ export const siteConfig = {
       description:
         'Curated experiential journeys to nature gardens, interactive science museums, and community centers extending learning beyond the classroom.',
       color: '#ed145b',
-      image: '/assets/features/feature-trips.svg',
+      image: '/assets/features/field-trips.jpg',
       href: '/field-trips',
     },
     {
@@ -216,7 +216,7 @@ export const siteConfig = {
       description:
         'Age-appropriate motor development, splash pool activities, outdoor games, and taekwondo that instill body strength and resilience.',
       color: '#1cbbb4',
-      image: '/assets/features/feature-pe.svg',
+      image: '/assets/features/physical-education.jpg',
       href: '/physical-education',
     },
     {
@@ -225,7 +225,7 @@ export const siteConfig = {
       description:
         'Playful storytelling, character dramatization, and voice articulation activities that build stage confidence, empathy, and vocabulary.',
       color: '#f7941e',
-      image: '/assets/features/feature-drama.svg',
+      image: '/assets/features/speech-drama.jpg',
       href: '/speech-and-drama',
     },
   ],
