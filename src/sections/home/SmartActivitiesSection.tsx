@@ -1,62 +1,396 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { siteConfig } from '@/content/site.config';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, GraduationCap } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Reveal } from '@/components/ui/Reveal';
+
+interface ActivityItem {
+  id: string;
+  title: string;
+  description: string;
+  iconSvg: string;
+  iconColor: string;
+  shapeType: 'trapezoid' | 'square' | 'circle' | 'triangle' | 'hexagon';
+  shapeColor: string;
+  image?: string;
+}
+
+const ACTIVITIES: ActivityItem[] = [
+  {
+    id: 'painting',
+    title: 'Painting',
+    description: "Focuses on explore emotion,color,process & outcome. It develops child's creativity & expression.",
+    iconSvg: '/assets/decorative/smart-icon-ball.svg',
+    iconColor: '#70E2B0',
+    shapeType: 'trapezoid',
+    shapeColor: '#70E2B0'
+  },
+  {
+    id: 'physical',
+    title: 'Physical Activities',
+    description: 'Focuses on Strengthening posture and flexibility in children with following activities: a) SPLASH POOL; b) SKATING; c) TAEKWONDO',
+    iconSvg: '/assets/decorative/smart-icon-school.svg',
+    iconColor: '#50C5D8',
+    shapeType: 'square',
+    shapeColor: '#50C5D8',
+    image: '/assets/activities/smart-physical.jpg'
+  },
+  {
+    id: 'team',
+    title: 'Team Activities',
+    description: 'Focuses on developing life skills-Problem Solving,Leadership,Empathy',
+    iconSvg: '/assets/decorative/smart-icon-children.svg',
+    iconColor: '#FBB03B',
+    shapeType: 'circle',
+    shapeColor: '#FBB03B',
+    image: '/assets/activities/smart-team.jpg'
+  },
+  {
+    id: 'individual',
+    title: 'Individual Activity',
+    description: 'Focuses on developing social and motor skill development.',
+    iconSvg: '/assets/decorative/smart-icon-ball.svg',
+    iconColor: '#F68B1F',
+    shapeType: 'triangle',
+    shapeColor: '#F68B1F'
+  },
+  {
+    id: 'craft',
+    title: 'Craft',
+    description: 'Focuses on developing fine motor skills which makes writing easier for them.',
+    iconSvg: '/assets/decorative/smart-icon-ball.svg',
+    iconColor: '#9E5BEA',
+    shapeType: 'hexagon',
+    shapeColor: '#9E5BEA'
+  }
+];
 
 export function SmartActivitiesSection() {
-  const { activities } = siteConfig;
+  const [startIndex, setStartIndex] = useState(0);
+
+  const prevSlide = () => {
+    setStartIndex((prev) => (prev === 0 ? ACTIVITIES.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setStartIndex((prev) => (prev === ACTIVITIES.length - 1 ? 0 : prev + 1));
+  };
+
+  // Get 3 visible cards in loop for desktop
+  const visibleCards = [
+    ACTIVITIES[startIndex],
+    ACTIVITIES[(startIndex + 1) % ACTIVITIES.length],
+    ACTIVITIES[(startIndex + 2) % ACTIVITIES.length]
+  ];
 
   return (
-    <Section bg="peach" spacing="default">
-      <Container>
-        <SectionHeading
-          eyebrow="Extracurricular Enrichment"
-          title={activities.heading}
-          description={activities.description}
-        />
+    <section className="relative w-full bg-white overflow-hidden pt-0 pb-16">
+      {/* ============================================================ */}
+      {/* 1. GRASSY HILL BANNER & RUNNING KIDS                         */}
+      {/* ============================================================ */}
+      <div className="relative w-full overflow-hidden bg-white">
+        {/* Grassy hill background illustration */}
+        <div
+          className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] bg-contain bg-bottom bg-no-repeat flex items-end justify-center"
+          style={{ backgroundImage: `url('/assets/decorative/gorden_images.png')` }}
+        >
+          {/* Jumping Pencil Girl (Left) */}
+          <motion.div
+            className="absolute left-4 sm:left-12 md:left-24 lg:left-36 bottom-6 sm:bottom-10 z-10 w-[140px] sm:w-[170px] md:w-[200px]"
+            animate={{ y: [0, -18, 0], rotate: [0, -2, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/assets/decorative/play_pencil_girl.png"
+              alt="Girl with pencil"
+              width={200}
+              height={376}
+              className="w-full h-auto object-contain drop-shadow-md select-none pointer-events-none"
+              priority
+            />
+          </motion.div>
 
-        {/* 5 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {activities.list.map((act, index) => (
-            <Reveal
-              key={act.id}
-              variant="fade-up"
-              delay={0.1 * (index + 1)}
-              className="h-full"
-            >
-              <div className="group h-full bg-white rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col p-5 text-center border border-peach">
-                {/* Image / Thumbnail */}
-                <div className="relative aspect-[1.4/1] w-full rounded-xl overflow-hidden mb-4 bg-gray-100">
-                  <Image
-                    src={act.image}
-                    alt={act.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  />
-                </div>
+          {/* Running Boy with Book (Right) */}
+          <motion.div
+            className="absolute right-4 sm:right-12 md:right-24 lg:right-36 bottom-4 sm:bottom-8 z-10 w-[130px] sm:w-[160px] md:w-[190px]"
+            animate={{ y: [0, 14, 0], rotate: [0, 2, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/assets/decorative/play_pencil_boy.png"
+              alt="Boy with book"
+              width={200}
+              height={249}
+              className="w-full h-auto object-contain drop-shadow-md select-none pointer-events-none"
+              priority
+            />
+          </motion.div>
+        </div>
 
-                <h3 className="font-bold text-lg text-black mb-2 group-hover:text-primary transition-colors">
-                  {act.title}
-                </h3>
+        {/* Delicate Scalloped Blue Line Divider */}
+        <div className="w-full flex justify-center py-2 px-4 overflow-hidden">
+          <div className="w-full max-w-4xl h-6">
+            <Image
+              src="/assets/decorative/scalloped-divider.svg"
+              alt="divider"
+              width={1200}
+              height={24}
+              className="w-full h-full object-fill opacity-90 select-none"
+            />
+          </div>
+        </div>
+      </div>
 
-                <p className="text-xs text-body leading-relaxed flex-1">
-                  {act.description}
-                </p>
+      {/* ============================================================ */}
+      {/* 2. SMART ACTIVITIES HEADER & DOODLES                         */}
+      {/* ============================================================ */}
+      <Container className="relative pt-8 pb-4">
+        {/* Left Side Hanging Spider */}
+        <motion.div
+          className="absolute -left-2 sm:left-4 md:left-8 top-32 z-10 w-28 sm:w-36 pointer-events-none hidden sm:block"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <Image
+            src="/assets/decorative/smart-spider-left.svg"
+            alt="Spider"
+            width={160}
+            height={90}
+            className="w-full h-auto object-contain"
+          />
+        </motion.div>
 
-                <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-center">
-                  <span className="font-bubblegum text-xs text-[#0a6375] font-bold">
-                    Developmental Skill
-                  </span>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+        {/* Right Side Hanging Spider */}
+        <motion.div
+          className="absolute -right-2 sm:right-4 md:right-8 top-32 z-10 w-28 sm:w-36 pointer-events-none hidden sm:block"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <Image
+            src="/assets/decorative/smart-spider-right.svg"
+            alt="Spider"
+            width={160}
+            height={90}
+            className="w-full h-auto object-contain"
+          />
+        </motion.div>
+
+        {/* Small floating pencil doodle (Left) */}
+        <motion.div
+          className="absolute left-8 sm:left-20 top-16 w-8 h-8 pointer-events-none"
+          animate={{ y: [0, -10, 0], rotate: [-10, -18, -10] }}
+          transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <svg viewBox="0 0 32 32" className="w-full h-full drop-shadow-sm">
+            <path d="M4,28 L8,28 L26,10 L22,6 L4,24 Z" fill="#EE302E" />
+            <path d="M22,6 L26,10 L28,8 L24,4 Z" fill="#F68A1F" />
+            <path d="M4,28 L4,24 L8,28 Z" fill="#FDD211" />
+          </svg>
+        </motion.div>
+
+        {/* Centered Heading with Butterfly & Rainbow Sun */}
+        <div className="relative max-w-2xl mx-auto text-center flex flex-col items-center mb-12">
+          {/* Butterfly (Left of heading) */}
+          <motion.div
+            className="absolute -left-12 sm:-left-20 -top-4 w-16 sm:w-20 pointer-events-none"
+            animate={{ y: [0, -12, 0], rotate: [8, 18, 8] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/assets/decorative/smart-butterfly.svg"
+              alt="Butterfly"
+              width={80}
+              height={80}
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
+          {/* Rainbow Sun (Right of heading) */}
+          <motion.div
+            className="absolute -right-14 sm:-right-24 -top-8 w-24 sm:w-32 pointer-events-none"
+            animate={{ y: [0, -6, 0], scale: [1, 1.03, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Image
+              src="/assets/decorative/smart-rainbow-sun.svg"
+              alt="Rainbow Sun"
+              width={140}
+              height={140}
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 text-[#EB1551] font-semibold text-sm sm:text-base tracking-wide mb-2">
+            <GraduationCap className="w-5 h-5 text-[#EB1551]" />
+            <span>Activity Programs</span>
+          </div>
+
+          {/* Title */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tight">
+            Smart Activities
+          </h2>
+        </div>
+
+        {/* ============================================================ */}
+        {/* 3. ACTIVITY CARDS CAROUSEL                                   */}
+        {/* ============================================================ */}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-8">
+          {/* Carousel Arrows */}
+          <button
+            onClick={prevSlide}
+            aria-label="Previous Activity"
+            className="absolute -left-3 sm:-left-6 top-1/3 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#EB1551] hover:shadow-xl transition-all hover:scale-110"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            aria-label="Next Activity"
+            className="absolute -right-3 sm:-right-6 top-1/3 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-gray-700 hover:text-[#EB1551] hover:shadow-xl transition-all hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Visible Cards Grid (3 cards on desktop, 1 on mobile) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-start">
+            <AnimatePresence mode="popLayout">
+              {visibleCards.map((act) => (
+                <motion.div
+                  key={act.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.35 }}
+                  className="flex flex-col items-center text-center group"
+                >
+                  {/* Card Shape Container */}
+                  <div className="relative flex flex-col items-center mb-6">
+                    {/* Top Outline Icon */}
+                    <div
+                      className="w-16 h-16 sm:w-20 sm:h-20 -mb-4 z-10 transition-transform duration-300 group-hover:-translate-y-2"
+                      style={{ color: act.iconColor }}
+                    >
+                      <Image
+                        src={act.iconSvg}
+                        alt=""
+                        width={75}
+                        height={75}
+                        className="w-full h-full object-contain filter"
+                      />
+                    </div>
+
+                    {/* Shape Elements */}
+                    {act.shapeType === 'trapezoid' && (
+                      <div className="w-[230px] sm:w-[250px] h-[210px] sm:h-[230px] relative drop-shadow-[0_12px_24px_rgba(112,226,176,0.35)] transition-transform duration-300 group-hover:scale-105">
+                        <svg viewBox="0 0 260 240" className="w-full h-full">
+                          <path
+                            d="M55,10 L205,10 C215,10 221,15 225,25 L257,218 C260,228 254,238 244,238 L16,238 C6,238 0,228 3,218 L35,25 C39,15 45,10 55,10 Z"
+                            fill="#70E2B0"
+                          />
+                        </svg>
+                      </div>
+                    )}
+
+                    {act.shapeType === 'square' && (
+                      <div className="w-[220px] sm:w-[240px] h-[220px] sm:h-[240px] rounded-2xl border-[6px] border-[#50C5D8] overflow-hidden shadow-[0_12px_28px_rgba(80,197,216,0.4)] relative transition-transform duration-300 group-hover:scale-105 bg-[#50C5D8]/10">
+                        {act.image && (
+                          <Image
+                            src={act.image}
+                            alt={act.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            sizes="260px"
+                          />
+                        )}
+                      </div>
+                    )}
+
+                    {act.shapeType === 'circle' && (
+                      <div className="w-[220px] sm:w-[240px] h-[220px] sm:h-[240px] rounded-full border-[6px] border-[#FBB03B] overflow-hidden shadow-[0_12px_28px_rgba(251,176,59,0.4)] relative transition-transform duration-300 group-hover:scale-105 bg-[#FBB03B]/10">
+                        {act.image && (
+                          <Image
+                            src={act.image}
+                            alt={act.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            sizes="260px"
+                          />
+                        )}
+                      </div>
+                    )}
+
+                    {act.shapeType === 'triangle' && (
+                      <div className="w-[230px] sm:w-[250px] h-[210px] sm:h-[230px] relative drop-shadow-[0_12px_24px_rgba(246,139,31,0.35)] transition-transform duration-300 group-hover:scale-105">
+                        <svg viewBox="0 0 260 240" className="w-full h-full">
+                          <path
+                            d="M118,18 C124,8 136,8 142,18 L254,215 C260,225 253,238 242,238 L18,238 C7,238 0,225 6,215 Z"
+                            fill="#F68B1F"
+                          />
+                        </svg>
+                      </div>
+                    )}
+
+                    {act.shapeType === 'hexagon' && (
+                      <div className="w-[230px] sm:w-[250px] h-[210px] sm:h-[230px] relative drop-shadow-[0_12px_24px_rgba(158,91,234,0.35)] transition-transform duration-300 group-hover:scale-105">
+                        <svg viewBox="0 0 260 240" className="w-full h-full">
+                          <path
+                            d="M48,15 L212,15 C222,15 230,20 235,29 L257,110 C261,118 261,126 257,134 L235,215 C230,224 222,229 212,229 L48,229 C38,229 30,224 25,215 L3,134 C-1,126 -1,118 3,110 L25,29 C30,20 38,15 48,15 Z"
+                            fill="#9E5BEA"
+                          />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-bold text-xl sm:text-2xl text-black mb-2 group-hover:text-[#EB1551] transition-colors">
+                    {act.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
+                    {act.description}
+                  </p>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center items-center gap-2.5 mt-10">
+            {ACTIVITIES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setStartIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`transition-all duration-300 rounded-full ${
+                  startIndex === i
+                    ? 'w-7 h-2.5 bg-[#EB1551]'
+                    : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Cloud Doodle at Bottom Center */}
+          <div className="w-full flex justify-center mt-6">
+            <div className="w-24 sm:w-28 opacity-80 pointer-events-none">
+              <Image
+                src="/assets/decorative/smart-cloud-stars.svg"
+                alt="Cloud doodle"
+                width={120}
+                height={50}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

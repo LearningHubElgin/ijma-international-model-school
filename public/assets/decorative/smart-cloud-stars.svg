@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <path d="M40,55 C30,55 20,48 20,38 C20,28 32,22 45,24 C50,14 68,10 85,16 C95,8 115,8 125,18 C135,14 150,18 155,28 C168,26 180,35 180,45 C180,55 170,55 160,55 Z" stroke="#CAD5DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Sparkles -->
+  <path d="M50,12 L50,4 M46,8 L54,8" stroke="#CAD5DC" stroke-width="2" stroke-linecap="round"/>
+  <path d="M165,15 L165,7 M161,11 L169,11" stroke="#CAD5DC" stroke-width="2" stroke-linecap="round"/>
+</svg>
