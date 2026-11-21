@@ -13,21 +13,21 @@ export function PatrioticVideoBannerSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0A5C36] py-20 sm:py-24 lg:py-28 text-white select-none"
+      className="relative w-full overflow-hidden bg-black py-20 sm:py-24 lg:py-28 text-white select-none"
       aria-label="Patriotic Video Showcase"
     >
-      {/* Background YouTube Video - AutoPlay Muted by Default */}
+      {/* Background YouTube Video - AutoPlay Muted by Default with high clarity */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/EALHYFvC8FI?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=EALHYFvC8FI&playsinline=1&rel=0&showinfo=0&modestbranding=1`}
           title="IJMA Students Performing Patriotic Song Background"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          className="absolute top-1/2 left-1/2 w-[350%] sm:w-[180%] lg:w-[130%] h-[350%] sm:h-[180%] lg:h-[130%] -translate-x-1/2 -translate-y-1/2 object-cover opacity-45 pointer-events-none"
+          className="absolute top-1/2 left-1/2 w-[350%] sm:w-[180%] lg:w-[130%] h-[350%] sm:h-[180%] lg:h-[130%] -translate-x-1/2 -translate-y-1/2 object-cover opacity-85 pointer-events-none"
         />
       </div>
 
-      {/* Rich Islamic Emerald Overlay (Ensuring High Text Legibility & Contrast) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#064E3B]/95 via-[#0A5C36]/85 to-[#0A5C36]/70 pointer-events-none" />
+      {/* Reduced Opacity Soft Emerald-Dark Vignette Overlay for Clear Video Visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-[#0A5C36]/25 to-black/75 pointer-events-none" />
 
       {/* Decorative Radial Geometry */}
       <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:24px_24px]" />
