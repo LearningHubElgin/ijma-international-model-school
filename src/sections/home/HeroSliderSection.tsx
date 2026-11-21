@@ -40,9 +40,9 @@ export function HeroSliderSection() {
             return (
               <div
                 key={slide.id}
-                className="relative flex-[0_0_100%] min-w-0 h-[620px] sm:h-[720px] md:h-[820px] lg:h-[890px] xl:h-[940px] flex items-center justify-center"
+                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[640px] md:h-[700px] lg:h-[760px] xl:h-[800px] flex items-center justify-center"
               >
-                {/* Full-width High-Res Slide Background Image */}
+                {/* Full-width High-Res Slide Background Image with sharp resolution */}
                 <Image
                   src={slide.image}
                   alt={slide.title}
@@ -52,11 +52,11 @@ export function HeroSliderSection() {
                   sizes="100vw"
                 />
 
-                {/* Rich Gradient Dark Overlay ensuring maximum text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35 z-10" />
+                {/* Subtle Vignette Overlay ensuring crystal clear image visibility and sharp contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/20 z-10" />
 
                 {/* Centered Slide Content Overlay */}
-                <div className="relative z-20 max-w-4xl mx-auto px-4 text-center pt-8 sm:pt-14 md:pt-16 pb-28 sm:pb-36">
+                <div className="relative z-20 max-w-4xl mx-auto px-4 text-center pt-8 sm:pt-12 md:pt-14 pb-24 sm:pb-32">
                   <AnimatePresence mode="wait">
                     {isActive && (
                       <div key={`slide-${slide.id}`} className="flex flex-col items-center">
@@ -65,7 +65,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: -15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5 }}
-                          className="inline-flex items-center gap-2 bg-[#0A5C36]/90 border border-emerald-400/30 text-[#F5A623] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-4 shadow-md backdrop-blur-xs"
+                          className="inline-flex items-center gap-2 bg-[#0A5C36]/90 border border-emerald-400/30 text-[#F5A623] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-3 shadow-md backdrop-blur-xs"
                         >
                           <span>★ {slide.badge} ★</span>
                         </motion.div>
@@ -75,7 +75,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 25 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, delay: 0.1 }}
-                          className="text-4xl sm:text-5xl md:text-6xl xl:text-[72px] font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]"
+                          className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-white tracking-tight leading-[1.14] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]"
                         >
                           {slide.title}
                         </motion.h1>
@@ -85,7 +85,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.55, delay: 0.25 }}
-                          className="mt-4 sm:mt-5 text-lg sm:text-xl md:text-2xl text-[#86EFAC] font-semibold max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                          className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-[#86EFAC] font-bold max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
                         >
                           {slide.subtitle}
                         </motion.p>
@@ -95,7 +95,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.35 }}
-                          className="mt-3 text-sm sm:text-base text-gray-200 max-w-xl font-normal leading-relaxed hidden sm:block drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]"
+                          className="mt-2 text-xs sm:text-sm md:text-base text-gray-100 max-w-xl font-normal leading-relaxed hidden sm:block drop-shadow-[0_1px_5px_rgba(0,0,0,0.7)]"
                         >
                           {slide.description}
                         </motion.p>
@@ -105,21 +105,21 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: 0.45 }}
-                          className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-4"
+                          className="mt-6 flex flex-wrap items-center justify-center gap-3.5"
                         >
                           <Button
                             variant="primary"
-                            size="lg"
+                            size="md"
                             href={slide.ctaHref}
-                            className="bg-[#0A5C36] text-white hover:bg-[#10B981] hover:text-white border border-emerald-400/40 px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                            className="bg-[#0A5C36] text-white hover:bg-[#10B981] hover:text-white border border-emerald-400/40 px-7 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                           >
                             {slide.ctaText}
                           </Button>
                           <Button
                             variant="outline"
-                            size="lg"
+                            size="md"
                             href="/contact-us"
-                            className="bg-white/10 hover:bg-white text-white hover:text-[#0A5C36] border-white/40 px-7 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full backdrop-blur-xs transition-all duration-300"
+                            className="bg-white/15 hover:bg-white text-white hover:text-[#0A5C36] border-white/40 px-6 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-base font-bold rounded-full backdrop-blur-xs transition-all duration-300"
                           >
                             Contact Campus
                           </Button>

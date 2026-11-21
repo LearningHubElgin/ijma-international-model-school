@@ -141,7 +141,7 @@ export const siteConfig = {
         'Cultivating curious minds and noble character through a balanced blend of academic excellence, Quranic values, hands-on STEM & Robotics, and physical fitness.',
       ctaText: 'Apply For Admission',
       ctaHref: '/admissions/application-form',
-      image: '/assets/ijma/photos/Runnig-student-in-sports-meet.jpg',
+      image: '/assets/ijma/photos/Runnig-student-in-sports-meet-wide.jpg',
     },
     {
       id: 2,
@@ -152,7 +152,7 @@ export const siteConfig = {
         'Equipping students with modern scientific inquiry, electronic circuitry, mechanical robotics, and critical thinking skills in air-conditioned smart labs.',
       ctaText: 'Explore Academics',
       ctaHref: '/academics',
-      image: '/assets/ijma/photos/Art-class.jpg',
+      image: '/assets/ijma/photos/Art-class-wide.jpg',
     },
     {
       id: 3,

@@ -31,13 +31,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      'bg-[#ed145b] text-white hover:bg-[#0a6375] shadow-button hover:shadow-lg focus:ring-[#ed145b]',
+      'bg-[#0A5C36] text-white hover:bg-[#10B981] shadow-md hover:shadow-lg focus:ring-[#0A5C36]',
     secondary:
-      'bg-[#0a6375] text-white hover:bg-[#ed145b] shadow-md hover:shadow-lg focus:ring-[#0a6375]',
+      'bg-[#10B981] text-white hover:bg-[#0A5C36] shadow-md hover:shadow-lg focus:ring-[#10B981]',
     outline:
-      'border-2 border-[#ed145b] text-[#ed145b] hover:bg-[#ed145b] hover:text-white focus:ring-[#ed145b]',
+      'border-2 border-[#0A5C36] text-[#0A5C36] hover:bg-[#0A5C36] hover:text-white focus:ring-[#0A5C36]',
     white:
-      'bg-white text-[#ed145b] hover:bg-[#0a6375] hover:text-white shadow-md focus:ring-white',
+      'bg-white text-[#0A5C36] hover:bg-[#0A5C36] hover:text-white shadow-md focus:ring-white',
   };
 
   const combinedClasses = cn(baseStyles, sizeStyles[size], variantStyles[variant], className);
