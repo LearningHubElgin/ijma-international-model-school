@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { siteConfig } from '@/content/site.config';
-import { CustomCursor } from '@/components/ui/CustomCursor';
 import { TopBar } from '@/components/layout/TopBar';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -72,7 +71,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-white text-gray-900 font-sans antialiased flex flex-col">
         {/* Preloader is handled statically or on mount */}
-        <CustomCursor />
         <TopBar />
         <Header />
         {children}

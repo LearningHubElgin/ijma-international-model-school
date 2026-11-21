@@ -133,17 +133,20 @@ export const siteConfig = {
   heroSlides: [
     {
       id: 1,
-      badge: 'Jashn-e-Ijma • Independence Day Celebrations',
+      isVideo: true,
+      videoSrc: '/assets/ijma/videos/hero-featured-video.mp4',
+      badge: 'Live Student Performance • Cultural & Patriotic Showcase',
       title: 'Celebrating Freedom, Faith & Excellence',
       subtitle: 'Grand Annual Stage Performance at Kala Kunj, Kolkata',
       description:
-        'Young scholars of IJMA International Model School celebrating Independence Day with patriotic fervor, Islamic cultural elegance, and theatrical poise.',
+        'Watch young scholars of IJMA International Model School perform on stage with patriotic fervor, Islamic cultural poise, and expressive artistry.',
       ctaText: 'Apply For Admission',
       ctaHref: '/admissions/application-form',
       image: '/assets/ijma/photos/jashn-e-ijma-independence-day.jpg',
     },
     {
       id: 2,
+      isVideo: false,
       badge: 'Welcome to IJMA International Model School',
       title: 'Empowering Minds, Nurturing Faith',
       subtitle: 'English Medium CBSE Curriculum with Islamic Education • Topsia, Kolkata',
@@ -155,6 +158,7 @@ export const siteConfig = {
     },
     {
       id: 3,
+      isVideo: false,
       badge: 'STEM & Innovation Excellence',
       title: 'Inspiring Future Innovators',
       subtitle: 'Hands-on Robotics, Science Labs & Creative Mathematics',
@@ -166,6 +170,7 @@ export const siteConfig = {
     },
     {
       id: 4,
+      isVideo: false,
       badge: 'Character, Discipline & Sports',
       title: 'Excellence in Faith & Action',
       subtitle: 'Karate Martial Arts, Annual Sports Meet & National Education Day',
@@ -177,6 +182,7 @@ export const siteConfig = {
     },
     {
       id: 5,
+      isVideo: false,
       badge: 'Martial Arts & Physical Fitness',
       title: 'Discipline, Strength & Self-Defense',
       subtitle: 'Certified Karate Training & Synthetic Turf Athletics • Topsia, Kolkata',

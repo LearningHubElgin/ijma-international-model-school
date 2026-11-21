@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Volume2, VolumeX, Play } from 'lucide-react';
 import { siteConfig } from '@/content/site.config';
 import { Button } from '@/components/ui/Button';
 import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
@@ -16,10 +16,42 @@ export function HeroSliderSection() {
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
+    const index = emblaApi.selectedScrollSnap();
+    setSelectedIndex(index);
+
+    const autoplay = emblaApi.plugins()?.autoplay;
+    const activeSlide = siteConfig.heroSlides[index];
+
+    if (activeSlide && (activeSlide as any).isVideo) {
+      // For video slide: stop 3-second autoplay timer so the video plays fully
+      autoplay?.stop();
+
+      // Play the video from the beginning
+      const video = videoRefs.current[index];
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(() => {
+          // Fallback if browser blocks unmuted playback
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+      }
+    } else {
+      // Pause any running videos when transitioning to image slides
+      Object.values(videoRefs.current).forEach((v) => {
+        if (v && !v.paused) {
+          v.pause();
+        }
+      });
+
+      // Resume standard 3-second autoplay for image slides
+      autoplay?.play();
+    }
   }, [emblaApi]);
 
   useEffect(() => {
@@ -29,6 +61,16 @@ export function HeroSliderSection() {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
+  const toggleMute = () => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    Object.values(videoRefs.current).forEach((v) => {
+      if (v) {
+        v.muted = nextMuted;
+      }
+    });
+  };
+
   return (
     <section className="relative w-full overflow-hidden bg-slate-900 group" aria-label="Hero Showcase">
       {/* Carousel Viewport */}
@@ -36,24 +78,47 @@ export function HeroSliderSection() {
         <div className="flex">
           {siteConfig.heroSlides.map((slide, index) => {
             const isActive = selectedIndex === index;
+            const isVideoSlide = (slide as any).isVideo && (slide as any).videoSrc;
 
             return (
               <div
                 key={slide.id}
-                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[640px] md:h-[700px] lg:h-[760px] xl:h-[800px] flex items-center justify-center"
+                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[640px] md:h-[700px] lg:h-[760px] xl:h-[800px] flex items-center justify-center overflow-hidden"
               >
-                {/* Full-width High-Res Slide Background Image with sharp resolution */}
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  priority={index === 0}
-                  className="object-cover object-center"
-                  sizes="100vw"
-                />
+                {/* Slide Media: High-Definition Video or Image */}
+                {isVideoSlide ? (
+                  <div className="absolute inset-0 w-full h-full">
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[index] = el;
+                      }}
+                      src={(slide as any).videoSrc}
+                      poster={slide.image}
+                      playsInline
+                      autoPlay
+                      muted={isMuted}
+                      onEnded={() => {
+                        // Play fully, then automatically advance to the next slide upon completion
+                        if (emblaApi) {
+                          emblaApi.scrollNext();
+                        }
+                      }}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    priority={index === 0}
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                )}
 
-                {/* Subtle Vignette Overlay ensuring crystal clear image visibility and sharp contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/20 z-10" />
+                {/* Subtle Vignette Overlay ensuring clear text contrast and sharp visuals */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20 z-10 pointer-events-none" />
 
                 {/* Centered Slide Content Overlay */}
                 <div className="relative z-20 max-w-4xl mx-auto px-4 text-center pt-8 sm:pt-12 md:pt-14 pb-24 sm:pb-32">
@@ -67,7 +132,14 @@ export function HeroSliderSection() {
                           transition={{ duration: 0.5 }}
                           className="inline-flex items-center gap-2 bg-[#0A5C36]/90 border border-emerald-400/30 text-[#F5A623] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-3 shadow-md backdrop-blur-xs"
                         >
-                          <span>★ {slide.badge} ★</span>
+                          {isVideoSlide ? (
+                            <>
+                              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                              <span>★ {slide.badge} ★</span>
+                            </>
+                          ) : (
+                            <span>★ {slide.badge} ★</span>
+                          )}
                         </motion.div>
 
                         {/* Title: Bold White Font */}
@@ -128,6 +200,30 @@ export function HeroSliderSection() {
                     )}
                   </AnimatePresence>
                 </div>
+
+                {/* Audio Toggle Button for Video Slide */}
+                {isVideoSlide && isActive && (
+                  <div className="absolute bottom-28 sm:bottom-32 right-5 sm:right-10 z-30">
+                    <button
+                      type="button"
+                      onClick={toggleMute}
+                      aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
+                      className="inline-flex items-center gap-2 bg-black/65 hover:bg-[#0A5C36] text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md border border-white/25 shadow-xl transition-all duration-300 cursor-pointer hover:scale-105"
+                    >
+                      {isMuted ? (
+                        <>
+                          <VolumeX className="w-4 h-4 text-emerald-400" />
+                          <span>Unmute Audio</span>
+                        </>
+                      ) : (
+                        <>
+                          <Volume2 className="w-4 h-4 text-emerald-400" />
+                          <span>Mute Audio</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
               </div>
             );
           })}

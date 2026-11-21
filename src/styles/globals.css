@@ -123,15 +123,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Authentic Kidscool Custom Crayon Cursor - Hide native OS pointer on desktop */
-@media only screen and (min-width: 768px) {
-  *,
-  html,
-  body {
-    cursor: none !important;
-  }
-}
-
 /* Authentic Kidscool Card Mask (Arched Dome Top + Bowed Sides from gdgoenkarohini.com) */
 .wdt-mask-card {
   -webkit-mask-image: url('/assets/decorative/custom-shape-bg-layer.png');
