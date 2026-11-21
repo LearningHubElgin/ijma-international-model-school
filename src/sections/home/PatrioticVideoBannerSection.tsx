@@ -116,7 +116,7 @@ export function PatrioticVideoBannerSection() {
 
             {/* Link to Campus Videos */}
             <Link
-              href="/videos"
+              href="/vlogs"
               className="inline-flex items-center gap-1.5 px-6 py-3.5 rounded-full bg-transparent hover:bg-white/10 text-emerald-200 hover:text-white font-bold text-sm transition-colors"
             >
               <span>Explore All Media</span>

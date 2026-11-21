@@ -104,10 +104,10 @@ export function VideoShowcaseSection() {
                 <span>Featured Presentations</span>
               </h4>
               <Link
-                href="/videos"
+                href="/vlogs"
                 className="text-xs font-bold text-[#0A5C36] hover:text-[#0A5C36]/80 flex items-center gap-1 group"
               >
-                <span>All 11 Videos</span>
+                <span>All Vlogs & Videos</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
