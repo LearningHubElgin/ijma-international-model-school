@@ -86,56 +86,58 @@ export function FacilitiesSection() {
           </Reveal>
         </div>
 
-        {/* 4 Arched Dome Cards Grid - items-start so card heights naturally stagger matching gdgoenkarohini.com */}
-        <div className="max-w-[1480px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-0 items-start justify-items-center">
+        {/* 4 Arched Dome Cards Grid - 2 columns on mobile, 4 columns on desktop */}
+        <div className="max-w-[1480px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 lg:gap-0 items-stretch justify-items-center">
           {facilities.list.map((facility, index) => (
             <Reveal
               key={facility.id}
               variant="fade-up"
               delay={0.08 * (index + 1)}
-              className="w-full flex justify-center"
+              className="w-full flex justify-center h-full"
             >
-              <div className="group relative w-[310px] max-w-full flex flex-col items-center transition-transform duration-300 hover:-translate-y-1">
+              <div className="group relative w-full sm:w-[310px] max-w-full flex flex-col items-center transition-transform duration-300 hover:-translate-y-1 h-full">
                 {/* Card Container with Special Arched Dome Mask in Dark Islamic Green turning into Light Green on hover */}
-                <div className="wdt-mask-card bg-[#0A5C36] group-hover:bg-[#10B981] transition-colors duration-300 w-[310px] max-w-full px-[30px] pb-[34px] pt-0 text-center flex flex-col items-center text-white relative shadow-xl">
-                  {/* Authentic upper spacer (matches live site .wdt-content-media-group of 214px height) */}
-                  <div className="w-full h-[214px] flex-shrink-0 select-none pointer-events-none" aria-hidden="true" />
+                <div className="wdt-mask-card bg-[#0A5C36] group-hover:bg-[#10B981] transition-colors duration-300 w-full sm:w-[310px] max-w-full px-2.5 sm:px-[30px] pb-4 sm:pb-[34px] pt-0 text-center flex flex-col items-center text-white relative shadow-xl h-full">
+                  {/* Upper spacer */}
+                  <div className="w-full h-[60px] sm:h-[214px] flex-shrink-0 select-none pointer-events-none" aria-hidden="true" />
 
                   {/* Detail Content Group */}
-                  <div className="w-full flex flex-col items-center">
-                    <h3 className="text-[22px] sm:text-[24px] font-bold text-white mb-1.5 tracking-wide leading-tight">
-                      {facility.title}
-                    </h3>
+                  <div className="w-full flex flex-col items-center flex-1 justify-between">
+                    <div>
+                      <h3 className="text-xs sm:text-[22px] lg:text-[24px] font-bold text-white mb-1 tracking-wide leading-snug line-clamp-2">
+                        {facility.title}
+                      </h3>
 
-                    {/* Gold Wavy Underline */}
-                    <svg
-                      width="56"
-                      height="7"
-                      viewBox="0 0 64 8"
-                      fill="none"
-                      className="my-1.5"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M2 4 Q 5 1, 8 4 T 14 4 T 20 4 T 26 4 T 32 4 T 38 4 T 44 4 T 50 4 T 56 4 T 62 4"
-                        stroke="#F5A623"
-                        strokeWidth="2.5"
+                      {/* Gold Wavy Underline */}
+                      <svg
+                        width="32"
+                        height="5"
+                        viewBox="0 0 64 8"
                         fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                        className="my-1 sm:my-1.5 mx-auto sm:w-14 sm:h-2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M2 4 Q 5 1, 8 4 T 14 4 T 20 4 T 26 4 T 32 4 T 38 4 T 44 4 T 50 4 T 56 4 T 62 4"
+                          stroke="#F5A623"
+                          strokeWidth="2.5"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
 
-                    {/* Description Paragraph */}
-                    <p className="text-[14px] sm:text-[15px] text-white/95 leading-[24px] font-normal px-1 pt-2 pb-1 mb-6">
-                      {facility.description}
-                    </p>
+                      {/* Description Paragraph */}
+                      <p className="text-[10px] sm:text-[14px] lg:text-[15px] text-white/95 leading-tight sm:leading-[24px] font-normal px-0.5 sm:px-1 pt-1 sm:pt-2 pb-1 mb-3 sm:mb-6 line-clamp-3 sm:line-clamp-none">
+                        {facility.description}
+                      </p>
+                    </div>
 
-                    {/* Bottom View More Button in Light Green turning to Dark Green */}
+                    {/* Bottom View More Button */}
                     <div className="mt-auto pt-1 relative z-10">
                       <Link
                         href={facility.ctaHref}
-                        className="inline-flex items-center justify-center bg-[#10B981] group-hover:bg-[#0A5C36] text-white font-bold text-[14px] px-8 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="inline-flex items-center justify-center bg-[#10B981] group-hover:bg-[#0A5C36] text-white font-bold text-[11px] sm:text-[14px] px-3.5 sm:px-8 py-1.5 sm:py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
                       >
                         {facility.ctaText}
                       </Link>
@@ -144,7 +146,7 @@ export function FacilitiesSection() {
                 </div>
 
                 {/* Corner SVG Icon in Light Green */}
-                <div className="absolute -bottom-[22px] -left-[20px] w-20 h-20 pointer-events-none select-none text-[#10B981] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black">
+                <div className="absolute -bottom-[22px] -left-[20px] w-20 h-20 pointer-events-none select-none text-[#10B981] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black hidden sm:block">
                   <Image
                     src={facility.icon}
                     alt={`${facility.title} icon`}

@@ -207,42 +207,45 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Col 2: Our Programmes (3 cols) */}
-            <div className="lg:col-span-3">
-              <h4 className="font-sans font-bold text-lg text-white mb-6 relative pb-2.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#10B981]">
-                Our Academic Wings
-              </h4>
-              <ul className="space-y-3 text-sm">
-                {siteConfig.footer.programmeLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-emerald-100/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-200"
-                    >
-                      → {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Combined 2-Column Side-by-Side Sections on Mobile */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:contents">
+              {/* Col 2: Our Programmes (3 cols on desktop) */}
+              <div className="lg:col-span-3">
+                <h4 className="font-sans font-bold text-base sm:text-lg text-white mb-4 sm:mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#10B981]">
+                  Our Academic Wings
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
+                  {siteConfig.footer.programmeLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-emerald-100/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-200 leading-snug"
+                      >
+                        → {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Col 3: Admissions & Navigation (2 cols) */}
-            <div className="lg:col-span-2">
-              <h4 className="font-sans font-bold text-lg text-white mb-6 relative pb-2.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#10B981]">
-                Admissions
-              </h4>
-              <ul className="space-y-3 text-sm">
-                {siteConfig.footer.quickLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-emerald-100/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-200"
-                    >
-                      → {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {/* Col 3: Admissions & Navigation (2 cols on desktop) */}
+              <div className="lg:col-span-2">
+                <h4 className="font-sans font-bold text-base sm:text-lg text-white mb-4 sm:mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#10B981]">
+                  Admissions
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
+                  {siteConfig.footer.quickLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-emerald-100/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-200 leading-snug"
+                      >
+                        → {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Col 4: Our Galleries 3x3 Thumbnails (3 cols) */}

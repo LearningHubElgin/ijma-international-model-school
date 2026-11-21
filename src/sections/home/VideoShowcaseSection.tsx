@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Video, Sparkles, ArrowRight } from 'lucide-react';
+import { Play, Video, Sparkles, ArrowRight, X } from 'lucide-react';
 import { siteConfig } from '@/content/site.config';
 import { Container } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
@@ -13,6 +13,7 @@ export function VideoShowcaseSection() {
   const videos = siteConfig.videoShowcase || [];
   const [selectedVideo, setSelectedVideo] = useState(videos[0] || null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const playerRef = useRef<HTMLDivElement>(null);
 
   if (!videos.length) return null;
 
@@ -47,30 +48,72 @@ export function VideoShowcaseSection() {
         {/* Featured Main Video Player + Playlist Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Video Viewport (Col 7) */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" ref={playerRef}>
             <Reveal variant="zoom-in" delay={0.2}>
-              <div className="bg-white rounded-3xl p-3 sm:p-4 shadow-xl border border-gray-100 relative group overflow-hidden">
+              <div className="bg-white rounded-3xl p-3 sm:p-4 shadow-xl border border-gray-100 relative group overflow-hidden scroll-mt-28">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner">
-                  {selectedVideo && selectedVideo.youtubeId ? (
-                    <iframe
-                      key={selectedVideo.youtubeId}
-                      src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=${isPlaying ? 1 : 0}&start=${selectedVideo.start || 0}&rel=0`}
-                      title={selectedVideo.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full border-0"
-                    />
-                  ) : selectedVideo && selectedVideo.src ? (
-                    <video
-                      key={selectedVideo.src}
-                      src={selectedVideo.src}
-                      controls
-                      autoPlay={isPlaying}
-                      playsInline
-                      poster={selectedVideo.thumbnail}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : null}
+                  {isPlaying && selectedVideo ? (
+                    <>
+                      {selectedVideo.youtubeId ? (
+                        <iframe
+                          key={selectedVideo.youtubeId}
+                          src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1&start=${selectedVideo.start || 0}&rel=0`}
+                          title={selectedVideo.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full border-0"
+                        />
+                      ) : selectedVideo.src ? (
+                        <video
+                          key={selectedVideo.src}
+                          src={selectedVideo.src}
+                          controls
+                          autoPlay
+                          playsInline
+                          poster={selectedVideo.thumbnail}
+                          className="w-full h-full object-contain"
+                        />
+                      ) : null}
+
+                      {/* Close / Cross Button */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsPlaying(false);
+                        }}
+                        className="absolute top-3 right-3 z-30 w-10 h-10 rounded-full bg-black/80 hover:bg-[#0A5C36] text-white flex items-center justify-center shadow-xl transition-all duration-300 backdrop-blur-md border border-white/30 cursor-pointer group/close hover:scale-105"
+                        aria-label="Close and stop video"
+                        title="Close video"
+                      >
+                        <X className="w-5 h-5 group-hover/close:rotate-90 transition-transform duration-300" />
+                      </button>
+                    </>
+                  ) : (
+                    /* Inactive Thumbnail Poster with Play button */
+                    <div
+                      onClick={() => setIsPlaying(true)}
+                      className="relative w-full h-full cursor-pointer group/poster flex items-center justify-center overflow-hidden"
+                    >
+                      {selectedVideo && (
+                        <Image
+                          src={selectedVideo.thumbnail}
+                          alt={selectedVideo.title}
+                          fill
+                          className="object-cover group-hover/poster:scale-105 transition-transform duration-500"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/45 group-hover/poster:bg-black/30 transition-colors duration-300" />
+
+                      {/* Pulsing Play Button */}
+                      <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0A5C36] hover:bg-[#10B981] text-white flex items-center justify-center shadow-2xl group-hover/poster:scale-110 transition-all duration-300 border-2 border-white/40">
+                        <Play className="w-7 h-7 sm:w-9 sm:h-9 ml-1 fill-current" />
+                      </div>
+
+                      <div className="absolute bottom-3 left-3 right-3 z-10 text-white text-xs sm:text-sm font-semibold truncate bg-black/60 backdrop-blur-xs py-1.5 px-4 rounded-full text-center border border-white/10">
+                        Click to Play: {selectedVideo?.title}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Video Info Card below player */}
@@ -124,6 +167,12 @@ export function VideoShowcaseSection() {
                     onClick={() => {
                       setSelectedVideo(vid);
                       setIsPlaying(true);
+                      if (playerRef.current) {
+                        playerRef.current.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'center',
+                        });
+                      }
                     }}
                     className={`flex items-center gap-3.5 p-3 rounded-2xl cursor-pointer transition-all duration-200 border ${
                       isSelected
