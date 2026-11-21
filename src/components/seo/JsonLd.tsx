@@ -4,27 +4,27 @@ import { siteConfig } from '@/content/site.config';
 export function JsonLd() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': ['Preschool', 'EducationalOrganization', 'LocalBusiness'],
+    '@type': ['School', 'EducationalOrganization', 'LocalBusiness'],
     name: siteConfig.school.fullName,
     alternateName: siteConfig.school.name,
     description: siteConfig.school.description,
-    url: 'https://gdgoenkarohini.com',
-    logo: 'https://gdgoenkarohini.com/assets/logo/gdglp-logo.svg',
-    image: 'https://gdgoenkarohini.com/assets/hero/hero-slide-1.svg',
+    url: 'https://ijmaschool.com',
+    logo: 'https://ijmaschool.com/assets/ijma/photos/Logo.jpeg',
+    image: 'https://ijmaschool.com/assets/ijma/photos/Runnig-student-in-sports-meet.jpg',
     telephone: siteConfig.contact.primaryPhone,
     email: siteConfig.contact.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Bhartiya Jan Sahyog Parishad, Pocket B-5, Sector 3',
-      addressLocality: 'Rohini',
-      addressRegion: 'New Delhi',
-      postalCode: '110085',
+      streetAddress: '9/1, Topsia Road South',
+      addressLocality: 'Topsia',
+      addressRegion: 'Kolkata, West Bengal',
+      postalCode: '700046',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '28.7011',
-      longitude: '77.1082',
+      latitude: '22.5401',
+      longitude: '88.3842',
     },
     openingHoursSpecification: [
       {
@@ -37,8 +37,8 @@ export function JsonLd() {
           'Friday',
           'Saturday',
         ],
-        opens: '09:00',
-        closes: '15:00',
+        opens: '08:30',
+        closes: '15:30',
       },
     ],
     sameAs: [

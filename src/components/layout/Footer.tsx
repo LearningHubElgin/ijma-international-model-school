@@ -125,13 +125,26 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
             {/* Col 1: About & Contact (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="relative w-56 h-16 bg-white rounded-xl p-2 shadow-sm">
-                <Image
-                  src={siteConfig.school.logo}
-                  alt={siteConfig.school.fullName}
-                  fill
-                  className="object-contain p-1"
-                />
+              <div className="flex items-center gap-3.5 mb-6">
+                <div className="relative w-16 h-16 bg-white rounded-full p-1 shadow-md flex-shrink-0">
+                  <Image
+                    src={siteConfig.school.logo}
+                    alt={siteConfig.school.fullName}
+                    fill
+                    className="object-contain p-0.5"
+                  />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-[#F5A623] tracking-wide block">
+                    {siteConfig.school.urduName}
+                  </span>
+                  <h4 className="text-base font-black text-white leading-tight">
+                    IJMA INTERNATIONAL MODEL SCHOOL
+                  </h4>
+                  <span className="text-[11px] text-white/70 block">
+                    Topsia, Kolkata • ESTD: 2022
+                  </span>
+                </div>
               </div>
 
               <p className="text-sm text-white/80 leading-relaxed max-w-sm">

@@ -149,7 +149,7 @@ export default function ContactUsPage() {
                       <input
                         type="tel"
                         {...register('phone')}
-                        placeholder="+91 88000 12762"
+                        placeholder="+91 75408 55755"
                         className="w-full px-5 py-3 rounded-pill border-2 border-[#ffefe4] focus:border-primary focus:outline-none text-sm font-sans transition-colors"
                       />
                     </div>
@@ -316,7 +316,7 @@ export default function ContactUsPage() {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="GD Goenka La Petite Rohini Map Location"
+              title="IJMA International Model School Topsia Kolkata Map Location"
               className="w-full"
             />
           </div>

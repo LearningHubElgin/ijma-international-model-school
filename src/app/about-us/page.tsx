@@ -8,43 +8,43 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/content/site.config';
-import { Heart, Compass, Shield, Award, Users, BookOpen } from 'lucide-react';
+import { Heart, Compass, Shield, Award, Users, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us | GD Goenka La Petite Rohini',
+  title: 'About Us | IJMA International Model School Topsia Kolkata',
   description:
-    'Learn about GD Goenka La Petite Rohini, our Montessori educational philosophy, experienced leadership, and nurturing early learning environment.',
+    'Learn about IJMA International Model School, our CBSE academic curriculum integrated with Islamic Tarbiyah, STEM labs, martial arts, and campus in Topsia, Kolkata.',
 };
 
 export default function AboutUsPage() {
   const values = [
     {
-      icon: <Heart className="w-8 h-8 text-primary" />,
-      title: 'Loving & Nurturing',
-      desc: 'Creating an emotionally secure atmosphere where every child feels cherished, heard, and respected as an individual.',
+      icon: <Heart className="w-8 h-8 text-[#0A5C36]" />,
+      title: 'Faith & Tarbiyah',
+      desc: 'Nurturing sincere Islamic values, Quranic literacy, daily Akhlaq, and moral integrity from early years through high school.',
     },
     {
       icon: <Compass className="w-8 h-8 text-[#0a6375]" />,
-      title: 'Montessori Inspired',
-      desc: 'Self-directed learning guided by tactile materials that encourage innate curiosity, intrinsic motivation, and problem-solving.',
+      title: 'CBSE Academic Rigor',
+      desc: 'Structured English medium CBSE syllabus emphasizing conceptual understanding, critical reasoning, and STEM scientific innovation.',
     },
     {
       icon: <Shield className="w-8 h-8 text-[#f7941e]" />,
-      title: 'Safe Campus',
-      desc: 'Uncompromising child safety standards with rounded edges, non-toxic materials, 24/7 CCTV surveillance, and trained caregivers.',
+      title: 'Safe & Modern Campus',
+      desc: 'Air-conditioned smart classrooms, CCTV security, dedicated female attendants, and certified child safety protocols in Topsia Kolkata.',
     },
     {
       icon: <Award className="w-8 h-8 text-[#1cbbb4]" />,
-      title: 'Excellence in Pedagogy',
-      desc: 'Recognized curricula bridging international early childhood benchmarks with culturally warm, community-centered values.',
+      title: 'Holistic Co-Curriculars',
+      desc: 'Certified Karate martial arts, annual athletic sports meets, science exhibitions, and collaborative arts workshops.',
     },
   ];
 
   return (
     <main className="flex-1">
       <InnerPageBanner
-        title="About Our Preschool"
-        badge="Nurturing Young Minds"
+        title="About Our School"
+        badge="Nurturing Minds & Building Character"
         breadcrumbs={[{ label: 'About Us' }]}
       />
 
@@ -54,30 +54,30 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <Reveal variant="fade-up" delay={0.1}>
-                <span className="font-bubblegum text-lg text-primary uppercase tracking-wide">
-                  Welcome to La Petite
+                <span className="font-bubblegum text-lg text-[#0A5C36] uppercase tracking-wide">
+                  Welcome to IJMA International Model School
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-black mt-2 leading-tight">
-                  Where Joyful Curiosity Meets Proven Pedagogy
+                  Where Academic Excellence Meets Islamic Morality
                 </h2>
               </Reveal>
 
               <Reveal variant="fade-up" delay={0.2}>
                 <p className="text-body text-base sm:text-lg leading-relaxed">
-                  Located in the heart of Rohini Sector 3, GD Goenka La Petite is designed as a sanctuary of early discovery. We combine the world-renowned Montessori methodology with contemporary developmental research to create an ecosystem where toddlers and preschoolers thrive.
+                  Conveniently situated at <strong>9/1, Topsia Road South, Topsia, Kolkata</strong>, IJMA International Model School is a premier educational institution established in 2022. We offer a progressive English Medium CBSE-oriented curriculum enriched with comprehensive Islamic Education (Class: Nursery to XII - Proposed).
                 </p>
                 <p className="text-body text-base leading-relaxed mt-4">
-                  From sensory-rich infant play to structured pre-nursery and nursery discovery, our teachers act as observant facilitators rather than traditional lecturers. Children learn at their own developmental pace, discovering self-discipline, concentration, and deep intellectual excitement.
+                  Guided by the Quranic motto <span className="font-bold text-[#0A5C36] font-arabic">اَلْعِلْمُ نُوْرٌ</span> (<em>Al-Ilmu Noorun</em> — Knowledge is Light) and the inspirational belief &ldquo;...Sky is the limit&rdquo;, our mission is to empower young minds with high-caliber academic capabilities while instilling timeless values of modesty, truthfulness, and leadership.
                 </p>
               </Reveal>
 
               <Reveal variant="fade-up" delay={0.3}>
                 <div className="pt-2 flex flex-wrap gap-4">
-                  <Button variant="primary" href="/programmes">
-                    Explore Programmes
+                  <Button variant="primary" href="/academics">
+                    Explore Academics
                   </Button>
-                  <Button variant="outline" href="/contact-us">
-                    Schedule a Campus Visit
+                  <Button variant="outline" href="/campus-life">
+                    Discover Campus Life
                   </Button>
                 </div>
               </Reveal>
@@ -85,18 +85,72 @@ export default function AboutUsPage() {
 
             <div className="lg:col-span-6 relative">
               <Reveal variant="zoom-in" delay={0.2}>
-                <div className="relative aspect-square max-w-[480px] mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-peach">
+                <div className="relative aspect-[4/3] max-w-[520px] mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-peach">
                   <Image
-                    src="/assets/about/about-main.svg"
-                    alt="GD Goenka La Petite Campus"
+                    src="/assets/ijma/photos/Art-class.jpg"
+                    alt="IJMA STEM & Creative Workshop"
                     fill
                     className="object-cover"
                   />
                 </div>
               </Reveal>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
-              <div className="absolute -bottom-8 -left-6 w-32 h-56 animate-float-slow hidden sm:block pointer-events-none">
-                <Image src="/assets/decorative/pencil-boy.svg" alt="Pencil Boy" fill className="object-contain" />
+      {/* Vision & Mission Sections */}
+      <Section bg="peach">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="vision-mission">
+            <div className="bg-white rounded-card p-8 shadow-card border border-emerald-100 flex flex-col justify-between">
+              <div>
+                <span className="font-bubblegum text-lg text-[#0A5C36] uppercase tracking-wide block mb-2">
+                  Our Vision
+                </span>
+                <h3 className="text-2xl font-bold text-black mb-4">
+                  Enlightened Scholars, Responsible Global Citizens
+                </h3>
+                <p className="text-sm text-body leading-relaxed">
+                  To be a center of educational brilliance in West Bengal that harmonizes modern scientific knowledge, analytical thought, and technological fluency with righteous Islamic character (Akhlaq), producing well-rounded leaders who serve society with dignity and compassion.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-emerald-50 flex items-center gap-2 text-xs font-bold text-[#0A5C36]">
+                <Sparkles className="w-4 h-4 text-[#F5A623]" />
+                <span>Knowledge, Discipline, and Spiritual Growth</span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-card p-8 shadow-card border border-emerald-100 flex flex-col justify-between">
+              <div>
+                <span className="font-bubblegum text-lg text-[#F5A623] uppercase tracking-wide block mb-2">
+                  Our Mission
+                </span>
+                <h3 className="text-2xl font-bold text-black mb-4">
+                  Holistic Education for Mind, Heart & Soul
+                </h3>
+                <ul className="space-y-3 text-sm text-body">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#0A5C36] mt-1 flex-shrink-0" />
+                    <span>Deliver rigorous CBSE curriculum with digital smart boards and STEM robotics labs.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#0A5C36] mt-1 flex-shrink-0" />
+                    <span>Provide Tajweed-based Quranic recitation, memorization, and foundational Islamic studies.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#0A5C36] mt-1 flex-shrink-0" />
+                    <span>Foster physical vitality through certified Karate martial arts and athletics on synthetic turf.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#0A5C36] mt-1 flex-shrink-0" />
+                    <span>Engage parents actively through transparent communication and regular parent-teacher orientations.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-6 pt-4 border-t border-emerald-50 flex items-center gap-2 text-xs font-bold text-[#0A5C36]">
+                <Sparkles className="w-4 h-4 text-[#F5A623]" />
+                <span>Excellence Across Academics, Sports & Tarbiyah</span>
               </div>
             </div>
           </div>
@@ -104,19 +158,19 @@ export default function AboutUsPage() {
       </Section>
 
       {/* Core Values Grid */}
-      <Section bg="peach">
+      <Section bg="white">
         <Container>
           <SectionHeading
-            eyebrow="Our Foundational Beliefs"
-            title="The Values That Guide Our Community"
-            description="Every interaction, activity, and learning space at GD Goenka La Petite is anchored in our dedication to holistic child development."
+            eyebrow="Our Guiding Principles"
+            title="Core Values of IJMA International Model School"
+            description="Every program, classroom interaction, and student celebration at IJMA is anchored in our commitment to holistic excellence."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((val, idx) => (
               <Reveal key={val.title} variant="fade-up" delay={0.1 * (idx + 1)} className="h-full">
-                <div className="bg-white rounded-card p-7 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full flex flex-col text-center items-center">
-                  <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-5">
+                <div className="bg-[#fff9f5] rounded-card p-7 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 h-full flex flex-col text-center items-center border border-peach">
+                  <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-5">
                     {val.icon}
                   </div>
                   <h3 className="font-bold text-xl text-black mb-3">{val.title}</h3>
@@ -128,37 +182,86 @@ export default function AboutUsPage() {
         </Container>
       </Section>
 
-      {/* Experienced Faculty & Safety Highlights */}
+      {/* Campus Life & Facility Photos */}
+      <Section bg="peach">
+        <Container>
+          <SectionHeading
+            eyebrow="Campus Snapshots"
+            title="Modern Facilities in Topsia, Kolkata"
+            description="Tour our active learning environments, from AC smart classrooms to martial arts arenas and STEM discovery corners."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group">
+              <Image
+                src="/assets/ijma/photos/Parent-tyeacher-meeting.jpeg"
+                alt="Parent Teacher Meeting & Smart Classrooms"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
+                <span className="text-white font-bold text-sm">AC Smart Classrooms & PTM Sessions</span>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group">
+              <Image
+                src="/assets/ijma/photos/Kerate-session.jpeg"
+                alt="Certified Karate Martial Arts Training"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
+                <span className="text-white font-bold text-sm">Karate Martial Arts Training</span>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md group">
+              <Image
+                src="/assets/ijma/photos/teacher-watching-art-of the-students.jpeg"
+                alt="Art, Design & STEM Mentorship"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
+                <span className="text-white font-bold text-sm">Creative Art & STEM Mentorship</span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Leadership & Faculty */}
       <Section bg="white">
         <Container>
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#0a6375] to-[#074c5a] rounded-card text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#0A5C36] to-[#074227] rounded-card text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
-                <span className="font-bubblegum text-[#f7941e] text-lg uppercase tracking-wide">
-                  Compassionate Mentors
+                <span className="font-bubblegum text-[#F5A623] text-lg uppercase tracking-wide">
+                  Passionate Mentors
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold mt-2 leading-tight">
-                  Certified Educators with a Passion for Early Childhood
+                  Experienced Educators & Certified Instructors
                 </h3>
-                <p className="text-sm sm:text-base text-white/80 mt-4 leading-relaxed">
-                  Our educators are trained in certified Montessori methods and early childhood psychology. They maintain high teacher-to-student ratios, ensuring personalized attention and continuous developmental tracking for every child.
+                <p className="text-sm sm:text-base text-white/85 mt-4 leading-relaxed">
+                  Our faculty consists of qualified CBSE curriculum specialists, certified Islamic scholars, and recognized sports trainers. With low student-to-teacher ratios, every child receives close individual guidance, pastoral care, and academic encouragement.
                 </p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 space-y-4">
                 <div className="flex items-start gap-3">
-                  <Users className="w-5 h-5 text-[#f7941e] mt-1 flex-shrink-0" />
+                  <Users className="w-5 h-5 text-[#F5A623] mt-1 flex-shrink-0" />
                   <div>
-                    <h5 className="font-bold text-sm">Low Student-Teacher Ratio</h5>
-                    <p className="text-xs text-white/80">Tailored care for maximum cognitive and emotional comfort.</p>
+                    <h5 className="font-bold text-sm">Personalized Student Attention</h5>
+                    <p className="text-xs text-white/80">Optimal class sizes allowing tailored academic coaching.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <BookOpen className="w-5 h-5 text-[#f7941e] mt-1 flex-shrink-0" />
+                  <BookOpen className="w-5 h-5 text-[#F5A623] mt-1 flex-shrink-0" />
                   <div>
-                    <h5 className="font-bold text-sm">Continuous Parent Communication</h5>
-                    <p className="text-xs text-white/80">Regular milestone updates, portfolios, and conferences.</p>
+                    <h5 className="font-bold text-sm">Islamic Tarbiyah Integration</h5>
+                    <p className="text-xs text-white/80">Regular Quranic recitation, Duas, and moral character guidance.</p>
                   </div>
                 </div>
               </div>

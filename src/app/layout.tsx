@@ -8,34 +8,36 @@ import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gdgoenkarohini.com'),
+  metadataBase: new URL('https://ijmaschool.com'),
   title: {
-    default: `${siteConfig.school.name} | Best Preschool in Rohini, Delhi`,
+    default: `${siteConfig.school.fullName} | English Medium CBSE with Islamic Education`,
     template: `%s | ${siteConfig.school.name}`,
   },
   description: siteConfig.school.description,
   keywords: [
-    'GD Goenka La Petite',
-    'Preschool in Rohini',
-    'Best Play School in Delhi',
-    'Montessori School Rohini',
-    'Day Care Rohini',
-    'Nursery Admissions Delhi',
+    'IJMA International Model School',
+    'Islamic School in Kolkata',
+    'Best School in Topsia',
+    'English Medium Islamic School Kolkata',
+    'CBSE Islamic Education Kolkata',
+    'Topsia Road South School',
+    'STEM Robotics School Kolkata',
+    'Karate Training School Kolkata',
   ],
   authors: [{ name: siteConfig.school.fullName }],
   creator: siteConfig.school.fullName,
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://gdgoenkarohini.com',
+    url: 'https://ijmaschool.com',
     siteName: siteConfig.school.fullName,
-    title: `${siteConfig.school.name} | Best Preschool in Rohini, Delhi`,
+    title: `${siteConfig.school.name} | Topsia, Kolkata`,
     description: siteConfig.school.description,
     images: [
       {
-        url: '/assets/hero/hero-slide-1.svg',
-        width: 1200,
-        height: 630,
+        url: '/assets/ijma/photos/Logo.jpeg',
+        width: 800,
+        height: 800,
         alt: siteConfig.school.fullName,
       },
     ],
@@ -44,11 +46,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.school.name,
     description: siteConfig.school.description,
-    images: ['/assets/hero/hero-slide-1.svg'],
+    images: ['/assets/ijma/photos/Logo.jpeg'],
   },
   icons: {
-    icon: '/assets/logo/gdglp-logo.png',
-    apple: '/assets/logo/gdglp-logo.png',
+    icon: '/assets/ijma/photos/Logo.jpeg',
+    apple: '/assets/ijma/photos/Logo.jpeg',
   },
 };
 
@@ -58,20 +60,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col font-sans bg-white text-body selection:bg-primary-light selection:text-primary">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         <JsonLd />
-        {/* WCAG 2.1 AA Skip to Content Link */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-pill focus:shadow-lg focus:outline-none"
-        >
-          Skip to main content
-        </a>
+      </head>
+      <body className="min-h-screen bg-white text-gray-900 font-sans antialiased flex flex-col">
+        {/* Preloader is handled statically or on mount */}
         <CustomCursor />
         <TopBar />
         <Header />
-        <div id="main-content" className="flex-1 flex flex-col">{children}</div>
+        {children}
         <Footer />
       </body>
     </html>

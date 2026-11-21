@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Music & Movement | GD Goenka La Petite Rohini',
+  title: 'Nasheed, Rhythm & Movement | IJMA International Model School Topsia Kolkata',
   description:
-    'Rhythm, vocal melodies, and body coordination sessions that nurture balance, sensory harmony, and emotional freedom.',
+    'Rhythmic coordination, vocal recitation of Islamic Nasheeds, and physical movement exercises fostering confidence and balance in Topsia, Kolkata.',
 };
 
 export default function MusicMovementPage() {
   return (
     <PillarPageTemplate
-      title="Music & Movement"
+      title="Nasheed, Vocal Articulation & Movement"
       badge="Harmony, Rhythm & Balance"
-      description="Music and movement form the heartbeat of early childhood expression. Through melodic games, acoustic percussion, and guided kinesthetic dance, children develop bilateral brain coordination and joyful release."
+      description="Vocal expression, rhythmic coordination, and physical movement sessions form a joyful part of early childhood at IJMA International Model School in Topsia, Kolkata."
       extendedParagraphs={[
-        'Neuroscience confirms that music education in the early years accelerates phonetic listening, spatial-temporal cognition, and emotional self-regulation. Our music curriculum introduces pentatonic scales, xylophones, hand drums, and folk rhythm clapping.',
-        'Movement sessions incorporate Dalcroze Eurhythmics and creative dance routines that strengthen vestibular awareness, posture control, and gross motor fluidity.',
+        'Through melodic recitation of Islamic Nasheeds, poems, and rhythm games, children develop refined auditory listening, memory retention, and phonetic fluency.',
+        'Movement sessions incorporate coordination games, balance drills, and calisthenics that build core physical stamina, spatial awareness, and healthy motor agility.',
       ]}
       keyHighlights={[
-        'Acoustic percussion instruments: drums, tambourines, xylophones',
-        'Eurhythmic musical games fostering active auditory listening',
-        'Bilateral body coordination through rhythmic folk dance',
-        'Vocal singing circles that strengthen breath control and phonics',
-        'Mindful relaxation and soothing classical auditory interludes',
+        'Melodic Islamic Nasheeds praising Allah and inspiring moral kindness',
+        'Vocal recitation circles strengthening breath control, Tajweed, and diction',
+        'Bilateral body coordination exercises and balance games',
+        'Eurhythmic clap drills fostering active auditory focus and rhythm',
+        'Joyful, wholesome creative movement in air-conditioned spaces',
       ]}
-      image="/assets/features/feature-music.svg"
+      image="/assets/ijma/photos/Art-seminer.jpeg"
     />
   );
 }

@@ -6,9 +6,9 @@ import { Section } from '@/components/ui/Section';
 import { siteConfig } from '@/content/site.config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | GD Goenka La Petite Rohini',
+  title: 'Privacy Policy | IJMA International Model School Topsia Kolkata',
   description:
-    'Our commitment to student and family data protection and transparent privacy practices at GD Goenka La Petite Rohini.',
+    'Our commitment to student and family data protection and transparent privacy practices at IJMA International Model School in Topsia, Kolkata.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -25,10 +25,10 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-slate max-w-none space-y-8 text-body text-base leading-relaxed">
             <div>
               <p className="text-sm text-muted">
-                Last Updated: March 2024
+                Last Updated: November 2024
               </p>
               <p className="mt-4">
-                At <strong>{siteConfig.school.fullName}</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the School&rdquo;), we deeply respect the privacy of our students, parents, and visitors. This Privacy Policy details how we collect, store, utilize, and protect personal information collected through our official website (<code>gdgoenkarohini.com</code>) and admissions administration.
+                At <strong>{siteConfig.school.fullName}</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the School&rdquo;), located at 9/1, Topsia Road South, Topsia, Kolkata - 700046, West Bengal, we deeply respect the privacy of our students, parents, and website visitors. This Privacy Policy details how we collect, store, utilize, and protect personal information collected through our official website and school administration.
               </p>
             </div>
 
@@ -38,10 +38,10 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p>We may collect personal details when you interact with our website or submit inquiries:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li><strong>Parent & Guardian Information:</strong> Full names, residential addresses, contact telephone numbers, and email addresses.</li>
-                <li><strong>Child Details:</strong> Full name, date of birth, gender, and previous preschool background for admission placement.</li>
-                <li><strong>Medical & Safety Records:</strong> Immunization details, allergies, and emergency medical contacts submitted during formal enrollment.</li>
-                <li><strong>Technical Diagnostics:</strong> Standard non-identifying browser data, device types, and pages visited to ensure website performance and security.</li>
+                <li><strong>Parent & Guardian Information:</strong> Full names, residential addresses in Kolkata, contact telephone numbers, and email addresses.</li>
+                <li><strong>Student Details:</strong> Full name, date of birth, gender, and previous academic transcripts / report cards.</li>
+                <li><strong>Medical & Safety Records:</strong> Immunization details, blood group, allergies, and emergency medical contacts submitted during formal enrollment.</li>
+                <li><strong>Technical Diagnostics:</strong> Standard non-identifying browser data to ensure website security and seamless access.</li>
               </ul>
             </div>
 
@@ -49,12 +49,12 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-bold text-black mb-3">
                 2. How We Use Collected Data
               </h2>
-              <p>Collected data is used strictly for legitimate preschool educational purposes:</p>
+              <p>Collected data is used strictly for legitimate educational, administrative, and communication purposes:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li>Processing admissions applications and scheduling campus tours.</li>
-                <li>Communicating academic calendars, developmental milestones, and emergency announcements.</li>
-                <li>Ensuring child safety, medical readiness, and authorized guardian verification.</li>
-                <li>Complying with regulatory directives established by the Directorate of Education, Delhi.</li>
+                <li>Processing admission applications and scheduling campus tours.</li>
+                <li>Communicating academic calendars, examination schedules, Tarbiyah milestones, and school notices.</li>
+                <li>Ensuring child safety, medical readiness, and verified school transport arrangements.</li>
+                <li>Complying with educational regulations established in the state of West Bengal and CBSE directives.</li>
               </ul>
             </div>
 
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
                 3. Student Image & Media Consent
               </h2>
               <p>
-                Photographs and video documentation of school events, celebrations, and classroom activities are shared only with explicit, written parental consent obtained during enrollment. We do not sell or monetize student photographs under any circumstances.
+                Photographs and video documentation of school events, sports meets, martial arts classes, and project exhibitions are shared for academic showcase only with appropriate parental consent. We never sell, license, or monetize student photographs.
               </p>
             </div>
 
@@ -72,21 +72,21 @@ export default function PrivacyPolicyPage() {
                 4. Data Security & Storage
               </h2>
               <p>
-                We enforce rigorous technical and administrative security measures to protect physical documents and digital databases from unauthorized access, accidental alteration, or disclosure.
+                We maintain rigorous technical and administrative security standards to protect physical school documents and digital records against unauthorized access, loss, or disclosure.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-black mb-3">
-                5. Contacting the School
+                5. Contacting the School Administration
               </h2>
               <p>
                 For questions regarding this privacy policy or to update personal information, please contact our administrative desk:
               </p>
               <div className="mt-4 p-5 rounded-2xl bg-[#fff9f5] border border-peach text-sm">
-                <p><strong>GD Goenka La Petite, Rohini</strong></p>
+                <p><strong>{siteConfig.school.fullName}</strong></p>
                 <p>{siteConfig.contact.address}</p>
-                <p>Email: <a href={`mailto:${siteConfig.contact.email}`} className="text-primary">{siteConfig.contact.email}</a></p>
+                <p>Email: <a href={`mailto:${siteConfig.contact.email}`} className="text-[#0A5C36] font-bold">{siteConfig.contact.email}</a></p>
                 <p>Phone: {siteConfig.contact.phones.join(', ')}</p>
               </div>
             </div>

@@ -12,9 +12,9 @@ import { siteConfig } from '@/content/site.config';
 import { Clock, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Preschool Programmes | GD Goenka La Petite Rohini',
+  title: 'Academic Programmes | IJMA International Model School Topsia Kolkata',
   description:
-    'Explore our comprehensive early childhood programmes from Mom & Me and Playgroup to Pre-Nursery, Nursery, Day Care, and After School Activity Centre.',
+    'Explore our comprehensive academic wings from Pre-Nursery and Kindergarten to Primary, Middle, Secondary CBSE wings and Islamic Studies in Topsia, Kolkata.',
 };
 
 export default function ProgrammesOverviewPage() {

@@ -7,6 +7,7 @@ import { ProgrammesGridSection } from '@/sections/home/ProgrammesGridSection';
 import { FacilitiesSection } from '@/sections/home/FacilitiesSection';
 import { CountersStripSection } from '@/sections/home/CountersStripSection';
 import { InfrastructureGallerySection } from '@/sections/home/InfrastructureGallerySection';
+import { VideoShowcaseSection } from '@/sections/home/VideoShowcaseSection';
 import { SmartActivitiesSection } from '@/sections/home/SmartActivitiesSection';
 import { BlogTeaserSection } from '@/sections/home/BlogTeaserSection';
 
@@ -22,28 +23,29 @@ export default function HomePage() {
       {/* 3. Step By Step Systematic Education Intro */}
       <StepByStepSection />
 
-      {/* 4. Six Feature Cards Grid (Montessori Methodology, Curriculum, etc.) */}
+      {/* 4. Feature Cards Grid */}
       <FeatureGridSection />
 
-      {/* 5. Programmes Grid with 6 Age Ranges */}
+      {/* 5. Academic Programmes & Wings Grid */}
       <ProgrammesGridSection />
 
-      {/* 6. School Facilities (4 Cards) */}
+      {/* 6. School Facilities (Smart Classrooms, Robotics, Turf, Transport) */}
       <FacilitiesSection />
 
       {/* 7. Animated Counters Strip */}
       <CountersStripSection />
 
-      {/* 8. Infrastructure Lightbox Gallery (6 Tiles) */}
+      {/* 8. Infrastructure & Photo Gallery */}
       <InfrastructureGallerySection />
 
-      {/* 9. Smart Activities (5 Cards) */}
+      {/* 9. Interactive Video Showcase */}
+      <VideoShowcaseSection />
+
+      {/* 10. Smart Activities & Grassy Hill Banner */}
       <SmartActivitiesSection />
 
-      {/* 10. Blog Teaser (3 Latest Posts) */}
+      {/* 11. News & Blog Teaser */}
       <BlogTeaserSection />
-
-      {/* 11. Newsletter Block is integrated as the Pre-Footer in Footer.tsx */}
     </main>
   );
 }

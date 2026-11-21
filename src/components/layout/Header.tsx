@@ -38,16 +38,27 @@ export function Header() {
       >
         <Container size="wide">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="relative flex-shrink-0 group">
-              <div className="relative w-[210px] sm:w-[250px] md:w-[260px] h-[64px] sm:h-[72px] md:h-[76px] transition-transform duration-300 group-hover:scale-[1.02]">
+            {/* Official IJMA Crest & Typography */}
+            <Link href="/" className="relative flex-shrink-0 flex items-center gap-2.5 sm:gap-3 group">
+              <div className="relative w-[48px] h-[48px] sm:w-[58px] sm:h-[58px] md:w-[64px] md:h-[64px] flex-shrink-0 transition-transform duration-300 group-hover:scale-105 drop-shadow-xs">
                 <Image
                   src={siteConfig.school.logo}
                   alt={siteConfig.school.fullName}
                   fill
                   priority
-                  className="object-contain object-left"
+                  className="object-contain"
                 />
+              </div>
+              <div className="flex flex-col justify-center text-left">
+                <span className="text-[10px] sm:text-xs font-bold text-[#0A5C36] tracking-wide leading-none mb-0.5">
+                  {siteConfig.school.urduName}
+                </span>
+                <span className="text-[12px] sm:text-[15px] md:text-[17px] font-black text-gray-900 tracking-tight leading-tight group-hover:text-[#0A5C36] transition-colors">
+                  IJMA INTERNATIONAL MODEL SCHOOL
+                </span>
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] text-[#F5A623] font-bold tracking-wider uppercase leading-tight mt-0.5">
+                  TOPSIA, KOLKATA • ENGLISH MEDIUM CBSE
+                </span>
               </div>
             </Link>
 

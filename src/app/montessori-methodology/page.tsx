@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Montessori Methodology | GD Goenka La Petite Rohini',
+  title: 'Early Childhood & Montessori Pedagogy | IJMA International Model School Kolkata',
   description:
-    'Discover the authentic Montessori methodology practiced at GD Goenka La Petite Rohini. Timeless education for a changing world.',
+    'Discover hands-on early childhood learning and Montessori-inspired foundational pedagogy at IJMA International Model School in Topsia, Kolkata.',
 };
 
 export default function MontessoriMethodologyPage() {
   return (
     <PillarPageTemplate
-      title="Montessori Methodology"
-      badge="Timeless Education for a Changing World"
-      description="Montessori is not just a curriculum; it is a profound scientific approach to early human development. At GD Goenka La Petite Rohini, we provide an authentically prepared environment where children self-select purposeful work and unlock their highest potential."
+      title="Foundational Pedagogy & Early Learning"
+      badge="Nurturing the Innate Love for Learning"
+      description="Our pre-primary wing at IJMA International Model School in Topsia, Kolkata blends proven hands-on sensory learning with Islamic Tarbiyah, giving young children the strongest cognitive and spiritual foundation."
       extendedParagraphs={[
-        'Dr. Maria Montessori observed that young children possess an "absorbent mind" between birth and age six. Our classrooms are organized into five fundamental curriculum areas: Practical Life, Sensorial Discovery, Language Arts, Mathematics, and Cultural Studies.',
-        'Rather than passive recipients of lectures, our children manipulate didactic apparatus designed with built-in control of error. When a child fits cylinders into wooden blocks or traces sandpaper letters, they teach themselves through direct sensory feedback.',
+        'Young children learn best through active touch, exploration, and structured play. In our prepared classrooms, children manipulate educational apparatus designed to develop fine-motor control, phonetic awareness, spatial perception, and mathematical numeracy.',
+        'Alongside sensory development, children learn polite Islamic social manners (Adaab), daily Duas, and sharing. Caring mentors guide each child at their own natural pace, cultivating confidence, concentration, and deep curiosity.',
       ]}
       keyHighlights={[
-        'Self-directed work cycles that develop uninterrupted focus',
-        'Multi-sensory apparatus with built-in control of error',
-        'Respectful guidance by certified Montessori directresses',
-        'Mixed-age collaborative peer mentoring and community harmony',
-        'Development of intrinsic motivation rather than external rewards',
+        'Self-directed hands-on apparatus building deep focus and concentration',
+        'Early phonetic literacy and sensorial mathematics materials',
+        'Gentle integration of Islamic daily Duas, manners, and Arabic alphabet',
+        'Air-conditioned, child-safe classrooms with rounded furniture in Topsia',
+        'Continuous observation and developmental feedback for parents',
       ]}
-      image="/assets/features/feature-montessori.svg"
+      image="/assets/ijma/photos/teacher-watching-art-of the-students.jpeg"
     />
   );
 }

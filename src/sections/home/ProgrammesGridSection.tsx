@@ -110,8 +110,8 @@ export function ProgrammesGridSection() {
                   style={{ borderRadius: '0px 0px 500px 0px' }}
                 >
                   <Image
-                    src="/assets/programmes/a1.jpg"
-                    alt="Child playing with clay"
+                    src="/assets/ijma/photos/Art-class.jpg"
+                    alt="Students in Robotics and STEM Class"
                     fill
                     className="object-cover object-center hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 480px"
@@ -126,8 +126,8 @@ export function ProgrammesGridSection() {
                   style={{ borderRadius: '500px 0px 0px 0px' }}
                 >
                   <Image
-                    src="/assets/programmes/a2.jpg"
-                    alt="Child painting a model"
+                    src="/assets/ijma/photos/teacher-watching-art-of the-students.jpeg"
+                    alt="Teacher reviewing student creative projects"
                     fill
                     className="object-cover object-center hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 480px"

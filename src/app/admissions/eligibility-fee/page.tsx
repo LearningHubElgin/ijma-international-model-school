@@ -10,19 +10,19 @@ import { Reveal } from '@/components/ui/Reveal';
 import { Check, AlertTriangle, Phone, FileCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Eligibility & Fee Structure | GD Goenka La Petite Rohini',
+  title: 'Eligibility & Fee Structure | IJMA International Model School Topsia Kolkata',
   description:
-    'Age criteria and fee breakdown for GD Goenka La Petite Preschool, Rohini, Delhi. Transparent early childhood admissions.',
+    'Age criteria and fee breakdown for IJMA International Model School, Topsia, Kolkata. Transparent admissions from Nursery to Class XII (Proposed).',
 };
 
 export default function EligibilityFeePage() {
   const ageCriteria = [
-    { programme: 'Mom and Me', age: '12 to 18 Months', criteria: 'Accompanied by mother / primary guardian' },
-    { programme: 'Play Group', age: '18 to 24 Months', criteria: 'Toddlers comfortable with independent movement' },
-    { programme: 'Pre Nursery', age: '2 to 3 Years', criteria: 'As of 31st March of the academic year' },
-    { programme: 'Nursery', age: '3 to 4 Years', criteria: 'As of 31st March of the academic year' },
-    { programme: 'Day Care', age: '12 Months to 12 Years', criteria: 'Full day or half day flexible schedules' },
-    { programme: 'Activity Centre', age: '2 to 12 Years', criteria: 'After-school & weekend batches' },
+    { programme: 'Pre-Nursery', age: '2.5 to 3.5 Years', criteria: 'Child should be comfortable in a classroom setting' },
+    { programme: 'Nursery', age: '3.5 to 4.5 Years', criteria: 'Basic verbal and motor responsiveness' },
+    { programme: 'Kindergarten (KG)', age: '4.5 to 5.5 Years', criteria: 'Preparatory foundation for primary school' },
+    { programme: 'Primary Wing (Classes I - V)', age: '6+ Years onwards', criteria: 'Previous report card / transfer certificate' },
+    { programme: 'Middle Wing (Classes VI - VIII)', age: '11+ Years onwards', criteria: 'Academic marksheet & personal interaction' },
+    { programme: 'Secondary Wing (Classes IX - XII)', age: '14+ Years onwards (Proposed)', criteria: 'Comprehensive evaluation & counseling' },
   ];
 
   return (
@@ -41,16 +41,16 @@ export default function EligibilityFeePage() {
         <Container>
           <SectionHeading
             eyebrow="Age Eligibility Norms"
-            title="Cohort Admission Criteria"
-            description="Our age categories align with the Directorate of Education Delhi guidelines and authentic Montessori stages."
+            title="Class Admission Criteria"
+            description="Our age requirements comply with modern CBSE guidelines while catering to balanced cognitive and emotional readiness."
           />
 
           <div className="max-w-4xl mx-auto overflow-hidden rounded-card border border-peach shadow-card">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#0a6375] text-white text-sm font-sans">
-                    <th className="py-4 px-6 font-bold">Programme</th>
+                  <tr className="bg-[#0A5C36] text-white text-sm font-sans">
+                    <th className="py-4 px-6 font-bold">Class / Wing</th>
                     <th className="py-4 px-6 font-bold">Age Group</th>
                     <th className="py-4 px-6 font-bold">Criteria / Remarks</th>
                   </tr>
@@ -62,7 +62,7 @@ export default function EligibilityFeePage() {
                       className={idx % 2 === 0 ? 'bg-white' : 'bg-[#fff9f5]'}
                     >
                       <td className="py-4 px-6 font-bold text-gray-900">{item.programme}</td>
-                      <td className="py-4 px-6 font-semibold text-primary">{item.age}</td>
+                      <td className="py-4 px-6 font-semibold text-[#0A5C36]">{item.age}</td>
                       <td className="py-4 px-6">{item.criteria}</td>
                     </tr>
                   ))}
@@ -73,126 +73,134 @@ export default function EligibilityFeePage() {
         </Container>
       </Section>
 
-      {/* Fee Structure Section with Clear Owner Placeholders */}
+      {/* Fee Structure Section */}
       <Section bg="peach">
         <Container>
           <SectionHeading
-            eyebrow="Transparent Structure"
+            eyebrow="Affordable & Transparent"
             title="School Fee Guidelines"
-            description="Our fee structure covers world-class Montessori apparatus, nutritious meals, expert mentors, and enrichment programs."
+            description="Our fee structure is designed to offer accessible, top-tier CBSE academic standards, air-conditioned smart classrooms, STEM robotics, and certified Karate training in Kolkata."
           />
 
-          {/* Owner Notice Badge */}
           <div className="max-w-3xl mx-auto mb-8 p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 text-xs sm:text-sm flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold">Notice for Administration:</span> The figures below are designated placeholders according to project ground rules. Exact term fees, activity charges, and transport slabs should be updated by the school management in `site.config.ts`.
+              <span className="font-bold">Notice for Parents:</span> For exact quarterly tuition fees, admission charges, uniform sets, and school transport routes covering Topsia and Kolkata, please contact our admissions office directly at <strong>+91 75408 55755</strong> or <strong>+91 98316 23162</strong>.
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Plan 1 */}
+            {/* Wing 1 */}
             <div className="bg-white rounded-card p-8 shadow-card border border-gray-100 flex flex-col justify-between">
               <div>
-                <span className="font-bubblegum text-sm text-primary uppercase font-bold">Foundation</span>
-                <h3 className="text-2xl font-bold text-black mt-1">Play Group & Pre-Nursery</h3>
+                <span className="font-bubblegum text-sm text-[#0A5C36] uppercase font-bold">Early Years</span>
+                <h3 className="text-2xl font-bold text-black mt-1">Pre-Primary (Nursery & KG)</h3>
                 <div className="mt-4 mb-6">
-                  {/* TODO: Placeholder fee */}
                   <span className="text-3xl font-extrabold text-black">Contact School</span>
-                  <span className="block text-xs text-muted mt-1">Quarterly fee structure</span>
+                  <span className="block text-xs text-muted mt-1">Affordable monthly / quarterly plans</span>
                 </div>
                 <ul className="space-y-3 text-sm text-body">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Montessori Work Cycles</span>
+                    <span>Playful Montessori Foundation</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Fresh Nutrition & Meals</span>
+                    <span>Basic Arabic & Quranic Duas</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Sensory & Art Supplies</span>
+                    <span>Sensory Art & Motor Games</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                    <span>AC Child-Safe Classrooms</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8 mt-6 border-t border-gray-100">
                 <Button variant="primary" href="/admissions/application-form" className="w-full">
-                  Apply Now
+                  Apply for Nursery / KG
                 </Button>
               </div>
             </div>
 
-            {/* Plan 2: Featured */}
-            <div className="bg-white rounded-card p-8 shadow-card-hover border-2 border-primary flex flex-col justify-between relative transform md:-translate-y-2">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider">
-                Most Popular
+            {/* Wing 2: Featured */}
+            <div className="bg-white rounded-card p-8 shadow-card-hover border-2 border-[#0A5C36] flex flex-col justify-between relative transform md:-translate-y-2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#0A5C36] text-white text-xs font-bold uppercase tracking-wider">
+                Flagship Program
               </div>
               <div>
-                <span className="font-bubblegum text-sm text-primary uppercase font-bold">Comprehensive</span>
-                <h3 className="text-2xl font-bold text-black mt-1">Nursery Programme</h3>
+                <span className="font-bubblegum text-sm text-[#F5A623] uppercase font-bold">Core Schooling</span>
+                <h3 className="text-2xl font-bold text-black mt-1">Primary Wing (Classes I - V)</h3>
                 <div className="mt-4 mb-6">
-                  {/* TODO: Placeholder fee */}
                   <span className="text-3xl font-extrabold text-black">Contact School</span>
-                  <span className="block text-xs text-muted mt-1">Quarterly fee structure</span>
+                  <span className="block text-xs text-muted mt-1">Transparent CBSE fee schedule</span>
                 </div>
                 <ul className="space-y-3 text-sm text-body">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Complete Academic Syllabus</span>
+                    <span>CBSE English Medium Curriculum</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Smart Activity Suite</span>
+                    <span>Islamic Studies, Tajweed & Tarbiyah</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Taekwondo & Splash Pool</span>
+                    <span>STEM & Robotics Innovation Lab</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Field Trips & Celebrations</span>
+                    <span>Certified Karate Martial Arts</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                    <span>Annual Sports & Science Exhibitions</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8 mt-6 border-t border-gray-100">
                 <Button variant="primary" href="/admissions/application-form" className="w-full">
-                  Apply for Nursery
+                  Apply for Primary
                 </Button>
               </div>
             </div>
 
-            {/* Plan 3 */}
+            {/* Wing 3 */}
             <div className="bg-white rounded-card p-8 shadow-card border border-gray-100 flex flex-col justify-between">
               <div>
-                <span className="font-bubblegum text-sm text-[#0a6375] uppercase font-bold">Full Support</span>
-                <h3 className="text-2xl font-bold text-black mt-1">Day Care & Activities</h3>
+                <span className="font-bubblegum text-sm text-[#0a6375] uppercase font-bold">Advanced Studies</span>
+                <h3 className="text-2xl font-bold text-black mt-1">Middle & Secondary (VI - XII)</h3>
                 <div className="mt-4 mb-6">
-                  {/* TODO: Placeholder fee */}
                   <span className="text-3xl font-extrabold text-black">Contact School</span>
-                  <span className="block text-xs text-muted mt-1">Hourly / Monthly plans</span>
+                  <span className="block text-xs text-muted mt-1">Board preparation fee bracket</span>
                 </div>
                 <ul className="space-y-3 text-sm text-body">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Flexible Extended Timings</span>
+                    <span>Advanced Mathematics & Sciences</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Hygienic Nap & Rest Beds</span>
+                    <span>Languages (English, Urdu, Hindi, Arabic)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500" />
-                    <span>Guided Homework Assistance</span>
+                    <span>Seminars, Debates & Exhibitions</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                    <span>National Education Day & Honors</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8 mt-6 border-t border-gray-100">
                 <Button variant="outline" href="/contact-us" className="w-full">
-                  Enquire for Day Care
+                  Enquire for Middle / Secondary
                 </Button>
               </div>
             </div>

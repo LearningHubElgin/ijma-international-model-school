@@ -18,27 +18,27 @@ interface BlogPostItem {
 const BLOG_POSTS: BlogPostItem[] = [
   {
     id: 'post-1',
-    slug: 'benefits-of-montessori-based-education',
-    date: 'August 14, 2025',
-    title: 'The Benefits of Montessori-Based Education: A Comprehensive Guide',
+    slug: 'national-education-day-celebration-ijma-international-model-school-kolkata',
+    date: 'November 15, 2026',
+    title: 'Commemorating National Education Day & Maulana Azad Birth Anniversary at IJMA',
     excerpt:
-      'Montessori education, developed by Dr. Maria Montessori in the early 1900s, represents a revolutionary...'
+      'Students and faculty celebrated National Education Day with prize distributions, inspiring speeches, and reflections on the vital importance of knowledge in Islam.'
   },
   {
     id: 'post-2',
-    slug: 'best-play-school-in-delhi',
-    date: 'February 15, 2025',
-    title: 'Best Play School in Delhi \u2013 GD Goenka La Petite, Rohini',
+    slug: 'stem-robotics-education-in-islamic-schools-ijma-kolkata',
+    date: 'October 28, 2026',
+    title: 'Why STEM, Robotics & Karate are Integral to Islamic Education in Topsia, Kolkata',
     excerpt:
-      'Best Play School in Delhi \u2013 GD Goenka La Petite, Rohini Choosing the right...'
+      'How our hands-on robotics and science labs nurture critical thinking, innovation, and self-defense skills rooted in ethical Tarbiyah.'
   },
   {
     id: 'post-3',
-    slug: 'importance-of-playschool',
-    date: 'March 16, 2023',
-    title: 'Importance of playschool and their various types',
+    slug: 'annual-sports-meet-and-karate-highlights-ijma-kolkata',
+    date: 'September 19, 2026',
+    title: 'Parent-Teacher Orientation & Student Art Exhibitions: Building Future Leaders',
     excerpt:
-      'Playschools play a crucial role in building strong foundations for every student, as they...'
+      'Our regular PTM sessions and multi-disciplinary exhibitions demonstrate the transformative power of parent-school partnership.'
   }
 ];
 
@@ -264,8 +264,8 @@ export function BlogTeaserSection() {
                   }}
                 >
                   <Image
-                    src="/assets/blog/tab2.jpg"
-                    alt="Classroom Montessori learning"
+                    src="/assets/ijma/photos/Art-exibition.jpeg"
+                    alt="IJMA student project exhibition"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 460px"
@@ -295,8 +295,8 @@ export function BlogTeaserSection() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src="/assets/blog/kids-eating.jpg"
-                    alt="Kids eating healthy food"
+                    src="/assets/ijma/photos/Best-student-prize-distribution.jpeg"
+                    alt="Student achievements and prize ceremony"
                     fill
                     className="object-cover"
                     sizes="200px"

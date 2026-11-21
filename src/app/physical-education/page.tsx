@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Physical Education & Sports | GD Goenka La Petite Rohini',
+  title: 'Physical Education & Karate | IJMA International Model School Topsia Kolkata',
   description:
-    'Age-appropriate motor development, splash pool fun, outdoor games, and taekwondo building stamina and confidence.',
+    'Certified Karate martial arts training, synthetic turf sprint athletics, and sports coaching fostering strength and discipline in Topsia, Kolkata.',
 };
 
 export default function PhysicalEducationPage() {
   return (
     <PillarPageTemplate
-      title="Physical Education"
-      badge="Strength, Agility & Lifelong Health"
-      description="Physical vitality and motor competence are essential building blocks of early childhood. Our physical education programme combines sports coaching, splash pool play, and martial arts in an energetic, safe campus."
+      title="Physical Education & Martial Arts"
+      badge="Strength, Agility & Islamic Discipline"
+      description="Physical vitality and motor competence are essential building blocks of balanced character. Our physical education programme combines certified Karate martial arts coaching, synthetic turf athletics, and sports competitions."
       extendedParagraphs={[
-        'Young children need uneven, varied surfaces and gross-motor challenges to develop spatial depth perception and muscle stamina. Our outdoor play area features padded obstacle courses, balance beams, turf slides, and a dedicated roller skating rink.',
-        'During warmer months, our hygienic splash pool provides guided hydrotherapy and aquatic games that foster water safety, lung capacity, and joyful active recreation.',
+        'The Prophet (peace be upon him) encouraged teaching children archery, swimming, and martial physical fitness. At IJMA, we provide safe synthetic turf sports facilities where students participate in sprint races, relays, and team sports.',
+        'Our certified Karate program trains boys and girls in self-defense, mental concentration, and physical stamina in complete Gi uniforms with formal belt advancement grading.',
       ]}
       keyHighlights={[
-        'Splash pool with certified swimming lifeguards and attendants',
-        'Introductory Taekwondo coaching for discipline and posture',
-        'Roller skating drills on smooth, protective rubberized rinks',
-        'Gross-motor obstacle courses enhancing spatial coordination',
-        'Annual Sports Day celebrations showcasing teamwork and sportsmanship',
+        'Synthetic turf athletics arena for sprint races, relays, and agility drills',
+        'Certified Karate martial arts coaching with official belt grading',
+        'Annual Sports Meet with medals, trophies, and house competitions',
+        'Emphasis on fair play, mutual respect, and Islamic sportsmanship',
+        'Regular fitness assessments promoting lifelong healthy living habits',
       ]}
-      image="/assets/features/feature-pe.svg"
+      image="/assets/ijma/photos/Runnig-student-in-sports-meet.jpg"
     />
   );
 }

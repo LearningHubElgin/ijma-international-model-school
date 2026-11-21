@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Celebrations & Cultural Life | GD Goenka La Petite Rohini',
+  title: 'Celebrations & Academic Honors | IJMA International Model School Topsia Kolkata',
   description:
-    'Experience our vibrant school celebrations, cultural festivals, and community theme days fostering empathy, joy, and unity.',
+    'Experience our vibrant school celebrations, National Education Day, Eid festivals, and student honor ceremonies in Topsia, Kolkata.',
 };
 
 export default function CelebrationsPage() {
   return (
     <PillarPageTemplate
-      title="Celebrations & Festivals"
+      title="Celebrations & Events"
       badge="Joyful Community Life"
-      description="Cultural celebrations at GD Goenka La Petite, Rohini are cherished milestones where children discover the beauty of traditions, communal warmth, and international diversity."
+      description="Celebrations at IJMA International Model School, Topsia, Kolkata are cherished milestones where children discover the beauty of Islamic traditions, national heritage, and community warmth."
       extendedParagraphs={[
-        'From Diwali, Christmas, and Eid to Grandparents Day and Earth Day, our campus comes alive with vibrant colors, storytelling, traditional foods, and student stage performances.',
-        'These festive occasions build empathy, open-mindedness, and deep social confidence. Children learn the underlying values behind each festival: compassion, generosity, friendship, and care for our planet.',
+        'From Eid-ul-Fitr, Eid-ul-Adha, and National Education Day (honoring Maulana Abul Kalam Azad) to Independence Day and Republic Day, our campus comes alive with vibrant decorations, Quranic recitations, storytelling, and student stage presentations.',
+        'These festive occasions build empathy, open-mindedness, and deep social confidence. Children learn the underlying values behind each occasion: compassion, generosity, love for the homeland, and dedication to knowledge.',
       ]}
       keyHighlights={[
-        'Interactive cultural storytelling and festive dramatizations',
-        'Grandparents Day and Family Carnival celebrations',
-        'Global Diversity Days introducing world traditions and music',
-        'Student stage performances building joyful public presence',
-        'Eco-friendly festive craft projects using recycled materials',
+        'National Education Day commemoration with academic trophies and prizes',
+        'Eid celebrations fostering generosity, brotherhood, and community charity',
+        'Patriotic assemblies for Independence Day and Republic Day',
+        'Student stage performances, public speaking, and choral presentations',
+        'Creative art exhibits and festive banner design workshops',
       ]}
-      image="/assets/features/feature-celebrations.svg"
+      image="/assets/ijma/photos/Best-student-prize-distribution.jpeg"
     />
   );
 }

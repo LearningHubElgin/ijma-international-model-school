@@ -10,9 +10,9 @@ import { siteConfig } from '@/content/site.config';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Educational Insights & Blog | GD Goenka La Petite Rohini',
+  title: 'School Blog & Campus News | IJMA International Model School Topsia Kolkata',
   description:
-    'Pedagogical articles, parenting insights, and preschool guides from our early childhood experts at GD Goenka La Petite Rohini.',
+    'News, academic articles, Islamic Tarbiyah insights, and event recaps from IJMA International Model School in Topsia, Kolkata.',
 };
 
 export default function BlogArchivePage() {

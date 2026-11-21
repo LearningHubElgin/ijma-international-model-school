@@ -10,9 +10,9 @@ import { Reveal } from '@/components/ui/Reveal';
 import { CheckCircle2, FileText, Calendar, Users, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Application Process | GD Goenka La Petite Rohini',
+  title: 'Application Process | IJMA International Model School Topsia Kolkata',
   description:
-    'Step-by-step admission guide for parents seeking enrollment at GD Goenka La Petite Preschool, Rohini, Delhi.',
+    'Step-by-step admission roadmap for parents seeking enrollment at IJMA International Model School in Topsia, Kolkata.',
 };
 
 export default function ApplicationProcessPage() {
@@ -20,41 +20,41 @@ export default function ApplicationProcessPage() {
     {
       step: '01',
       title: 'Online or Campus Enquiry',
-      desc: 'Start by filling our online enquiry form or visiting our school office at Bhartiya Jan Sahyog Parishad, Sector 3, Rohini. Receive our detailed prospectus and schedule an interactive campus visit.',
+      desc: 'Start by filling our online application form or visiting our school office at 9/1, Topsia Road South, Topsia, Kolkata - 700046. Receive our prospectus and schedule an interactive campus visit.',
     },
     {
       step: '02',
-      title: 'Personalized Campus Tour & Interaction',
-      desc: 'Visit our classrooms with your child. Our academic counselor conducts an informal, friendly interaction with the child and explains our Montessori methodology, daily routine, and safety protocols.',
+      title: 'Campus Tour & Academic Counseling',
+      desc: 'Tour our air-conditioned smart classrooms, STEM robotics lab, and sports arenas. Our academic team conducts a friendly discussion to understand your child’s learning interests.',
     },
     {
       step: '03',
       title: 'Submission of Application & Documents',
-      desc: 'Complete the Admission Application form along with self-attested copies of the child’s birth certificate, immunization record, residence proof, and four passport-sized photographs.',
+      desc: 'Complete the formal admission registration with self-attested copies of the child’s birth certificate, previous academic marksheet/transfer certificate (for Class I and above), address proof, and passport-sized photographs.',
     },
     {
       step: '04',
       title: 'Enrolment Confirmation & Welcome Kit',
-      desc: 'Upon verification and completion of admission fee formalities, your child is formally registered. You will receive an official Welcome Kit containing the school calendar, uniform details, and orientation schedule.',
+      desc: 'Upon verification and completion of admission formalities, your child is formally enrolled. You will receive an official Welcome Kit containing the academic calendar, school uniform specifications, and orientation timetable.',
     },
   ];
 
   const faqs = [
     {
-      q: 'At what age can my child join GD Goenka La Petite?',
-      a: 'We welcome children from 12 months in our Mom & Me and Day Care programmes, from 18 months in Play Group, 2 years in Pre-Nursery, and 3 years in Nursery.',
+      q: 'Which classes are open for admission at IJMA International Model School?',
+      a: 'We admit students from Pre-Nursery (age 2.5+) through Nursery, KG, Primary Wing (Classes I - V), Middle Wing (Classes VI - VIII), and Secondary Wing (Classes IX - XII - Proposed).',
     },
     {
-      q: 'Is there a formal interview or test for toddlers?',
-      a: 'No. We strictly adhere to child-friendly education norms. There are no written tests or stressful interviews for children or parents. The interaction is an informal, joyful meet-and-greet.',
+      q: 'What curriculum does the school follow?',
+      a: 'We follow the English Medium CBSE academic framework seamlessly integrated with Islamic Education, Quranic Tajweed, Arabic language, and Tarbiyah moral character formation.',
     },
     {
-      q: 'Do you offer transport facilities across Rohini?',
-      a: 'Yes, our GPS-enabled, air-conditioned school vans equipped with female attendants and speed governors cover all major sectors of Rohini and surrounding localities.',
+      q: 'Do you offer safe school transport in Kolkata?',
+      a: 'Yes, we provide safe, GPS-monitored school transport vans with dedicated staff and female attendants covering Topsia, Park Circus, Entally, Beniapukur, EM Bypass, Tiljala, and adjoining areas in Kolkata.',
     },
     {
-      q: 'Can parents observe classroom sessions?',
-      a: 'We hold regular Parent-Teacher Orientations, Open Houses, and Grandparents Days. For our Mom & Me programme, mothers actively participate in classroom activities alongside toddlers.',
+      q: 'Are co-curriculars like Karate and STEM included in regular schooling?',
+      a: 'Yes! Certified Karate martial arts training, annual sports athletics, hands-on STEM & Robotics experiments, and art exhibitions are integral parts of the curriculum for all students.',
     },
   ];
 
@@ -75,14 +75,14 @@ export default function ApplicationProcessPage() {
           <SectionHeading
             eyebrow="Admissions Roadmap"
             title="How to Enroll Your Child"
-            description="Our admissions process is designed to be joyful, stress-free, and thoroughly transparent for young families."
+            description="Our admissions process is designed to be welcoming, transparent, and supportive for families in Kolkata."
           />
 
           <div className="space-y-8 max-w-4xl mx-auto">
             {steps.map((st, i) => (
               <Reveal key={st.step} variant="fade-up" delay={0.1 * (i + 1)}>
-                <div className="bg-white rounded-card p-6 sm:p-8 border-2 border-peach hover:border-primary shadow-card transition-all duration-300 flex flex-col sm:flex-row items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-[#0a6375] text-white flex items-center justify-center font-extrabold text-2xl flex-shrink-0 shadow-md">
+                <div className="bg-white rounded-card p-6 sm:p-8 border-2 border-peach hover:border-[#0A5C36] shadow-card transition-all duration-300 flex flex-col sm:flex-row items-start gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-[#0A5C36] text-white flex items-center justify-center font-extrabold text-2xl flex-shrink-0 shadow-md">
                     {st.step}
                   </div>
                   <div className="flex-1">
@@ -108,7 +108,7 @@ export default function ApplicationProcessPage() {
           <SectionHeading
             eyebrow="Got Questions?"
             title="Admissions Frequently Asked Questions"
-            description="Everything you need to know about starting your child's educational journey with us."
+            description="Everything you need to know about joining IJMA International Model School."
           />
 
           <div className="space-y-4">
@@ -116,7 +116,7 @@ export default function ApplicationProcessPage() {
               <Reveal key={i} variant="fade-up" delay={0.1 * (i + 1)}>
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-peach/80">
                   <h4 className="font-bold text-lg text-black flex items-start gap-2.5">
-                    <HelpCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <HelpCircle className="w-5 h-5 text-[#0A5C36] mt-0.5 flex-shrink-0" />
                     <span>{faq.q}</span>
                   </h4>
                   <p className="mt-2 text-sm text-body leading-relaxed pl-7">{faq.a}</p>

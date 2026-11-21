@@ -53,7 +53,7 @@ export default function ApplicationFormPage() {
     try {
       // Pure frontend submission - no backend dependency
       await new Promise((resolve) => setTimeout(resolve, 800));
-      const randomRef = `GDG-ROHINI-${Math.floor(1000 + Math.random() * 9000)}`;
+      const randomRef = `IJMA-KOL-${Math.floor(1000 + Math.random() * 9000)}`;
       setSubmittedRef(randomRef);
       reset();
     } catch {
@@ -83,9 +83,9 @@ export default function ApplicationFormPage() {
               </div>
               <h2 className="text-3xl font-bold text-black">Application Received!</h2>
               <p className="text-body text-base max-w-md mx-auto">
-                Thank you for applying to GD Goenka La Petite, Rohini. Your official application reference number is:
+                Thank you for applying to IJMA International Model School, Topsia, Kolkata. Your official application reference number is:
               </p>
-              <div className="inline-block px-6 py-2.5 rounded-pill bg-[#0a6375] text-white font-mono font-bold text-lg">
+              <div className="inline-block px-6 py-2.5 rounded-pill bg-[#0A5C36] text-white font-mono font-bold text-lg">
                 {submittedRef}
               </div>
               <p className="text-xs text-muted max-w-sm mx-auto">
@@ -206,7 +206,7 @@ export default function ApplicationFormPage() {
                     <input
                       type="text"
                       {...register('address')}
-                      placeholder="e.g. Pocket B-5, Sector 3, Rohini, Delhi"
+                      placeholder="e.g. 9/1, Topsia Road South, Topsia, Kolkata - 700046"
                       className="w-full px-4 py-3 rounded-pill border-2 border-border focus:border-primary focus:outline-none text-sm transition-colors"
                     />
                     {errors.address && (

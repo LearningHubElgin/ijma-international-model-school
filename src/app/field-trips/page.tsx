@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Experiential Field Trips | GD Goenka La Petite Rohini',
+  title: 'Experiential Field Trips | IJMA International Model School Topsia Kolkata',
   description:
-    'Extending learning beyond the classroom with curated, safe experiential educational visits across Delhi-NCR.',
+    'Extending learning beyond the classroom with curated, safe experiential visits across Kolkata and West Bengal.',
 };
 
 export default function FieldTripsPage() {
   return (
     <PillarPageTemplate
-      title="Field Trips & Excursions"
+      title="Field Trips & Educational Visits"
       badge="Learning in the Real World"
-      description="Field trips are an integral component of our experiential pedagogy. We curate safe, structured outdoor visits that transform theoretical concepts into unforgettable sensory memories."
+      description="Field trips are an integral component of our holistic pedagogy. We curate safe, structured educational excursions across Kolkata that transform theoretical classroom concepts into unforgettable real-world learning."
       extendedParagraphs={[
-        'Whether visiting a local organic vegetable nursery to touch blooming saplings, touring a community fire station to understand civic heroes, or exploring the interactive National Science Centre, children engage with their environment as curious young researchers.',
-        'Safety is our utmost priority during all excursions. Every field trip is conducted in our GPS-tracked school vans, supported by a 1:4 teacher-to-child ratio, trained first-aiders, and verified security protocols.',
+        'Whether touring the Birla Industrial & Technological Museum (BITM) to explore interactive physics exhibits, visiting the Alipore Zoological Gardens to observe biodiversity, or exploring historical landmarks and science planetariums, our students engage with the wider world as eager researchers.',
+        'Safety is our top priority on all excursions. Every trip is conducted in our GPS-monitored school transport vans, accompanied by dedicated faculty, female attendants, and certified first-aid provisions.',
       ]}
       keyHighlights={[
-        'Botanical gardens, organic farms, and nature exploration',
-        'Civic center visits: post offices, fire stations, libraries',
-        'Interactive children museums and science planetariums',
-        'Strict 1:4 adult-to-child supervision ratio with female attendants',
-        'Pre-trip orientation and post-trip sensory reflection journals',
+        'Visits to science museums, planetariums, and technology centers in Kolkata',
+        'Botanical gardens, ecological parks, and nature conservation study',
+        'Civic and heritage visits introducing community institutions',
+        'Strict adult-to-child supervision ratio with verified security protocols',
+        'Pre-trip guided study and post-trip student project presentations',
       ]}
-      image="/assets/features/feature-trips.svg"
+      image="/assets/ijma/photos/Art-Consult.jpeg"
     />
   );
 }

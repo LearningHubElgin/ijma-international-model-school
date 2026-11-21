@@ -3,29 +3,29 @@ import { Metadata } from 'next';
 import { PillarPageTemplate } from '@/components/montessori/PillarPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Speech and Drama | GD Goenka La Petite Rohini',
+  title: 'Speech, Elocution & Debates | IJMA International Model School Topsia Kolkata',
   description:
-    'Playful storytelling, character role-playing, and vocal articulation sessions building stage confidence, vocabulary, and empathy.',
+    'Elocution, storytelling, Islamic debates, and vocal articulation sessions building stage confidence and eloquence in Topsia, Kolkata.',
 };
 
 export default function SpeechAndDramaPage() {
   return (
     <PillarPageTemplate
-      title="Speech and Drama"
-      badge="Stage Poise, Voice & Expressive Empathy"
-      description="Speech and Drama at GD Goenka La Petite, Rohini provides an imaginative stage where young children discover the magic of spoken language, role assumption, and heartfelt creative expression."
+      title="Speech, Elocution & Public Speaking"
+      badge="Stage Poise, Eloquence & Articulation"
+      description="Speech and elocution at IJMA International Model School in Topsia, Kolkata provides an empowering platform where young scholars discover the power of spoken words, public address, and thoughtful argumentation."
       extendedParagraphs={[
-        'Through puppet interactions, improvisational drama games, poetry recitation, and character costume play, children overcome early shyness and develop articulate public speaking skills.',
-        'Drama also cultivates empathy: by stepping into the shoes of diverse characters—from gentle forest animals to community helpers—children learn to recognize emotions, listen deeply to others, and cooperate creatively.',
+        'Through structured debate societies, Quranic storytelling, poetry elocution, and seminar presentations, students overcome shyness and master English and Urdu public speaking.',
+        'These sessions cultivate confidence and intellectual empathy: students learn to formulate coherent arguments, listen attentively to differing perspectives, and communicate respectfully with clarity and poise.',
       ]}
       keyHighlights={[
-        'Interactive puppet theater and imaginative costume play',
-        'Vocal projection, diction, and phonetic articulation exercises',
-        'Poetry recitation and choral speaking circles',
-        'Improvisational socio-dramatic play nurturing social empathy',
-        'Term-end stage showcases celebrating each child’s unique voice',
+        'Elocution contests and declamation in English, Urdu, and Bengali',
+        'Vocal projection, clear diction, and phonetic articulation coaching',
+        'Student-led seminar presentations and project explanations',
+        'Debates on contemporary scientific and ethical topics',
+        'Stage assemblies building fearless, articulate public speakers',
       ]}
-      image="/assets/features/feature-drama.svg"
+      image="/assets/ijma/photos/Art-seminor-2.jpeg"
     />
   );
 }

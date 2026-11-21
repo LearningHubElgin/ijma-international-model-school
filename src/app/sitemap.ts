@@ -3,33 +3,31 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://gdgoenkarohini.com';
+  const baseUrl = 'https://ijmainternationalschool.com';
 
   const routes = [
     '',
     '/about-us',
+    '/academics',
+    '/campus-life',
+    '/gallery',
+    '/videos',
     '/programmes',
-    '/programmes/mom-and-me',
-    '/programmes/play-group',
-    '/programmes/pre-nursery-age-group-2-years-to-3-years',
-    '/programmes/nursery-age-group-3-years-to-4-years',
-    '/programmes/day-care-age-group-12-months-to-12-years',
-    '/programmes/after-school-activity-center-2-years-12-years',
     '/admissions',
     '/admissions/application-form',
     '/admissions/application-process',
     '/admissions/eligibility-fee',
-    '/montessori-methodology',
     '/curriculum',
     '/celebrations',
     '/field-trips',
     '/music-movement',
     '/physical-education',
     '/speech-and-drama',
+    '/montessori-methodology',
     '/blog',
-    '/blog/the-benefits-of-montessori-based-education-a-comprehensive-guide',
-    '/blog/best-play-school-in-delhi-gd-goenka-la-petite-rohini',
-    '/blog/importance-of-playschool-and-their-various-types',
+    '/blog/national-education-day-celebration-ijma-international-model-school-kolkata',
+    '/blog/stem-robotics-education-in-islamic-schools-ijma-kolkata',
+    '/blog/annual-sports-meet-and-karate-highlights-ijma-kolkata',
     '/contact-us',
     '/privacy-policy',
   ];
@@ -38,6 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : route.startsWith('/programmes') ? 0.9 : 0.8,
+    priority: route === '' ? 1.0 : route.startsWith('/academics') || route.startsWith('/campus-life') ? 0.9 : 0.8,
   }));
 }
