@@ -34,7 +34,7 @@ export function SectionHeading({
     >
       {eyebrow && (
         <Reveal variant="fade-up" delay={0.1}>
-          <span className="inline-block font-bubblegum text-lg md:text-xl text-[#ed145b] tracking-wide mb-2 uppercase">
+          <span className="inline-block font-bubblegum text-lg md:text-xl text-[#0A5C36] tracking-wide mb-2 uppercase">
             {eyebrow}
           </span>
         </Reveal>

@@ -93,8 +93,8 @@ export function ProgrammeDetailTemplate({
                       href={prog.href}
                       className={`flex items-center justify-between p-3.5 rounded-2xl text-[14px] font-bold transition-all duration-200 ${
                         isActive
-                          ? 'bg-white text-[#ed145b] shadow-md border-l-4 border-[#ed145b]'
-                          : 'text-gray-700 hover:bg-white hover:text-[#0a6375] hover:shadow-sm'
+                          ? 'bg-white text-[#0A5C36] shadow-md border-l-4 border-[#0A5C36]'
+                          : 'text-gray-700 hover:bg-white hover:text-[#0A5C36] hover:shadow-sm'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
@@ -103,7 +103,7 @@ export function ProgrammeDetailTemplate({
                       </div>
                       <ChevronRight
                         className={`w-4 h-4 flex-shrink-0 transition-transform ${
-                          isActive ? 'text-[#ed145b] translate-x-0.5' : 'text-gray-400'
+                          isActive ? 'text-[#0A5C36] translate-x-0.5' : 'text-gray-400'
                         }`}
                       />
                     </Link>
@@ -112,7 +112,7 @@ export function ProgrammeDetailTemplate({
               </div>
 
               {/* Need Guidance CTA Card */}
-              <div className="bg-gradient-to-br from-[#0a6375] to-[#1cbbb4] rounded-3xl p-6 text-white shadow-md">
+              <div className="bg-gradient-to-br from-[#0A5C36] to-[#10B981] rounded-3xl p-6 text-white shadow-md">
                 <span className="font-bubblegum text-sm tracking-wider uppercase opacity-90">
                   Admissions Open
                 </span>
@@ -125,7 +125,7 @@ export function ProgrammeDetailTemplate({
                     variant="primary"
                     size="sm"
                     href="/admissions"
-                    className="bg-white text-[#0a6375] hover:bg-[#ed145b] hover:text-white px-5 py-2.5 rounded-full font-bold shadow-sm"
+                    className="bg-white text-[#0A5C36] hover:bg-[#064E3B] hover:text-white px-5 py-2.5 rounded-full font-bold shadow-sm"
                   >
                     Enquire Today
                   </Button>
@@ -139,8 +139,8 @@ export function ProgrammeDetailTemplate({
               <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight">
-                    <span className="text-[#0a6375] block">We Break Boundaries To Craft</span>
-                    <span className="text-[#ed145b]">Extraordinary Experiences.</span>
+                    <span className="text-[#0A5C36] block">We Break Boundaries To Craft</span>
+                    <span className="text-[#10B981]">Extraordinary Experiences.</span>
                   </h2>
                 </div>
 
@@ -148,8 +148,8 @@ export function ProgrammeDetailTemplate({
                 <div className="w-28 sm:w-36 h-20 sm:h-24 relative flex-shrink-0 select-none pointer-events-none">
                   <svg viewBox="0 0 160 120" className="w-full h-full">
                     {/* Rainbow Arcs */}
-                    <path d="M 20 110 A 60 60 0 0 1 140 110" fill="none" stroke="#ed145b" strokeWidth="8" strokeLinecap="round" />
-                    <path d="M 28 110 A 52 52 0 0 1 132 110" fill="none" stroke="#f7941e" strokeWidth="8" strokeLinecap="round" />
+                    <path d="M 20 110 A 60 60 0 0 1 140 110" fill="none" stroke="#0A5C36" strokeWidth="8" strokeLinecap="round" />
+                    <path d="M 28 110 A 52 52 0 0 1 132 110" fill="none" stroke="#10B981" strokeWidth="8" strokeLinecap="round" />
                     <path d="M 36 110 A 44 44 0 0 1 124 110" fill="none" stroke="#ffeb3b" strokeWidth="8" strokeLinecap="round" />
                     <path d="M 44 110 A 36 36 0 0 1 116 110" fill="none" stroke="#4caf50" strokeWidth="8" strokeLinecap="round" />
                     <path d="M 52 110 A 28 28 0 0 1 108 110" fill="none" stroke="#00b4b6" strokeWidth="8" strokeLinecap="round" />
@@ -181,7 +181,7 @@ export function ProgrammeDetailTemplate({
 
               {/* Programme Overview Text */}
               <Reveal variant="fade-up" delay={0.2}>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-peach text-[#ed145b] text-sm font-bold mb-3">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-peach text-[#0A5C36] text-sm font-bold mb-3">
                   <Clock className="w-4 h-4" />
                   <span>Age Group: {ageRange}</span>
                 </div>
@@ -194,7 +194,7 @@ export function ProgrammeDetailTemplate({
               <Reveal variant="fade-up" delay={0.3}>
                 <div className="bg-[#fff9f5] border border-orange-100 rounded-3xl p-6 sm:p-8 space-y-4">
                   <h3 className="font-bold text-xl text-gray-900 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#ed145b]" />
+                    <Award className="w-5 h-5 text-[#0A5C36]" />
                     <span>Key Developmental Objectives</span>
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">

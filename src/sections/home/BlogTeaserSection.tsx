@@ -221,11 +221,11 @@ export function BlogTeaserSection() {
                   </div>
                 </div>
 
-                {/* View More Pink Button */}
+                {/* View More Deep Green Button */}
                 <div className="mt-8">
                   <Link
                     href="/blog"
-                    className="inline-block px-8 py-3.5 rounded-full bg-[#EB1551] text-white font-bold text-sm sm:text-base hover:bg-[#d01347] transition-all hover:scale-105 shadow-md"
+                    className="inline-block px-8 py-3.5 rounded-full bg-[#0A5C36] text-white font-bold text-sm sm:text-base hover:bg-[#10B981] transition-all hover:scale-105 shadow-md"
                   >
                     View More
                   </Link>

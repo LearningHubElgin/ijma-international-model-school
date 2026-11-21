@@ -13,6 +13,7 @@ import {
   Maximize2,
   CheckCircle2,
   Share2,
+  Youtube,
 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Lightbox, LightboxImage } from '@/components/ui/Lightbox';
@@ -351,6 +352,19 @@ export default function VlogsPage() {
           <p className="text-base sm:text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
             Discover life at IJMA International Model School in Topsia, Kolkata. Explore real video recordings of stage dramas, patriotic anthems, science presentations, and our complete photo gallery.
           </p>
+
+          {/* Official YouTube Channel CTA */}
+          <div className="mt-5">
+            <a
+              href="https://www.youtube.com/@ijma977"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0A5C36] hover:bg-[#10B981] text-white font-bold text-xs sm:text-sm border border-emerald-400/40 shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              <Youtube className="w-4 h-4 fill-white" />
+              <span>Subscribe on YouTube (@ijma977)</span>
+            </a>
+          </div>
 
           {/* Section Mode Switcher Pills */}
           <div className="mt-8 inline-flex items-center p-1.5 bg-black/40 backdrop-blur-md rounded-full border border-emerald-500/30">

@@ -8,9 +8,9 @@
   --font-nunito: 'Nunito', system-ui, -apple-system, sans-serif;
   --font-bubblegum: 'Bubblegum Sans', cursive, sans-serif;
 
-  /* Design Tokens from recon.md */
-  --wdtPrimaryColor: #ed145b;
-  --wdtPrimaryHover: #c40e48;
+  /* Design Tokens - Deep Islamic Green */
+  --wdtPrimaryColor: #0A5C36;
+  --wdtPrimaryHover: #064E3B;
   --wdtSecondaryColor: #0a6375;
   --wdtSecondaryHover: #074c5a;
   --wdtTertiaryColor: #f7941e;

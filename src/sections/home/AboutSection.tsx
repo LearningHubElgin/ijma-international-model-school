@@ -121,7 +121,7 @@ export function AboutSection() {
                     className="object-contain"
                   />
                 </div>
-                <span className="font-bubblegum text-lg sm:text-xl text-[#ed145b] tracking-wider uppercase font-semibold">
+                <span className="font-bubblegum text-lg sm:text-xl text-[#0A5C36] tracking-wider uppercase font-semibold">
                   {about.eyebrow}
                 </span>
               </div>
@@ -150,25 +150,14 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Centered "Read More" Button with Floating Crayon */}
+        {/* Centered "Discover More About Us" Button in Deep Islamic Green */}
         <div className="mt-10 sm:mt-12 relative w-full flex justify-center items-center">
-          {/* Floating Crayon Left of Read More */}
-          <div className="absolute left-[18%] sm:left-[26%] -top-3 w-10 sm:w-12 h-10 sm:h-12 pointer-events-none hidden sm:block animate-float-delayed z-20">
-            <Image
-              src="/assets/decorative/doodle-pencil.svg"
-              alt="Pencil Doodle"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-          </div>
-
           <Reveal variant="fade-up" delay={0.45}>
             <Button
               variant="primary"
               size="lg"
               href={about.ctaHref}
-              className="bg-[#ed145b] text-white hover:bg-[#0a6375] px-10 sm:px-12 py-3.5 sm:py-4 text-base sm:text-lg rounded-full shadow-[0_4px_16px_rgba(237,20,91,0.35)] transition-all duration-300 transform hover:scale-105"
+              className="bg-[#0A5C36] text-white hover:bg-[#10B981] px-10 sm:px-12 py-3.5 sm:py-4 text-base sm:text-lg rounded-full shadow-[0_4px_16px_rgba(10,92,54,0.35)] transition-all duration-300 transform hover:scale-105"
             >
               {about.ctaText}
             </Button>

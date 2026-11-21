@@ -78,7 +78,7 @@ export default function CampusLifePage() {
     },
     {
       id: 'exhibitions',
-      icon: <Palette className="w-6 h-6 text-[#ed145b]" />,
+      icon: <Palette className="w-6 h-6 text-[#0A5C36]" />,
       badge: 'Creativity & Research',
       title: 'Art, Mathematics & Science Exhibitions',
       description:

@@ -45,7 +45,7 @@ export const siteConfig = {
   socials: {
     facebook: 'https://www.facebook.com/share/18pccq7TAw/',
     instagram: 'https://www.instagram.com/ijmainternationalmodelschool/',
-    youtube: 'https://www.facebook.com/share/18pccq7TAw/',
+    youtube: 'https://www.youtube.com/@ijma977',
   },
 
   navigation: [
@@ -255,7 +255,7 @@ export const siteConfig = {
       title: 'Karate & Self Defence',
       description:
         'Structured martial arts training under certified senseis, teaching discipline, mental focus, physical fitness, and vital self-defense skills.',
-      color: '#ed145b',
+      color: '#0A5C36',
       image: '/assets/ijma/photos/Kerate-session.jpeg',
       href: '/campus-life#karate',
     },

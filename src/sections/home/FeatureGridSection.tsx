@@ -26,7 +26,7 @@ export function FeatureGridSection() {
             >
               <Link
                 href={feature.href}
-                className="group relative bg-white hover:bg-[#EB1551] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-8 lg:py-[55px] lg:px-[35px] flex flex-row items-center gap-6 lg:gap-[23px] cursor-pointer block"
+                className="group relative bg-white hover:bg-[#0A5C36] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-8 lg:py-[55px] lg:px-[35px] flex flex-row items-center gap-6 lg:gap-[23px] cursor-pointer block"
               >
                 {/* Left Side: Authentic Special Curve Masked Image (Matching gdgoenkarohini.com) */}
                 <div className="wdt-mask-frame relative w-[155px] sm:w-[175px] lg:w-[185px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">

@@ -93,7 +93,7 @@ export function StepByStepSection() {
         <Reveal variant="fade-up" delay={0.35}>
           <Link
             href={stepByStep.montessoriHref || '/montessori-methodology'}
-            className="group relative max-w-[1050px] mx-auto bg-white hover:bg-[#EB1551] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-9 lg:py-[60px] lg:px-[45px] cursor-pointer block"
+            className="group relative max-w-[1050px] mx-auto bg-white hover:bg-[#0A5C36] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-9 lg:py-[60px] lg:px-[45px] cursor-pointer block"
           >
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column: Authentic Special Curve Masked Photo Frame (Matching gdgoenkarohini.com) */}

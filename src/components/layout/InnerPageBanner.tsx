@@ -63,7 +63,7 @@ export function InnerPageBanner({
               </Link>
               {breadcrumbs.map((crumb, idx) => (
                 <React.Fragment key={crumb.label}>
-                  <span className="text-[#ed145b] font-bold">▪</span>
+                  <span className="text-[#0A5C36] font-bold">▪</span>
                   {crumb.href && idx < breadcrumbs.length - 1 ? (
                     <Link href={crumb.href} className="hover:text-[#f7941e] transition-colors">
                       {crumb.label}

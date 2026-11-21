@@ -115,7 +115,7 @@ export function EnquireModal({ isOpen, onClose, defaultProgramme }: EnquireModal
             ) : (
               <div>
                 <div className="mb-6">
-                  <span className="font-bubblegum text-[#ed145b] text-base uppercase tracking-wider block">
+                  <span className="font-bubblegum text-[#0A5C36] text-base uppercase tracking-wider block">
                     Admissions Open 2024-25
                   </span>
                   <h3 id="enquiry-modal-title" className="text-2xl sm:text-3xl font-bold text-black mt-1">

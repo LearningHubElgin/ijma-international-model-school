@@ -67,7 +67,7 @@ export function InfrastructureGallerySection() {
                   />
                 </div>
 
-                <span className="w-6 h-6 flex-shrink-0 text-[#eb1551]">
+                <span className="w-6 h-6 flex-shrink-0 text-[#0A5C36]">
                   <Image
                     src="/assets/decorative/doodle-cap-exact.svg"
                     alt="Cap"
@@ -76,7 +76,7 @@ export function InfrastructureGallerySection() {
                     className="object-contain"
                   />
                 </span>
-                <span className="text-[#eb1551] font-bold text-sm sm:text-[15px] tracking-wide">
+                <span className="text-[#0A5C36] font-bold text-sm sm:text-[15px] tracking-wide">
                   {infrastructureGallery.eyebrow}
                 </span>
               </div>
