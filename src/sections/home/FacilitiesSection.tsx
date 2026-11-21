@@ -13,7 +13,7 @@ export function FacilitiesSection() {
     <section
       className="relative overflow-hidden py-20 sm:py-24 lg:py-28"
       style={{
-        background: 'linear-gradient(180deg, #ffefe4 0%, #ffefe4 90%, #ffffff 100%)',
+        background: 'linear-gradient(180deg, #F0FDF4 0%, #ECFDF5 85%, #ffffff 100%)',
       }}
       aria-label="School Facilities"
     >
@@ -56,7 +56,7 @@ export function FacilitiesSection() {
           {/* Eyebrow with Cap Icon */}
           <Reveal variant="fade-up" delay={0.1}>
             <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-6 h-6 flex-shrink-0 text-[#eb1551]">
+              <span className="w-6 h-6 flex-shrink-0 text-[#0A5C36]">
                 <Image
                   src="/assets/decorative/doodle-cap-exact.svg"
                   alt="Cap"
@@ -65,7 +65,7 @@ export function FacilitiesSection() {
                   className="object-contain"
                 />
               </span>
-              <span className="text-[#eb1551] font-bold text-sm sm:text-[15px] tracking-wide">
+              <span className="text-[#0A5C36] font-bold text-sm sm:text-[15px] tracking-wide">
                 {facilities.eyebrow}
               </span>
             </div>
@@ -96,8 +96,8 @@ export function FacilitiesSection() {
               className="w-full flex justify-center"
             >
               <div className="group relative w-[310px] max-w-full flex flex-col items-center transition-transform duration-300 hover:-translate-y-1">
-                {/* Card Container with Special Arched Dome Mask */}
-                <div className="wdt-mask-card bg-[#0A6375] group-hover:bg-[#EB1551] transition-colors duration-300 w-[310px] max-w-full px-[30px] pb-[34px] pt-0 text-center flex flex-col items-center text-white relative">
+                {/* Card Container with Special Arched Dome Mask in Dark Islamic Green turning into Light Green on hover */}
+                <div className="wdt-mask-card bg-[#0A5C36] group-hover:bg-[#10B981] transition-colors duration-300 w-[310px] max-w-full px-[30px] pb-[34px] pt-0 text-center flex flex-col items-center text-white relative shadow-xl">
                   {/* Authentic upper spacer (matches live site .wdt-content-media-group of 214px height) */}
                   <div className="w-full h-[214px] flex-shrink-0 select-none pointer-events-none" aria-hidden="true" />
 
@@ -107,7 +107,7 @@ export function FacilitiesSection() {
                       {facility.title}
                     </h3>
 
-                    {/* Yellow Wavy Underline */}
+                    {/* Gold Wavy Underline */}
                     <svg
                       width="56"
                       height="7"
@@ -118,7 +118,7 @@ export function FacilitiesSection() {
                     >
                       <path
                         d="M2 4 Q 5 1, 8 4 T 14 4 T 20 4 T 26 4 T 32 4 T 38 4 T 44 4 T 50 4 T 56 4 T 62 4"
-                        stroke="#f7941e"
+                        stroke="#F5A623"
                         strokeWidth="2.5"
                         fill="none"
                         strokeLinecap="round"
@@ -131,11 +131,11 @@ export function FacilitiesSection() {
                       {facility.description}
                     </p>
 
-                    {/* Bottom View More Button */}
+                    {/* Bottom View More Button in Light Green turning to Dark Green */}
                     <div className="mt-auto pt-1 relative z-10">
                       <Link
                         href={facility.ctaHref}
-                        className="inline-flex items-center justify-center bg-[#EB1551] group-hover:bg-[#c40e48] text-white font-bold text-[14px] px-8 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="inline-flex items-center justify-center bg-[#10B981] group-hover:bg-[#0A5C36] text-white font-bold text-[14px] px-8 py-3 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-0.5"
                       >
                         {facility.ctaText}
                       </Link>
@@ -143,8 +143,8 @@ export function FacilitiesSection() {
                   </div>
                 </div>
 
-                {/* Corner SVG Icon: sits OUTSIDE the card in bright turquoise when not hovered; moves UP and INWARD at 0.15 opacity on hover */}
-                <div className="absolute -bottom-[22px] -left-[20px] w-20 h-20 pointer-events-none select-none text-[#1CBBB4] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black">
+                {/* Corner SVG Icon in Light Green */}
+                <div className="absolute -bottom-[22px] -left-[20px] w-20 h-20 pointer-events-none select-none text-[#10B981] z-20 transition-all duration-300 ease-out transform group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-15 group-hover:text-black">
                   <Image
                     src={facility.icon}
                     alt={`${facility.title} icon`}

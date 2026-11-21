@@ -35,7 +35,7 @@ export function ProgrammesGridSection() {
             {/* Eyebrow with Cap Icon */}
             <Reveal variant="fade-up" delay={0.1}>
               <div className="inline-flex items-center gap-2.5 mb-3.5">
-                <span className="w-7 h-7 flex-shrink-0 text-[#eb1551]">
+                <span className="w-7 h-7 flex-shrink-0 text-[#0A5C36]">
                   <Image
                     src="/assets/decorative/doodle-cap-exact.svg"
                     alt="Cap"
@@ -44,7 +44,7 @@ export function ProgrammesGridSection() {
                     className="object-contain"
                   />
                 </span>
-                <span className="text-[#eb1551] font-bold text-sm sm:text-[15px] tracking-wide">
+                <span className="text-[#0A5C36] font-bold text-sm sm:text-[15px] tracking-wide">
                   {programmes.eyebrow}
                 </span>
               </div>
@@ -69,7 +69,7 @@ export function ProgrammesGridSection() {
               <div className="relative">
                 <Link
                   href={programmes.ctaHref}
-                  className="inline-flex items-center justify-center bg-[#EB1551] hover:bg-[#d01046] text-white font-bold text-base px-9 py-3.5 rounded-full shadow-[0_8px_25px_rgba(235,21,81,0.25)] hover:shadow-[0_12px_30px_rgba(235,21,81,0.35)] transition-all duration-300 transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center bg-[#0A5C36] hover:bg-[#064E3B] text-white font-bold text-base px-9 py-3.5 rounded-full shadow-[0_8px_25px_rgba(10,92,54,0.25)] hover:shadow-[0_12px_30px_rgba(10,92,54,0.35)] transition-all duration-300 transform hover:-translate-y-0.5"
                 >
                   {programmes.ctaText}
                 </Link>
@@ -149,12 +149,12 @@ export function ProgrammesGridSection() {
             >
               <Link
                 href={prog.href}
-                className="group relative rounded-[100px] text-white py-12 sm:py-14 px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_6px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(235,21,81,0.25)] block min-h-[175px]"
+                className="group relative rounded-[100px] text-white py-12 sm:py-14 px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_6px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(10,92,54,0.25)] block min-h-[175px]"
                 style={{ backgroundColor: prog.bgColor, borderRadius: '100px' }}
               >
-                {/* Hover overlay that smoothly transitions to #EB1551 */}
+                {/* Hover overlay in Dark Islamic Green */}
                 <div
-                  className="absolute inset-0 bg-[#EB1551] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-[#0A5C36] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ borderRadius: '100px' }}
                 />
 

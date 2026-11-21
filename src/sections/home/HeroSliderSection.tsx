@@ -5,6 +5,7 @@ import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '@/content/site.config';
 import { Button } from '@/components/ui/Button';
 import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
@@ -29,7 +30,7 @@ export function HeroSliderSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-slate-900" aria-label="Hero Showcase">
+    <section className="relative w-full overflow-hidden bg-slate-900 group" aria-label="Hero Showcase">
       {/* Carousel Viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
@@ -54,12 +55,12 @@ export function HeroSliderSection() {
                 {/* Rich Gradient Dark Overlay ensuring maximum text contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35 z-10" />
 
-                {/* Centered Slide Content Overlay - generous padding */}
+                {/* Centered Slide Content Overlay */}
                 <div className="relative z-20 max-w-4xl mx-auto px-4 text-center pt-8 sm:pt-14 md:pt-16 pb-28 sm:pb-36">
                   <AnimatePresence mode="wait">
                     {isActive && (
                       <div key={`slide-${slide.id}`} className="flex flex-col items-center">
-                        {/* Eyebrow Badge */}
+                        {/* Eyebrow Badge in Dark Islamic Green + Gold */}
                         <motion.div
                           initial={{ opacity: 0, y: -15 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -79,12 +80,12 @@ export function HeroSliderSection() {
                           {slide.title}
                         </motion.h1>
 
-                        {/* Subtitle */}
+                        {/* Subtitle in Light Green */}
                         <motion.p
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.55, delay: 0.25 }}
-                          className="mt-4 sm:mt-5 text-lg sm:text-xl md:text-2xl text-emerald-100 font-semibold max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                          className="mt-4 sm:mt-5 text-lg sm:text-xl md:text-2xl text-[#86EFAC] font-semibold max-w-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
                         >
                           {slide.subtitle}
                         </motion.p>
@@ -99,7 +100,7 @@ export function HeroSliderSection() {
                           {slide.description}
                         </motion.p>
 
-                        {/* CTA Button */}
+                        {/* CTAs */}
                         <motion.div
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -110,7 +111,7 @@ export function HeroSliderSection() {
                             variant="primary"
                             size="lg"
                             href={slide.ctaHref}
-                            className="bg-[#0A5C36] text-white hover:bg-[#F5A623] hover:text-gray-900 border border-emerald-400/40 px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
+                            className="bg-[#0A5C36] text-white hover:bg-[#10B981] hover:text-white border border-emerald-400/40 px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
                           >
                             {slide.ctaText}
                           </Button>
@@ -118,7 +119,7 @@ export function HeroSliderSection() {
                             variant="outline"
                             size="lg"
                             href="/contact-us"
-                            className="bg-white/10 hover:bg-white text-white hover:text-gray-900 border-white/30 px-7 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full backdrop-blur-xs transition-all duration-300"
+                            className="bg-white/10 hover:bg-white text-white hover:text-[#0A5C36] border-white/40 px-7 sm:px-9 py-3 sm:py-3.5 text-base sm:text-lg font-bold rounded-full backdrop-blur-xs transition-all duration-300"
                           >
                             Contact Campus
                           </Button>
@@ -132,6 +133,39 @@ export function HeroSliderSection() {
           })}
         </div>
       </div>
+
+      {/* Slide Indicator Dots in Light Green / White */}
+      <div className="absolute bottom-24 sm:bottom-28 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5">
+        {siteConfig.heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => emblaApi?.scrollTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`transition-all duration-300 rounded-full cursor-pointer ${
+              selectedIndex === i
+                ? 'w-8 h-2.5 bg-[#10B981] shadow-md'
+                : 'w-2.5 h-2.5 bg-white/60 hover:bg-white'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Slide Navigation Arrows */}
+      <button
+        onClick={() => emblaApi?.scrollPrev()}
+        aria-label="Previous Slide"
+        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-[#0A5C36] text-white border border-white/20 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 cursor-pointer"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={() => emblaApi?.scrollNext()}
+        aria-label="Next Slide"
+        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-[#0A5C36] text-white border border-white/20 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 cursor-pointer"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
 
       {/* Cloud Wave Divider at the bottom */}
       <CloudWaveDivider className="z-30 text-[#FFFFFF]" />

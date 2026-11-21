@@ -13,7 +13,7 @@ export function StepByStepSection() {
 
   return (
     <section
-      className="relative overflow-hidden pt-8 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-11 bg-[#FFEFE4]"
+      className="relative overflow-hidden pt-8 pb-6 sm:pt-12 sm:pb-8 lg:pt-16 lg:pb-11 bg-[#F0FDF4]"
       aria-label="Step By Step Systematic Education"
     >
       {/* Floating Saturn Planet with Ring on Left */}

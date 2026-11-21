@@ -165,6 +165,17 @@ export const siteConfig = {
       ctaHref: '/campus-life',
       image: '/assets/ijma/photos/Prize-Distirbution-serimony.jpg',
     },
+    {
+      id: 4,
+      badge: 'Martial Arts & Physical Fitness',
+      title: 'Discipline, Strength & Self-Defense',
+      subtitle: 'Certified Karate Training & Synthetic Turf Athletics • Topsia, Kolkata',
+      description:
+        'Instilling confidence, physical stamina, mental focus, and Islamic sportsmanship under certified martial arts instructors.',
+      ctaText: 'Explore Campus Life',
+      ctaHref: '/campus-life',
+      image: '/assets/ijma/photos/Kerate-session.jpeg',
+    },
   ],
 
   about: {
@@ -278,7 +289,7 @@ export const siteConfig = {
         id: 'playgroup-nursery',
         title: 'Pre-Nursery & Nursery',
         ageRange: 'Age: 2.5 – 4 Years',
-        bgColor: '#4D4EFF',
+        bgColor: '#0A5C36',
         description:
           'Nurturing sensory exploration, phonics, motor coordination, Islamic adab (etiquettes), and joyful play-based discovery.',
         image: '/assets/ijma/photos/Art-class.jpg',
@@ -288,7 +299,7 @@ export const siteConfig = {
         id: 'kindergarten',
         title: 'KG & Preparatory',
         ageRange: 'Age: 4 – 6 Years',
-        bgColor: '#FF994E',
+        bgColor: '#10B981',
         description:
           'Early literacy, number concepts, basic Arabic alphabets, Dua memorization, and collaborative socialization.',
         image: '/assets/ijma/photos/teacher-watching-art-of the-students.jpeg',
@@ -298,7 +309,7 @@ export const siteConfig = {
         id: 'primary-wing',
         title: 'Primary Wing (Classes I - V)',
         ageRange: 'Age: 6 – 10 Years',
-        bgColor: '#73BE48',
+        bgColor: '#047857',
         description:
           'CBSE foundation in English, Mathematics, EVS, Languages, Tajweed, Islamic Studies, and introductory STEM robotics.',
         image: '/assets/ijma/photos/Runnig-student-in-sports-meet.jpg',
@@ -308,7 +319,7 @@ export const siteConfig = {
         id: 'middle-wing',
         title: 'Middle Wing (Classes VI - VIII)',
         ageRange: 'Age: 11 – 14 Years',
-        bgColor: '#1CBBB4',
+        bgColor: '#059669',
         description:
           'In-depth science labs, advanced mathematics, computer coding, social sciences, Quranic comprehension, and Karate.',
         image: '/assets/ijma/photos/Art-exibition.jpeg',
@@ -318,7 +329,7 @@ export const siteConfig = {
         id: 'secondary-wing',
         title: 'Secondary (Classes IX - X)',
         ageRange: 'Age: 14 – 16 Years',
-        bgColor: '#FF994E',
+        bgColor: '#0A5C36',
         description:
           'Rigorous CBSE board exam preparation, critical problem solving, laboratory practicals, and ethical leadership.',
         image: '/assets/ijma/photos/Best-student-prize-distribution.jpeg',
@@ -328,7 +339,7 @@ export const siteConfig = {
         id: 'co-curricular',
         title: 'Co-Curricular & Enrichment',
         ageRange: 'All Age Groups',
-        bgColor: '#73BE48',
+        bgColor: '#10B981',
         description:
           'After-school Karate academy, Science and Art exhibition workshops, speech and calligraphy competitions.',
         image: '/assets/ijma/photos/Kerate-session.jpeg',

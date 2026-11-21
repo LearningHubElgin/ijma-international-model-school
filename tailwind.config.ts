@@ -12,33 +12,41 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#ed145b',
-          hover: '#c40e48',
-          light: '#fce4ec',
+          DEFAULT: '#0A5C36', // Dark Islamic Green
+          hover: '#064e3b',   // Deep Forest Green
+          light: '#ecfdf5',   // Clean Mint Green
         },
         secondary: {
-          DEFAULT: '#0a6375',
-          hover: '#074c5a',
-          light: '#e0f2f5',
+          DEFAULT: '#10B981', // Vibrant Light Emerald Green
+          hover: '#059669',
+          light: '#f0fdf4',   // Soft White-Mint
         },
         tertiary: {
-          DEFAULT: '#f7941e',
-          hover: '#d97d10',
-          light: '#fef3e5',
+          DEFAULT: '#F5A623', // Gold Accent from School Crest
+          hover: '#d97706',
+          light: '#fef3c7',
         },
         turquoise: {
-          DEFAULT: '#1cbbb4',
-          hover: '#159690',
-          light: '#e5f8f7',
+          DEFAULT: '#059669',
+          hover: '#047857',
+          light: '#e6f7f0',
         },
         peach: {
-          DEFAULT: '#ffefe4',
-          light: '#fff9f5',
+          DEFAULT: '#f0fdf4', // Soft White-Green tint
+          light: '#fcfdfd',   // Crisp White
         },
-        body: '#6b6b84',
-        dark: '#000000',
-        muted: '#9e9eb0',
-        border: '#e8e8ed',
+        islamic: {
+          dark: '#0A5C36',
+          light: '#10B981',
+          mint: '#86EFAC',
+          soft: '#E8F5E9',
+          tint: '#F0FDF4',
+          gold: '#F5A623',
+        },
+        body: '#4a5568',
+        dark: '#0f172a',
+        muted: '#64748b',
+        border: '#e2e8f0',
       },
       fontFamily: {
         sans: ['var(--font-nunito)', 'sans-serif'],
@@ -50,10 +58,10 @@ const config: Config = {
         thumb: '8px',
       },
       boxShadow: {
-        header: '0 4px 20px rgba(0, 0, 0, 0.08)',
-        card: '0 10px 30px rgba(0, 0, 0, 0.05)',
-        'card-hover': '0 18px 40px rgba(0, 0, 0, 0.12)',
-        primary: '0 6px 18px rgba(237, 20, 91, 0.35)',
+        header: '0 4px 20px rgba(10, 92, 54, 0.08)',
+        card: '0 10px 30px rgba(10, 92, 54, 0.05)',
+        'card-hover': '0 18px 40px rgba(10, 92, 54, 0.12)',
+        primary: '0 6px 18px rgba(10, 92, 54, 0.3)',
       },
       keyframes: {
         floatBobSlow: {

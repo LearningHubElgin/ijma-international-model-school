@@ -13,7 +13,7 @@ export function AboutSection() {
   return (
     <section
       className="relative overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14"
-      style={{ background: 'linear-gradient(180deg, #FFFFFF 15%, #FFEFE4 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 15%, #F0FDF4 100%)' }}
       aria-label="About Us"
     >
       <Container>
@@ -55,11 +55,11 @@ export function AboutSection() {
                     />
                   </g>
 
-                  {/* Orange Organic Border */}
+                  {/* Emerald Organic Border */}
                   <path
                     d="M981.8,104.4c-28.3-14.6-54.6-23.5-79.3-28c-24.7-4.5-47.8-4.6-69.7-1.7c-20.7,2.9-40.3,8.6-59.3,16.3 c-48.1,19.1-87,50.9-132.4,79c-36.1,22.9-79.6,30.9-116.7,8.3c-24.2-12.3-47.2-30.3-70.6-42.4C391,102.6,320.3,89.5,251,99.3 c-21,2.8-41.5,7.6-61.2,14.5c-59.1,20.5-110.5,59.2-141,115.7c-73.5,135.8-26.2,297.3,45.9,420.8c10.4,16.8,22,33.1,34.6,48.8 c16,19.9,33.5,38.1,52.1,54.7c18.6,16.6,38.3,31.6,59,45c92.1,58.1,201.2,89,310.8,85.3c72.3-2.6,142.6-22.6,206.1-55.9 c21.2-11.1,41.6-23.7,61.3-37.6c112.4-79.3,194.4-196.4,236-328.4c32.8-102.5,52-226.2-18.6-315.5 C1021.8,130.1,1003.9,115.9,981.8,104.4z"
                     fill="none"
-                    stroke="#f7941e"
+                    stroke="#10B981"
                     strokeWidth="16"
                   />
 
@@ -69,7 +69,7 @@ export function AboutSection() {
                     cy="75.7"
                     rx="74.8"
                     ry="65.8"
-                    fill="#f7941e"
+                    fill="#10B981"
                   />
 
                   {/* Lower Right Accent Ellipse */}
@@ -78,7 +78,7 @@ export function AboutSection() {
                     cy="699.1"
                     rx="30.3"
                     ry="34.4"
-                    fill="#f7941e"
+                    fill="#10B981"
                   />
                 </svg>
               </div>

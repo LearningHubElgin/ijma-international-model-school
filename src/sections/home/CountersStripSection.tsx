@@ -59,7 +59,7 @@ function CountUpItem({
             alt=""
             width={140}
             height={140}
-            className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(237,20,91,0.25)]"
+            className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(16,185,129,0.35)] hue-rotate-[135deg]"
           />
         </div>
 
