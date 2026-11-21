@@ -11,8 +11,8 @@ import { Button } from '@/components/ui/Button';
 import { CloudWaveDivider } from '@/components/ui/CloudWaveDivider';
 
 export function HeroSliderSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 35 }, [
-    Autoplay({ delay: 6500, stopOnInteraction: false, stopOnMouseEnter: true }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 25 }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: false }),
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);

@@ -134,28 +134,39 @@ export const siteConfig = {
   heroSlides: [
     {
       id: 1,
+      badge: 'Jashn-e-Ijma • Independence Day Celebrations',
+      title: 'Celebrating Freedom, Faith & Excellence',
+      subtitle: 'Grand Annual Stage Performance at Kala Kunj, Kolkata',
+      description:
+        'Young scholars of IJMA International Model School celebrating Independence Day with patriotic fervor, Islamic cultural elegance, and theatrical poise.',
+      ctaText: 'Apply For Admission',
+      ctaHref: '/admissions/application-form',
+      image: '/assets/ijma/photos/jashn-e-ijma-independence-day.jpg',
+    },
+    {
+      id: 2,
       badge: 'Welcome to IJMA International Model School',
       title: 'Empowering Minds, Nurturing Faith',
       subtitle: 'English Medium CBSE Curriculum with Islamic Education • Topsia, Kolkata',
       description:
         'Cultivating curious minds and noble character through a balanced blend of academic excellence, Quranic values, hands-on STEM & Robotics, and physical fitness.',
-      ctaText: 'Apply For Admission',
-      ctaHref: '/admissions/application-form',
+      ctaText: 'Explore Academics',
+      ctaHref: '/academics',
       image: '/assets/ijma/photos/Runnig-student-in-sports-meet-wide.jpg',
     },
     {
-      id: 2,
+      id: 3,
       badge: 'STEM & Innovation Excellence',
       title: 'Inspiring Future Innovators',
       subtitle: 'Hands-on Robotics, Science Labs & Creative Mathematics',
       description:
         'Equipping students with modern scientific inquiry, electronic circuitry, mechanical robotics, and critical thinking skills in air-conditioned smart labs.',
-      ctaText: 'Explore Academics',
-      ctaHref: '/academics',
+      ctaText: 'Explore STEM Labs',
+      ctaHref: '/academics#stem',
       image: '/assets/ijma/photos/Art-class-wide.jpg',
     },
     {
-      id: 3,
+      id: 4,
       badge: 'Character, Discipline & Sports',
       title: 'Excellence in Faith & Action',
       subtitle: 'Karate Martial Arts, Annual Sports Meet & National Education Day',
@@ -166,14 +177,14 @@ export const siteConfig = {
       image: '/assets/ijma/photos/Prize-Distirbution-serimony.jpg',
     },
     {
-      id: 4,
+      id: 5,
       badge: 'Martial Arts & Physical Fitness',
       title: 'Discipline, Strength & Self-Defense',
       subtitle: 'Certified Karate Training & Synthetic Turf Athletics • Topsia, Kolkata',
       description:
         'Instilling confidence, physical stamina, mental focus, and Islamic sportsmanship under certified martial arts instructors.',
-      ctaText: 'Explore Campus Life',
-      ctaHref: '/campus-life',
+      ctaText: 'Explore Sports & Karate',
+      ctaHref: '/campus-life#karate',
       image: '/assets/ijma/photos/Kerate-session.jpeg',
     },
   ],
