@@ -20,7 +20,7 @@ export function InfrastructureGallerySection() {
 
   return (
     <section
-      className="relative overflow-hidden pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28 bg-white"
+      className="relative overflow-visible pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-16 bg-white"
       aria-label="Infrastructure Gallery"
     >
       <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
