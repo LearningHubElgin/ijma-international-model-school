@@ -22,7 +22,7 @@ export const siteConfig = {
     motto: 'English Medium CBSE Curriculum with Islamic Education | ...Sky is the limit',
     description:
       'IJMA International Model School is a premier English medium Islamic school located in Topsia, Kolkata. We blend CBSE academic excellence with timeless Islamic values, Quranic understanding, STEM & Robotics innovation, Martial Arts, and holistic character building.',
-    logo: '/assets/ijma/photos/Logo.jpeg',
+    logo: '/assets/ijma/photos/Logo.png',
     affiliation: 'English Medium CBSE Curriculum with Islamic Education (Class: Nursery to XII - Proposed)',
     estd: '2022',
   },
@@ -512,8 +512,26 @@ export const siteConfig = {
     ],
   },
 
-  // Real School Videos from Ijma-School/Videos
+  // Real School Videos including YouTube Features
   videoShowcase: [
+    {
+      id: 'video-drama-1947',
+      title: '15th August 1947 Independence Day Drama Performance',
+      description: 'Students performing a powerful dramatic re-enactment of 15th August 1947 Independence Day (highlight starting at 2:48).',
+      youtubeId: 'W497IhKC8mI',
+      start: 168,
+      thumbnail: 'https://img.youtube.com/vi/W497IhKC8mI/hqdefault.jpg',
+      category: 'Stage Drama & History',
+    },
+    {
+      id: 'video-patriotic-song',
+      title: 'Students Patriotic Song Performance',
+      description: 'Students of IJMA performing with pride and harmony on an emotional patriotic anthem on campus in Topsia, Kolkata.',
+      youtubeId: 'EALHYFvC8FI',
+      start: 0,
+      thumbnail: 'https://img.youtube.com/vi/EALHYFvC8FI/hqdefault.jpg',
+      category: 'Patriotic Anthem',
+    },
     {
       id: 'video-1',
       title: 'Art & Maths Project Explanation',

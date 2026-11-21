@@ -30,10 +30,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out bg-white ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-header py-2.5'
-            : 'bg-white py-4 md:py-5 border-b border-gray-100'
+            ? 'shadow-header py-2.5'
+            : 'py-4 md:py-5 border-b border-gray-100'
         }`}
       >
         <Container size="wide">

@@ -9,7 +9,7 @@ export function JsonLd() {
     alternateName: siteConfig.school.name,
     description: siteConfig.school.description,
     url: 'https://ijmaschool.com',
-    logo: 'https://ijmaschool.com/assets/ijma/photos/Logo.jpeg',
+    logo: 'https://ijmaschool.com/assets/ijma/photos/Logo.png',
     image: 'https://ijmaschool.com/assets/ijma/photos/Runnig-student-in-sports-meet.jpg',
     telephone: siteConfig.contact.primaryPhone,
     email: siteConfig.contact.email,

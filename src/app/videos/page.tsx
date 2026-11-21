@@ -9,12 +9,32 @@ interface SchoolVideoItem {
   id: string;
   title: string;
   description: string;
-  category: 'Student Presentations' | 'Exhibitions & Projects' | 'Academic Seminars' | 'Campus Highlights';
-  src: string;
+  category: 'Stage Drama & History' | 'Patriotic Anthem' | 'Student Presentations' | 'Exhibitions & Projects' | 'Academic Seminars' | 'Campus Highlights';
+  src?: string;
+  youtubeId?: string;
+  start?: number;
   thumbnail: string;
 }
 
 const ALL_VIDEOS: SchoolVideoItem[] = [
+  {
+    id: 'vid-drama-1947',
+    title: '15th August 1947 Independence Day Drama Performance',
+    description: 'Students performing a moving historical drama re-enacting India’s 15th August 1947 Independence Day (highlight portion starts at 2:48).',
+    category: 'Stage Drama & History',
+    youtubeId: 'W497IhKC8mI',
+    start: 168,
+    thumbnail: 'https://img.youtube.com/vi/W497IhKC8mI/hqdefault.jpg',
+  },
+  {
+    id: 'vid-patriotic-song',
+    title: 'Students Patriotic Song Performance',
+    description: 'Students of IJMA International Model School performing an emotional patriotic anthem on our Topsia campus in Kolkata.',
+    category: 'Patriotic Anthem',
+    youtubeId: 'EALHYFvC8FI',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/EALHYFvC8FI/hqdefault.jpg',
+  },
   {
     id: 'vid-1',
     title: 'Art & Maths Project 3D Model Presentation',
@@ -107,6 +127,8 @@ const ALL_VIDEOS: SchoolVideoItem[] = [
 
 const CATEGORIES = [
   'All',
+  'Stage Drama & History',
+  'Patriotic Anthem',
   'Student Presentations',
   'Exhibitions & Projects',
   'Academic Seminars',
@@ -149,14 +171,25 @@ export default function VideosPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-lg">
-                  <video
-                    key={activeVideo.src}
-                    src={activeVideo.src}
-                    controls
-                    playsInline
-                    poster={activeVideo.thumbnail}
-                    className="w-full h-full object-contain"
-                  />
+                  {activeVideo && activeVideo.youtubeId ? (
+                    <iframe
+                      key={activeVideo.youtubeId}
+                      src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1&start=${activeVideo.start || 0}&rel=0`}
+                      title={activeVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                    />
+                  ) : activeVideo && activeVideo.src ? (
+                    <video
+                      key={activeVideo.src}
+                      src={activeVideo.src}
+                      controls
+                      playsInline
+                      poster={activeVideo.thumbnail}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : null}
                 </div>
               </div>
               <div className="lg:col-span-4 text-left">

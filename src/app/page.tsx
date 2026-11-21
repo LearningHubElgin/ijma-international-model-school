@@ -6,6 +6,7 @@ import { FeatureGridSection } from '@/sections/home/FeatureGridSection';
 import { ProgrammesGridSection } from '@/sections/home/ProgrammesGridSection';
 import { FacilitiesSection } from '@/sections/home/FacilitiesSection';
 import { CountersStripSection } from '@/sections/home/CountersStripSection';
+import { PatrioticVideoBannerSection } from '@/sections/home/PatrioticVideoBannerSection';
 import { InfrastructureGallerySection } from '@/sections/home/InfrastructureGallerySection';
 import { VideoShowcaseSection } from '@/sections/home/VideoShowcaseSection';
 import { SmartActivitiesSection } from '@/sections/home/SmartActivitiesSection';
@@ -35,16 +36,19 @@ export default function HomePage() {
       {/* 7. Animated Counters Strip */}
       <CountersStripSection />
 
-      {/* 8. Infrastructure & Photo Gallery */}
+      {/* 8. Full-Width Background Video: Patriotic Song Performance (Muted by Default) */}
+      <PatrioticVideoBannerSection />
+
+      {/* 9. Infrastructure & Photo Gallery */}
       <InfrastructureGallerySection />
 
-      {/* 9. Interactive Video Showcase */}
+      {/* 10. Interactive Video Showcase (Featuring 15th August 1947 Drama at 2:48) */}
       <VideoShowcaseSection />
 
-      {/* 10. Smart Activities & Grassy Hill Banner */}
+      {/* 11. Smart Activities & Grassy Hill Banner */}
       <SmartActivitiesSection />
 
-      {/* 11. News & Blog Teaser */}
+      {/* 12. News & Blog Teaser */}
       <BlogTeaserSection />
     </main>
   );

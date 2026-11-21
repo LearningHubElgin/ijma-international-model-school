@@ -112,9 +112,9 @@ export function CountersStripSection() {
     >
       {/* Outer wrapper for the masked ribbon */}
       <div className="relative max-w-[1920px] mx-auto px-0">
-        {/* The Orange Masked Ribbon Strip */}
+        {/* The Green Masked Ribbon Strip */}
         <div
-          className="wdt-mask-counter-strip bg-[#f7941e] relative py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 overflow-hidden shadow-[0_10px_30px_rgba(247,148,30,0.15)]"
+          className="wdt-mask-counter-strip bg-[#0A5C36] relative py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 overflow-hidden shadow-[0_10px_30px_rgba(10,92,54,0.25)]"
         >
           {/* Subtle Alphabet Background Overlay */}
           <div

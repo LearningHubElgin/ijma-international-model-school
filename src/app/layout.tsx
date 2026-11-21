@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: siteConfig.school.description,
     images: [
       {
-        url: '/assets/ijma/photos/Logo.jpeg',
+        url: '/assets/ijma/photos/Logo.png',
         width: 800,
         height: 800,
         alt: siteConfig.school.fullName,
@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.school.name,
     description: siteConfig.school.description,
-    images: ['/assets/ijma/photos/Logo.jpeg'],
+    images: ['/assets/ijma/photos/Logo.png'],
   },
   icons: {
-    icon: '/assets/ijma/photos/Logo.jpeg',
-    apple: '/assets/ijma/photos/Logo.jpeg',
+    icon: '/assets/ijma/photos/Logo.png',
+    apple: '/assets/ijma/photos/Logo.png',
   },
 };
 

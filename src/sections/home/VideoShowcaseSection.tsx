@@ -51,7 +51,16 @@ export function VideoShowcaseSection() {
             <Reveal variant="zoom-in" delay={0.2}>
               <div className="bg-white rounded-3xl p-3 sm:p-4 shadow-xl border border-gray-100 relative group overflow-hidden">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner">
-                  {selectedVideo && (
+                  {selectedVideo && selectedVideo.youtubeId ? (
+                    <iframe
+                      key={selectedVideo.youtubeId}
+                      src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=${isPlaying ? 1 : 0}&start=${selectedVideo.start || 0}&rel=0`}
+                      title={selectedVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                    />
+                  ) : selectedVideo && selectedVideo.src ? (
                     <video
                       key={selectedVideo.src}
                       src={selectedVideo.src}
@@ -61,7 +70,7 @@ export function VideoShowcaseSection() {
                       poster={selectedVideo.thumbnail}
                       className="w-full h-full object-contain"
                     />
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Video Info Card below player */}
