@@ -93,42 +93,42 @@ export function StepByStepSection() {
         <Reveal variant="fade-up" delay={0.35}>
           <Link
             href={stepByStep.montessoriHref || '/montessori-methodology'}
-            className="group relative max-w-[1050px] mx-auto bg-white hover:bg-[#0A5C36] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-9 lg:py-[60px] lg:px-[45px] cursor-pointer block"
+            className="group relative max-w-[1050px] mx-auto bg-white hover:bg-[#0A5C36] rounded-2xl sm:rounded-[50px] transition-all duration-300 overflow-hidden p-4 sm:p-9 lg:py-[60px] lg:px-[45px] cursor-pointer block shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-xl"
           >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center">
-              {/* Left Column: Authentic Special Curve Masked Photo Frame (Matching gdgoenkarohini.com) */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center">
+              {/* Left Column: Authentic Special Curve Masked Photo Frame */}
               <div className="md:col-span-5 flex justify-center items-center relative">
-                <div className="wdt-mask-frame relative w-[260px] sm:w-[300px] lg:w-[330px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
+                <div className="relative w-full aspect-[16/10] sm:w-[300px] lg:w-[330px] sm:aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden rounded-xl sm:rounded-none sm:wdt-mask-frame">
                   <Image
                     src={stepByStep.montessoriImage || '/assets/gallery/playground-1.jpg'}
                     alt="Montessori Child Sliding"
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 300px, 350px"
+                    sizes="(max-width: 768px) 100vw, 350px"
                   />
                 </div>
               </div>
 
               {/* Right Column: Title, Long Description & Learn More CTA */}
-              <div className="md:col-span-7 flex flex-col justify-center text-left relative z-10">
-                <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0a6375] group-hover:text-white transition-colors duration-300 tracking-tight mb-4">
+              <div className="md:col-span-7 flex flex-col justify-center text-center sm:text-left relative z-10">
+                <h3 className="text-xl sm:text-3xl lg:text-[34px] font-bold text-[#0a6375] group-hover:text-white transition-colors duration-300 tracking-tight mb-2 sm:mb-4">
                   {stepByStep.montessoriHeading}
                 </h3>
 
-                <p className="text-[14px] sm:text-[15px] lg:text-base text-[#6b6b84] group-hover:text-white/95 transition-colors duration-300 leading-relaxed mb-6 font-normal">
+                <p className="text-xs sm:text-[15px] lg:text-base text-[#6b6b84] group-hover:text-white/95 transition-colors duration-300 leading-relaxed mb-4 sm:mb-6 font-normal">
                   {stepByStep.montessoriDescription}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <div className="inline-flex flex-col items-start font-bold text-sm sm:text-base text-[#0a6375] group-hover:text-white transition-colors duration-300">
+                  <div className="inline-flex flex-col items-center sm:items-start font-bold text-xs sm:text-base text-[#0a6375] group-hover:text-white transition-colors duration-300">
                     <span>Learn More</span>
                     {/* Authentic yellow wavy underline matching live site */}
                     <svg
-                      width="64"
-                      height="8"
+                      width="52"
+                      height="7"
                       viewBox="0 0 64 8"
                       fill="none"
-                      className="mt-1"
+                      className="mt-1 sm:w-16 sm:h-2"
                       aria-hidden="true"
                     >
                       <path
@@ -143,7 +143,7 @@ export function StepByStepSection() {
                   </div>
 
                   {/* Authentic Sun Rays Doodle from live site */}
-                  <div className="w-16 sm:w-20 select-none pointer-events-none transition-all duration-300 group-hover:brightness-0 group-hover:invert">
+                  <div className="w-12 sm:w-20 select-none pointer-events-none transition-all duration-300 group-hover:brightness-0 group-hover:invert">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 416 226.1"

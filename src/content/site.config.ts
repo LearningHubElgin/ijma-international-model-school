@@ -238,7 +238,7 @@ export const siteConfig = {
       description:
         'Quran recitation with Tajweed, daily Duas, Hadith studies, Seerah of Prophet Muhammad (PBUH), and foundational 7 Pillars of Faith (Iman).',
       color: '#0a6348',
-      image: '/assets/ijma/photos/photo_prize.jpeg',
+      image: '/assets/ijma/photos/Prize-Distirbution-serimony.jpg',
       href: '/academics#islamic-studies',
     },
     {

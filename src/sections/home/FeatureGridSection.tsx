@@ -16,44 +16,65 @@ export function FeatureGridSection() {
   return (
     <section className="bg-[#FFEFE4] pt-0 pb-16 sm:pb-20 lg:pb-24">
       <Container>
-        <div className="max-w-[1050px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-10 gap-y-[35px] lg:gap-y-[45px]">
-          {remainingFeatures.map((feature, index) => (
-            <Reveal
-              key={feature.id}
-              variant="fade-up"
-              delay={0.06 * (index + 1)}
-              className="h-full"
-            >
-              <Link
-                href={feature.href}
-                className="group relative bg-white hover:bg-[#0A5C36] rounded-[50px] transition-colors duration-300 overflow-hidden p-6 sm:p-8 lg:py-[55px] lg:px-[35px] flex flex-row items-center gap-6 lg:gap-[23px] cursor-pointer block"
+        <div className="max-w-[1050px] mx-auto grid grid-cols-2 md:grid-cols-2 gap-2.5 sm:gap-6 lg:gap-8">
+          {remainingFeatures.map((feature, index) => {
+            const isLastOdd =
+              index === remainingFeatures.length - 1 &&
+              remainingFeatures.length % 2 !== 0;
+
+            return (
+              <Reveal
+                key={feature.id}
+                variant="fade-up"
+                delay={0.06 * (index + 1)}
+                className={`h-full ${isLastOdd ? 'col-span-2' : ''}`}
               >
-                {/* Left Side: Authentic Special Curve Masked Image (Matching gdgoenkarohini.com) */}
-                <div className="wdt-mask-frame relative w-[155px] sm:w-[175px] lg:w-[185px] aspect-[1315/1097] flex-shrink-0 select-none overflow-hidden">
+                <Link
+                  href={feature.href}
+                  className={`group relative bg-white hover:bg-[#0A5C36] rounded-2xl sm:rounded-[45px] transition-all duration-300 overflow-hidden p-2.5 sm:p-7 lg:py-[50px] lg:px-[35px] items-center cursor-pointer block h-full shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-xl ${
+                    isLastOdd
+                      ? 'flex flex-row gap-3 sm:gap-6 lg:gap-[23px]'
+                      : 'flex flex-col sm:flex-row gap-2 sm:gap-6 lg:gap-[23px]'
+                  }`}
+                >
+                {/* Left Side: Authentic Image (Clean rounded 4:3 on mobile, special curve mask on desktop) */}
+                <div
+                  className={`relative flex-shrink-0 select-none overflow-hidden rounded-xl sm:rounded-none sm:wdt-mask-frame ${
+                    isLastOdd
+                      ? 'w-[105px] sm:w-[170px] lg:w-[185px] aspect-[4/3] sm:aspect-[1315/1097]'
+                      : 'w-full aspect-[4/3] sm:w-[170px] lg:w-[185px] sm:aspect-[1315/1097] mb-2 sm:mb-0'
+                  }`}
+                >
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    sizes="200px"
+                    sizes="(max-width: 640px) 50vw, 200px"
                   />
                 </div>
 
                 {/* Right Side: Title & Learn More Link */}
-                <div className="flex-1 flex flex-col justify-center text-left relative z-10 pr-4 sm:pr-6">
-                  <h3 className="text-xl sm:text-2xl lg:text-[25px] font-bold text-[#0a6375] group-hover:text-white transition-colors duration-300 mb-2 leading-tight">
+                <div
+                  className={`flex-1 flex flex-col justify-between relative z-10 w-full pt-1 sm:pt-0 sm:pr-4 ${
+                    isLastOdd
+                      ? 'items-start text-left'
+                      : 'items-center sm:items-start text-center sm:text-left'
+                  }`}
+                >
+                  <h3 className="text-xs sm:text-xl lg:text-[24px] font-bold text-[#0a6375] group-hover:text-white transition-colors duration-300 mb-1 sm:mb-2 leading-tight line-clamp-2">
                     {feature.title}
                   </h3>
 
-                  <div className="inline-flex flex-col items-start font-bold text-sm sm:text-[15px] text-[#0a6375] group-hover:text-white transition-colors duration-300">
+                  <div className="inline-flex flex-col items-center sm:items-start font-bold text-[10px] sm:text-sm text-[#0a6375] group-hover:text-white transition-colors duration-300">
                     <span>Learn More</span>
                     {/* Authentic yellow wavy underline */}
                     <svg
-                      width="56"
-                      height="7"
+                      width="32"
+                      height="5"
                       viewBox="0 0 64 8"
                       fill="none"
-                      className="mt-1"
+                      className="mt-0.5 sm:w-14 sm:h-2"
                       aria-hidden="true"
                     >
                       <path
@@ -68,8 +89,8 @@ export function FeatureGridSection() {
                   </div>
                 </div>
 
-                {/* Corner Doodle SVG in bottom right matching live site (visible on hover) */}
-                <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 pointer-events-none select-none text-[#FFC1A7] group-hover:text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                {/* Corner Doodle SVG in bottom right matching live site (visible on hover on desktop) */}
+                <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 pointer-events-none select-none text-[#FFC1A7] group-hover:text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hidden sm:block">
                   {feature.id === 'celebrations' ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +126,8 @@ export function FeatureGridSection() {
                 </div>
               </Link>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>

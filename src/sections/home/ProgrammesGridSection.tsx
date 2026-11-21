@@ -102,19 +102,18 @@ export function ProgrammesGridSection() {
             </div>
 
             {/* Dual Curved Photos Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-center">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 items-center">
               {/* Photo 1: Playing with clay (border-radius: 0 0 500px 0) */}
               <Reveal variant="fade-up" delay={0.25}>
                 <div
-                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
-                  style={{ borderRadius: '0px 0px 500px 0px' }}
+                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)] rounded-bl-[40px] sm:rounded-bl-[500px]"
                 >
                   <Image
                     src="/assets/ijma/photos/Art-class.jpg"
                     alt="Students in Robotics and STEM Class"
                     fill
                     className="object-cover object-center hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 480px"
+                    sizes="(max-width: 768px) 50vw, 480px"
                   />
                 </div>
               </Reveal>
@@ -122,15 +121,14 @@ export function ProgrammesGridSection() {
               {/* Photo 2: Painting horse model (border-radius: 500px 0 0 0) */}
               <Reveal variant="fade-up" delay={0.35}>
                 <div
-                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)]"
-                  style={{ borderRadius: '500px 0px 0px 0px' }}
+                  className="relative aspect-[480/372] w-full overflow-hidden select-none bg-gray-50 shadow-[0_6px_25px_rgba(0,0,0,0.04)] rounded-tl-[40px] sm:rounded-tl-[500px]"
                 >
                   <Image
                     src="/assets/ijma/photos/teacher-watching-art-of the-students.jpeg"
                     alt="Teacher reviewing student creative projects"
                     fill
                     className="object-cover object-center hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 480px"
+                    sizes="(max-width: 768px) 50vw, 480px"
                   />
                 </div>
               </Reveal>
@@ -138,8 +136,8 @@ export function ProgrammesGridSection() {
           </div>
         </div>
 
-        {/* Bottom Row: 6 Wide Rounded Pill Cards (Exact 446px x 180px proportions matching gdgoenkarohini.com) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mt-16 sm:mt-20 lg:mt-24">
+        {/* Bottom Row: 6 Compact Pill Cards in balanced grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8 mt-10 sm:mt-16 lg:mt-24">
           {programmes.list.map((prog, index) => (
             <Reveal
               key={prog.id}
@@ -149,30 +147,29 @@ export function ProgrammesGridSection() {
             >
               <Link
                 href={prog.href}
-                className="group relative rounded-[100px] text-white py-12 sm:py-14 px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_6px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(10,92,54,0.25)] block min-h-[175px]"
-                style={{ backgroundColor: prog.bgColor, borderRadius: '100px' }}
+                className="group relative rounded-2xl sm:rounded-[60px] lg:rounded-[100px] text-white py-4 px-2.5 sm:py-12 sm:px-8 text-center flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(10,92,54,0.25)] block min-h-[96px] sm:min-h-[170px]"
+                style={{ backgroundColor: prog.bgColor }}
               >
                 {/* Hover overlay in Dark Islamic Green */}
                 <div
-                  className="absolute inset-0 bg-[#0A5C36] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ borderRadius: '100px' }}
+                  className="absolute inset-0 bg-[#0A5C36] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl sm:rounded-[60px] lg:rounded-[100px]"
                 />
 
                 {/* Card Content */}
-                <div className="relative z-10 flex flex-col items-center">
-                  <h3 className="text-2xl sm:text-[27px] font-bold text-white mb-2 tracking-wide leading-tight">
+                <div className="relative z-10 flex flex-col items-center w-full px-1">
+                  <h3 className="text-xs sm:text-xl lg:text-[26px] font-bold text-white mb-1 tracking-wide leading-tight text-center line-clamp-2">
                     {prog.title}
                   </h3>
 
-                  <div className="inline-flex flex-col items-center font-semibold text-sm sm:text-base text-white/95">
+                  <div className="inline-flex flex-col items-center font-semibold text-[10px] sm:text-sm lg:text-base text-white/95 text-center">
                     <span>{prog.ageRange}</span>
                     {/* Authentic yellow wavy underline */}
                     <svg
-                      width="56"
-                      height="7"
+                      width="34"
+                      height="5"
                       viewBox="0 0 64 8"
                       fill="none"
-                      className="mt-1"
+                      className="mt-0.5 sm:w-14 sm:h-2"
                       aria-hidden="true"
                     >
                       <path
@@ -188,7 +185,7 @@ export function ProgrammesGridSection() {
                 </div>
 
                 {/* Sparkles Doodle SVG in bottom right (visible on hover) */}
-                <div className="absolute bottom-3 right-7 pointer-events-none select-none text-white opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 z-10">
+                <div className="absolute bottom-2 right-3 sm:bottom-3 sm:right-7 pointer-events-none select-none text-white opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 z-10 hidden sm:block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 100 100"
