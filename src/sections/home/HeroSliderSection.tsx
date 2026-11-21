@@ -117,8 +117,8 @@ export function HeroSliderSection() {
                   />
                 )}
 
-                {/* Subtle Vignette Overlay ensuring clear text contrast and sharp visuals */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20 z-10 pointer-events-none" />
+                {/* Crystal-Clear Subtle Vignette Overlay ensuring clear text contrast without blurring background video or images */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent z-10 pointer-events-none" />
 
                 {/* Centered Slide Content Overlay */}
                 <div className="relative z-20 max-w-4xl mx-auto px-4 text-center pt-8 sm:pt-12 md:pt-14 pb-24 sm:pb-32">
@@ -130,7 +130,7 @@ export function HeroSliderSection() {
                           initial={{ opacity: 0, y: -15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5 }}
-                          className="inline-flex items-center gap-2 bg-[#0A5C36]/90 border border-emerald-400/30 text-[#F5A623] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-3 shadow-md backdrop-blur-xs"
+                          className="inline-flex items-center gap-2 bg-[#0A5C36]/90 border border-emerald-400/30 text-[#F5A623] px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-3 shadow-md"
                         >
                           {isVideoSlide ? (
                             <>
@@ -191,7 +191,7 @@ export function HeroSliderSection() {
                             variant="outline"
                             size="md"
                             href="/contact-us"
-                            className="bg-white/15 hover:bg-white text-white hover:text-[#0A5C36] border-white/40 px-6 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-base font-bold rounded-full backdrop-blur-xs transition-all duration-300"
+                            className="bg-black/30 hover:bg-white text-white hover:text-[#0A5C36] border-white/50 px-6 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-base font-bold rounded-full transition-all duration-300"
                           >
                             Contact Campus
                           </Button>

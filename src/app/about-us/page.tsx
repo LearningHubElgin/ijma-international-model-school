@@ -64,7 +64,7 @@ export default function AboutUsPage() {
 
               <Reveal variant="fade-up" delay={0.2}>
                 <p className="text-body text-base sm:text-lg leading-relaxed">
-                  Conveniently situated at <strong>9/1, Topsia Road South, Topsia, Kolkata</strong>, IJMA International Model School is a premier educational institution established in 2022. We offer a progressive English Medium CBSE-oriented curriculum enriched with comprehensive Islamic Education (Class: Nursery to XII - Proposed).
+                  Conveniently situated at <strong>32/3, Topsia Rd, Topsia, Kolkata, West Bengal 700046</strong>, IJMA International Model School is a premier educational institution established in 2022. We offer a progressive English Medium CBSE-oriented curriculum enriched with comprehensive Islamic Education (Class: Nursery to XII - Proposed).
                 </p>
                 <p className="text-body text-base leading-relaxed mt-4">
                   Guided by the Quranic motto <span className="font-bold text-[#0A5C36] font-arabic">اَلْعِلْمُ نُوْرٌ</span> (<em>Al-Ilmu Noorun</em> — Knowledge is Light) and the inspirational belief &ldquo;...Sky is the limit&rdquo;, our mission is to empower young minds with high-caliber academic capabilities while instilling timeless values of modesty, truthfulness, and leadership.

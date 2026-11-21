@@ -20,7 +20,7 @@ export default function ApplicationProcessPage() {
     {
       step: '01',
       title: 'Online or Campus Enquiry',
-      desc: 'Start by filling our online application form or visiting our school office at 9/1, Topsia Road South, Topsia, Kolkata - 700046. Receive our prospectus and schedule an interactive campus visit.',
+      desc: 'Start by filling our online application form or visiting our school office at 32/3, Topsia Rd, Topsia, Kolkata - 700046. Receive our prospectus and schedule an interactive campus visit.',
     },
     {
       step: '02',

@@ -28,20 +28,24 @@ export const siteConfig = {
   },
 
   contact: {
-    address: '9/1, Topsia Road South, Topsia, Kolkata – 700046, West Bengal, India',
-    landmark: 'Topsia South, Near EM Bypass Connector',
-    phones: ['+91 75408 55755', '+91 98316 23162'],
-    primaryPhone: '+917540855755',
+    address: '32/3, Topsia Rd, Topsia, Kolkata, West Bengal 700046',
+    landmark: 'Topsia, Near EM Bypass Connector',
+    coordinates: {
+      lat: 22.537651521277105,
+      lng: 88.38174334871343,
+    },
+    phones: ['+91 99038 98162', '09903898162'],
+    primaryPhone: '+919903898162',
     email: 'info@ijmaschool.com',
     hours: 'Mon - Sat: 8:30 AM - 3:30 PM',
     mapEmbedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14740.354152864696!2d88.3842!3d22.5401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276eb1c28c687%3A0x6b876e5d2634e2c!2sTopsia%2C%20Kolkata%2C%20West%20Bengal%20700046!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+      'https://maps.google.com/maps?q=22.537651521277105,88.38174334871343&hl=en&z=17&output=embed',
   },
 
   socials: {
-    facebook: 'https://www.facebook.com/IjmaInternationalModelSchool',
+    facebook: 'https://www.facebook.com/share/18pccq7TAw/',
     instagram: 'https://www.instagram.com/ijmainternationalmodelschool/',
-    youtube: 'https://www.youtube.com/@IjmaInternationalModelSchool',
+    youtube: 'https://www.facebook.com/share/18pccq7TAw/',
   },
 
   navigation: [
@@ -199,7 +203,7 @@ export const siteConfig = {
     heading: 'We Nurture Knowledge, Faith & Essential Life Skills!',
     arabicCalligraphy: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ • اَلْعِلْمُ نُوْرٌ',
     paragraph1:
-      'Welcome to IJMA INTERNATIONAL MODEL SCHOOL (إجماع انترنیشنل ماڈل اسکول), conveniently situated at 9/1, Topsia Road South, Kolkata. Established in 2022, our institution is dedicated to offering a distinguished English Medium education following the CBSE curriculum, seamlessly infused with timeless Islamic education and character development (Tarbiyah).',
+      'Welcome to IJMA INTERNATIONAL MODEL SCHOOL (إجماع انترنیشنل ماڈل اسکول), conveniently situated at 32/3, Topsia Rd, Topsia, Kolkata, West Bengal 700046. Established in 2022, our institution is dedicated to offering a distinguished English Medium education following the CBSE curriculum, seamlessly infused with timeless Islamic education and character development (Tarbiyah).',
     paragraph2:
       'In a supportive, modern, and morally uplifting atmosphere, we empower boys and girls to attain academic excellence while remaining firmly grounded in Islamic ethics, Quranic understanding, mutual respect, and social responsibility.',
     ctaText: 'Discover More About Us',

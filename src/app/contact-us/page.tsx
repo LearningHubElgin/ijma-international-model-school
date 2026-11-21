@@ -149,7 +149,7 @@ export default function ContactUsPage() {
                       <input
                         type="tel"
                         {...register('phone')}
-                        placeholder="+91 75408 55755"
+                        placeholder="+91 99038 98162"
                         className="w-full px-5 py-3 rounded-pill border-2 border-[#ffefe4] focus:border-primary focus:outline-none text-sm font-sans transition-colors"
                       />
                     </div>

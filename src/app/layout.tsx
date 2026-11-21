@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Best School in Topsia',
     'English Medium Islamic School Kolkata',
     'CBSE Islamic Education Kolkata',
-    'Topsia Road South School',
+    'Topsia Rd School',
     'STEM Robotics School Kolkata',
     'Karate Training School Kolkata',
   ],

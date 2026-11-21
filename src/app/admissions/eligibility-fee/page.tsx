@@ -85,7 +85,7 @@ export default function EligibilityFeePage() {
           <div className="max-w-3xl mx-auto mb-8 p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 text-xs sm:text-sm flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold">Notice for Parents:</span> For exact quarterly tuition fees, admission charges, uniform sets, and school transport routes covering Topsia and Kolkata, please contact our admissions office directly at <strong>+91 75408 55755</strong> or <strong>+91 98316 23162</strong>.
+              <span className="font-bold">Notice for Parents:</span> For exact quarterly tuition fees, admission charges, uniform sets, and school transport routes covering Topsia and Kolkata, please contact our admissions office directly at <strong>+91 99038 98162</strong> or <strong>09903898162</strong>.
             </div>
           </div>
 

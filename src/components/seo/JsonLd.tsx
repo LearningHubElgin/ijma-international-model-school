@@ -15,7 +15,7 @@ export function JsonLd() {
     email: siteConfig.contact.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '9/1, Topsia Road South',
+      streetAddress: '32/3, Topsia Rd',
       addressLocality: 'Topsia',
       addressRegion: 'Kolkata, West Bengal',
       postalCode: '700046',
@@ -23,8 +23,8 @@ export function JsonLd() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '22.5401',
-      longitude: '88.3842',
+      latitude: '22.537651521277105',
+      longitude: '88.38174334871343',
     },
     openingHoursSpecification: [
       {

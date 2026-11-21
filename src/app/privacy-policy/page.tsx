@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
                 Last Updated: November 2024
               </p>
               <p className="mt-4">
-                At <strong>{siteConfig.school.fullName}</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the School&rdquo;), located at 9/1, Topsia Road South, Topsia, Kolkata - 700046, West Bengal, we deeply respect the privacy of our students, parents, and website visitors. This Privacy Policy details how we collect, store, utilize, and protect personal information collected through our official website and school administration.
+                At <strong>{siteConfig.school.fullName}</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;the School&rdquo;), located at 32/3, Topsia Rd, Topsia, Kolkata, West Bengal 700046, we deeply respect the privacy of our students, parents, and website visitors. This Privacy Policy details how we collect, store, utilize, and protect personal information collected through our official website and school administration.
               </p>
             </div>
 
